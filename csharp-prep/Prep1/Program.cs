@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        // This is my C# Prep 1 code.
         Console.WriteLine("Hello Sandbox World!");
         string firstName;
         string lastName;
