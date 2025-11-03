@@ -48,38 +48,51 @@ class Program
         // }
         // Loops, For, while, do while, foreach
 
-        Console.WriteLine(Math.Pow(2, 10));
+        // Console.WriteLine(Math.Pow(2, 10));
 
-        int x = 10;
-        Console.WriteLine($"{x}, {++x}, {x++}, {x}");
-        //++x increments x then uses the value of x.
-        //x++ uses the value of x before you increment it.
+        // int x = 10;
+        // Console.WriteLine($"{x}, {++x}, {x++}, {x}");
+        // //++x increments x then uses the value of x.
+        // //x++ uses the value of x before you increment it.
 
-        // Loops
+        // // Loops
 
-        for (int i = 0; i < 20; i++)
+        // for (int i = 0; i < 20; i++)
+        // {
+        //     Console.WriteLine($"The value of i is: {i}");
+        // }
+
+        // for (int i = 0; i <= 1000; i += 10)
+        // {
+        //     Console.WriteLine($"The value of i is {i}.");
+        // }
+
+        // for (int i = -10000; i <= 10000; i += 100)
+        // {
+        //     Console.WriteLine($"The value of i is: {i}.");
+        // }
+
+        // for (int i = -10000; i >= -100000; i -= 100)
+        // {
+        //     Console.WriteLine($"The value of i is: {i}.");
+        // }
+
+        // for (double i = 1.234; i < 12.234234; i += .234)
+        // {
+        //     Console.WriteLine($"The value of i is: {i}.");
+        // }
+
+        bool done = false;
+        // While loops need entrance strategy (how to get in) and exit strategy (how to get out)
+        while (!done)
         {
-            Console.WriteLine($"The value of i is: {i}");
-        }
-
-        for (int i = 0; i <= 1000; i += 10)
-        {
-            Console.WriteLine($"The value of i is {i}.");
-        }
-
-        for (int i = -10000; i <= 10000; i += 100)
-        {
-            Console.WriteLine($"The value of i is: {i}.");
-        }
-
-        for (int i = -10000; i >= -100000; i -= 100)
-        {
-            Console.WriteLine($"The value of i is: {i}.");
-        }
-
-        for (double i = 1.234; i < 12.234234; i += .234)
-        {
-            Console.WriteLine($"The value of i is: {i}.");
+            Console.Write("Input your age: ");
+            int age = int.Parse(Console.ReadLine());
+            if (age >= 0 && age <= 125)
+            {
+                done = true;
+                Console.WriteLine($"Super age: {age}.");
+            }
         }
     }
 }
