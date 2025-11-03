@@ -84,7 +84,17 @@ class Program
 
         bool done = false;
         // While loops need entrance strategy (how to get in) and exit strategy (how to get out)
-        while (!done)
+        // while (!done)
+        // {
+        //     Console.Write("Input your age: ");
+        //     int age = int.Parse(Console.ReadLine());
+        //     if (age >= 0 && age <= 125)
+        //     {
+        //         done = true;
+        //         Console.WriteLine($"Super age: {age}.");
+        //     }
+        // }
+        do
         {
             Console.Write("Input your age: ");
             int age = int.Parse(Console.ReadLine());
@@ -93,6 +103,6 @@ class Program
                 done = true;
                 Console.WriteLine($"Super age: {age}.");
             }
-        }
+        } while (!done);
     }
 }
