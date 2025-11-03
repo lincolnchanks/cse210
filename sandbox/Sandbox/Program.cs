@@ -71,5 +71,15 @@ class Program
         {
             Console.WriteLine($"The value of i is: {i}.");
         }
+
+        for (int i = -10000; i >= -100000; i -= 100)
+        {
+            Console.WriteLine($"The value of i is: {i}.");
+        }
+
+        for (double i = 1.234; i < 12.234234; i += .234)
+        {
+            Console.WriteLine($"The value of i is: {i}.");
+        }
     }
 }
