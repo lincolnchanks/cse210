@@ -82,7 +82,7 @@ class Program
         //     Console.WriteLine($"The value of i is: {i}.");
         // }
 
-        bool done = false;
+        // bool done = false;
         // While loops need entrance strategy (how to get in) and exit strategy (how to get out)
         // while (!done)
         // {
@@ -94,15 +94,30 @@ class Program
         //         Console.WriteLine($"Super age: {age}.");
         //     }
         // }
-        do
+        // do
+        // {
+        //     Console.Write("Input your age: ");
+        //     int age = int.Parse(Console.ReadLine());
+        //     if (age >= 0 && age <= 125)
+        //     {
+        //         done = true;
+        //         Console.WriteLine($"Super age: {age}.");
+        //     }
+        // } while (!done);
+
+        //List is a class with a <type>
+        //new creates the new object
+        //the parenthesis cause the constructor to be called.
+        //In Python you can put anything you want in a list.
+        // In C# the list must be assigned a type.
+        List<int> numbers = new List<int>();
+        numbers.Add(10);
+        numbers.Add(2134);
+        numbers.Add(-234);
+        numbers.Add(101);
+        foreach(int n in numbers) // for is a counting loop (for numbers). foreach is for iteration through iterables.
         {
-            Console.Write("Input your age: ");
-            int age = int.Parse(Console.ReadLine());
-            if (age >= 0 && age <= 125)
-            {
-                done = true;
-                Console.WriteLine($"Super age: {age}.");
-            }
-        } while (!done);
+            Console.WriteLine($"The number is: {n}.");
+        }
     }
 }
