@@ -1,7 +1,7 @@
 using System;
 
 class Program
-{
+{ // Bring your KANO back out next semester!
     static void Main(string[] args)
     {
         // Console.WriteLine("Hello Prep2 World!");

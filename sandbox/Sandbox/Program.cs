@@ -33,20 +33,8 @@ class Program
         // If statements, ||, &&, !
 
         int x = 10;
-        // Don't put semicolons after if statements or loops.
-        if (!(x == 10 || x == 12 && x == 13 && x != 23)) // You don't need brackets if the if statement is only one line of code.
-        {
-            Console.WriteLine("X is 10.");
-        }
-        else if (x == 435)
-        {
-            Console.WriteLine("Hey Bob."); // C#: All strings must be in double quotes. Single quotes are only for single characters.
-        }
-        else
-        {
-            Console.WriteLine("Goodbye Bob.");
-        }
-        
+        // Don't put semicolons after if statements or loops. // You don't need brackets if the if statement is only one line of code. // C#: All strings must be in double quotes. Single quotes are only for single characters.
+        if (!(x == 10 || x == 12 && x == 13 && x != 23)) {Console.WriteLine("X is 10.");} else if (x == 435) {Console.WriteLine("Hey Bob.");} else {Console.WriteLine("Goodbye Bob.");}
         // Loops, For, while, do while, foreach
     }
 }
