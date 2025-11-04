@@ -2,6 +2,12 @@ using System;
 
 class Program
 { // void means: don't return anything. That's this function's return type. // Must have Main, must be capitalized.
+
+    static void TestValues(int x, float y, double z) //static: I can call this function w/o an object
+    {
+        Console.WriteLine($"The values are: {x}, {y}, {z}");
+    }
+
     static void Main(string[] args) //static: you don't need an object to call this function.
     {
         Console.WriteLine("Hello Sandbox World!"); //Console.WriteLine() doesn't leave the cursor on the written line.
@@ -110,14 +116,16 @@ class Program
         //the parenthesis cause the constructor to be called.
         //In Python you can put anything you want in a list.
         // In C# the list must be assigned a type.
-        List<int> numbers = new List<int>();
-        numbers.Add(10);
-        numbers.Add(2134);
-        numbers.Add(-234);
-        numbers.Add(101);
-        foreach(int n in numbers) // for is a counting loop (for numbers). foreach is for iteration through iterables.
-        {
-            Console.WriteLine($"The number is: {n}.");
-        }
+        // List<int> numbers = new List<int>();
+        // numbers.Add(10);
+        // numbers.Add(2134);
+        // numbers.Add(-234);
+        // numbers.Add(101);
+        // foreach(int n in numbers) // for is a counting loop (for numbers). foreach is for iteration through iterables.
+        // {
+        //     Console.WriteLine($"The number is: {n}.");
+        // }
+
+        TestValues(10, (float)10.123, 123.21412351325325325);
     }
 }
