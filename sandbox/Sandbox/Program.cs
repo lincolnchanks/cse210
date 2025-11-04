@@ -7,20 +7,30 @@ class Program
     {
         Console.WriteLine($"The values are: {x}, {y}, {z}");
     }
-
+    static int AddValues(int n1, int n2, int n3)
+    {
+        int total = n1 + n2 + n3;
+        return total;
+    }
     static void Main(string[] args) //static: you don't need an object to call this function.
     {
-        Console.WriteLine("Hello Sandbox World!"); //Console.WriteLine() doesn't leave the cursor on the written line.
-        string firstName; // C# is a strongly-typed language, meaning every variable must have a type and it must be used. It also must be declared before it is used.
-        string lastName;
-        //Console.Read() only returns one character as an int.
-        Console.Write("Please enter your first name: "); //Console.Write() leaves the cursor on the written line.
-        firstName = Console.ReadLine();
 
-        Console.Write("Please enter your last name: ");
-        lastName = Console.ReadLine(); //ReadLine(): Title Case. lastName: Camel Case. last_name: Snake Case.
+        TestValues(10, (float)10.123, 123.21412351325325325);
 
-        Console.WriteLine($"Your name is: {lastName}, {firstName}.");
+        int newTotal = AddValues(1, 2, 3);
+        Console.WriteLine(newTotal);
+
+        // Console.WriteLine("Hello Sandbox World!"); //Console.WriteLine() doesn't leave the cursor on the written line.
+        // string firstName; // C# is a strongly-typed language, meaning every variable must have a type and it must be used. It also must be declared before it is used.
+        // string lastName;
+        // //Console.Read() only returns one character as an int.
+        // Console.Write("Please enter your first name: "); //Console.Write() leaves the cursor on the written line.
+        // firstName = Console.ReadLine();
+
+        // Console.Write("Please enter your last name: ");
+        // lastName = Console.ReadLine(); //ReadLine(): Title Case. lastName: Camel Case. last_name: Snake Case.
+
+        // Console.WriteLine($"Your name is: {lastName}, {firstName}.");
 
         // Comments: double slash
         /*
@@ -121,11 +131,14 @@ class Program
         // numbers.Add(2134);
         // numbers.Add(-234);
         // numbers.Add(101);
-        // foreach(int n in numbers) // for is a counting loop (for numbers). foreach is for iteration through iterables.
+        // foreach (int n in numbers) // for is a counting loop (for numbers). foreach is for iteration through iterables.
         // {
         //     Console.WriteLine($"The number is: {n}.");
         // }
-
-        TestValues(10, (float)10.123, 123.21412351325325325);
+        
+        // for (int i = 0; i < numbers.Count; i++)
+        // {
+        //     Console.WriteLine(numbers[i]);
+        // }
     }
 }
