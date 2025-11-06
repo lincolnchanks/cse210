@@ -9,20 +9,33 @@ class Program
 
         int userSelection;
 
-        userSelection = journalMenu.ProcessMenu();
+        bool done = false;
 
-        switch(userSelection)
+        do
         {
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-        }
+            userSelection = journalMenu.ProcessMenu();
+
+            switch(userSelection)
+            {
+                case 1:
+                // Create a new Entry Object
+                // Call create on that object
+                // Add the entry to the journal
+                    break;
+                case 2:
+                // Call journal.Display();
+                    break;
+                case 3:
+                // Save to a file
+                    break;
+                case 4:
+                // Read from a file
+                    break;
+                case 5:
+                    done = true;
+                    break;
+            }
+        } while (!done);
+
     }
 }
