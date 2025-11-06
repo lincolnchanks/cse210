@@ -1,5 +1,9 @@
 ﻿class Program
 {
+    static void print(string sentence)
+    {
+        Console.WriteLine(sentence);
+    }
     static void Main()
     {
         // Console.WriteLine("Bonjour tout le monde!");
@@ -44,5 +48,7 @@
         solarSystem._solarSystem.Add(alkalia);
 
         solarSystem.DisplaySolarSystem();
+
+        print("Eat this C#!!");
     }
 }
