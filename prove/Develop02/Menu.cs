@@ -13,19 +13,20 @@ public class Menu
         "5 - Quit"
     };
 
-    public void ProcessMenu()
+    /* Process Menu will display the menu to the user and read and validate the input,
+    and return the input. There are no parameters received in this function. */
+    public int ProcessMenu()
     {
-        foreach(string menuItem in _menuStrings)
+        int userSelection;
+        do
         {
-            // Console.BackgroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine(menuItem);
+            foreach (string menuItem in _menuStrings)
+            {
+                Console.WriteLine(menuItem);
+            }
+            userSelection = int.Parse(Console.ReadLine());
         }
-    }
-
-
-
-    public void print(string sentence)
-    {
-        Console.WriteLine(sentence);
+        while (userSelection < 1 || userSelection > 5);
+        return userSelection;
     }
 }
