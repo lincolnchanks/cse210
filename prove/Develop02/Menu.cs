@@ -12,9 +12,6 @@ public class Menu
         "4 - Read Journal Entries from File",
         "5 - Quit"
     };
-
-    /* Process Menu will display the menu to the user and read and validate the input,
-    and return the input. There are no parameters received in this function. */
     public int ProcessMenu()
     {
         int userSelection;
@@ -30,3 +27,6 @@ public class Menu
         return userSelection;
     }
 }
+
+/* Process Menu will display the menu to the user and read and validate the input,
+    and return the input. There are no parameters received in this function. */

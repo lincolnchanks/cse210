@@ -1,0 +1,36 @@
+using System.IO.Enumeration;
+
+class Journal
+{
+    public List<Entry> _entries = new List<Entry>();
+
+    public void Display()
+    {
+        foreach (Entry e in _entries)
+        {
+            Console.WriteLine($"{e._date}: {e._prompt}");
+            Console.WriteLine($"{e._response}");
+        }
+    }
+    public void AddEntry()
+    {
+
+    }
+    public void SaveToFile()
+    {
+        Console.Write("Enter the filename to save to: ");
+        string outputFilehandle = Console.ReadLine();
+
+        using (StreamWriter outputFile = new StreamWriter(outputFilehandle))
+        {
+            foreach(Entry e in _entries)
+            {
+                outputFile.WriteLine(e.CreateFileSystemString());
+            }
+        }
+    }
+    public void ReadFromFile(string filename)
+    {
+        string[] lines = System.IO.File.ReadAllLines(filename);
+    }
+}
