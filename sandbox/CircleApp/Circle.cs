@@ -1,6 +1,6 @@
 class Circle
 {
-    public double _radius;
+    private double _radius; // Now that _radius is private, it's only usable inside this class.
 
     public void SetRadius(double radius)
     {
