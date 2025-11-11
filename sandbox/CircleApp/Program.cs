@@ -10,5 +10,8 @@
         myCircle.SetRadius(10);
 
         Console.WriteLine(myCircle.GetCircleArea());
+
+        Circle myOtherCircle = new Circle(100);
+        Console.WriteLine(myOtherCircle.GetCircleArea());
     }
 }
