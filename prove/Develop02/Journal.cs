@@ -9,7 +9,7 @@ class Journal
         foreach (Entry e in _entries)
         {
             Console.WriteLine($"{e._date}: {e._prompt}");
-            Console.WriteLine($"{e._response}");
+            Console.WriteLine($"{e._response}"); // I could have just called entry.Display();
         }
     }
     public void AddEntry()
@@ -29,8 +29,11 @@ class Journal
             }
         }
     }
-    public void ReadFromFile(string filename)
+    public void ReadFromFile()
     {
+        Console.Write("Enter the file name to read: ");
+        string filename = Console.ReadLine();
+
         string[] entryLines = System.IO.File.ReadAllLines(filename);
 
         foreach (string entry in entryLines)
@@ -41,7 +44,9 @@ class Journal
             string entryPrompt = parts[1];
             string entryResponse = parts[2];
 
-            // string entryString = 
+            Entry readEntry = new Entry();
+            readEntry._fileString = readEntry.CreateEntry(entryDate, entryPrompt, entryResponse);
+            _entries.Add(readEntry);
         }
     }
 }

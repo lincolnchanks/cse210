@@ -17,7 +17,7 @@ class Program
         {
             userSelection = journalMenu.ProcessMenu();
 
-            switch(userSelection)
+            switch(userSelection) // Very shortened if-else if statement
             {
                 case 1:
                     Entry currentEntry = new Entry();
@@ -36,6 +36,7 @@ class Program
                 // Save to a file
                     break;
                 case 4:
+                    currentJournal.ReadFromFile();
                 // Read from a file
                     break;
                 case 5:
