@@ -6,7 +6,7 @@
 
         Circle myCircle = new Circle();
 
-        // myCircle._radius = 10;
+        // myCircle._radius = 10; <-- This does not work because _radius is now private, as **all data should be**.
         myCircle.SetRadius(10);
 
         Console.WriteLine(myCircle.GetCircleArea());
