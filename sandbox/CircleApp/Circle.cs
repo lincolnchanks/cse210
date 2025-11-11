@@ -3,21 +3,23 @@ class Circle
     private double _radius; // Now that _radius is private, it's only usable inside this class.
     // Keep **all of your data** private!
     // If someone needs access to it, make access methods so they can access them ON YOUR TERMS.
-    public Circle()
+    public Circle() // These should set the attributes to initial values.
     {
-        
+        _radius = 10;
     }
     public Circle(double radius)
     {
-        if (radius < 0)
-        {
-            Console.WriteLine("Invalid radius. Setting radius to 0.");
-            _radius = 0;
-        }
-        else
-        {
-            _radius = radius;
-        }
+        this.SetRadius(radius);
+
+        // if (radius < 0)
+        // {
+        //     Console.WriteLine("Invalid radius. Setting radius to 0.");
+        //     _radius = 0;
+        // }
+        // else
+        // {
+        //     _radius = radius;
+        // }
     }
 
     public void SetRadius(double radius)
