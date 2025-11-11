@@ -16,9 +16,9 @@ class Entry
         Console.WriteLine($"{_date}: {_prompt}");
         Console.WriteLine($"{_response}");
     }
-    public void CreateEntry(string date, string prompt, string response)
+    public string CreateEntry(string date, string prompt, string response)
     {
-        
+        return $"{date}: {prompt}\n{response}";
     }
     public void CreateEntry() //Method that turns the entry into a string meant for the file
     {

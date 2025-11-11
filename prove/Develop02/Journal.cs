@@ -31,6 +31,17 @@ class Journal
     }
     public void ReadFromFile(string filename)
     {
-        string[] lines = System.IO.File.ReadAllLines(filename);
+        string[] entryLines = System.IO.File.ReadAllLines(filename);
+
+        foreach (string entry in entryLines)
+        {
+            string[] parts = entry.Split("#");
+
+            string entryDate = parts[0];
+            string entryPrompt = parts[1];
+            string entryResponse = parts[2];
+
+            // string entryString = 
+        }
     }
 }
