@@ -1,6 +1,5 @@
 class Word
 {
-    // private List<string> _characters = new List<string>();
     private string _word;
     private bool _isHidden;
 
@@ -20,15 +19,13 @@ class Word
         _isHidden = true;
     }
 
-    public string GetWordString()
+    private string LocalGetWordString()
     {
+        // If the word isn't hidden, return it. If it is,
+        // return the hidden version of it.
         int wordLength = _word.Length;
         string hiddenString = "";
-        if (!_isHidden)
-        {
-            return _word;
-        }
-        else
+        if (_isHidden)
         {
             for (int i = 0; i < wordLength; i++)
             {
@@ -36,10 +33,19 @@ class Word
             }
             return hiddenString;
         }
+        else
+        {
+            return _word;
+        }
     }
 
     public void DisplayWord()
     {
-        Console.WriteLine(_word);
+        Console.Write(LocalGetWordString());
+    }
+
+    public string GetWordString()
+    {
+        return LocalGetWordString();
     }
 }

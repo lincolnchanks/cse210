@@ -14,11 +14,14 @@ class Program
             Console.WriteLine("Word is hidden.");
         }
 
-        Console.WriteLine(myWord.GetWordString());
+        // Console.WriteLine(myWord.GetWordString());
+        myWord.DisplayWord();
 
         Word wordNumberTwo = new Word("Kaladin");
-        Console.WriteLine(wordNumberTwo.GetWordString());
+        // Console.WriteLine(wordNumberTwo.GetWordString());
+        wordNumberTwo.DisplayWord();
         wordNumberTwo.HideWord();
-        Console.WriteLine(wordNumberTwo.GetWordString());
+        // Console.WriteLine(wordNumberTwo.GetWordString());
+        wordNumberTwo.DisplayWord();
     }
 }
