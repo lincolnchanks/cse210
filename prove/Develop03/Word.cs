@@ -9,6 +9,17 @@ class Word
         _word = word;
         _isHidden = false;
     }
+
+    public bool GetIsHidden() // Get method
+    {
+        return _isHidden;
+    }
+    
+    public void HideWord() // Set isHidden
+    {
+        _isHidden = true;
+    }
+
     public void DisplayWord()
     {
         Console.WriteLine(_word);

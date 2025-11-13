@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 
 class Program
 {
@@ -6,5 +7,11 @@ class Program
     {
         Word myWord = new Word("Uncle");
         myWord.DisplayWord();
+
+        myWord.HideWord();
+        if (myWord.GetIsHidden())
+        {
+            Console.WriteLine("Word is hidden.");
+        }
     }
 }
