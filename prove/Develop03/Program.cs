@@ -13,5 +13,12 @@ class Program
         {
             Console.WriteLine("Word is hidden.");
         }
+
+        Console.WriteLine(myWord.GetWordString());
+
+        Word wordNumberTwo = new Word("Kaladin");
+        Console.WriteLine(wordNumberTwo.GetWordString());
+        wordNumberTwo.HideWord();
+        Console.WriteLine(wordNumberTwo.GetWordString());
     }
 }
