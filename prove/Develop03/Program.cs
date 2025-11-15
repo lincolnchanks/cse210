@@ -9,10 +9,10 @@ class Program
         myWord.DisplayWord();
 
         myWord.HideWord();
-        if (myWord.GetIsHidden())
-        {
-            Console.WriteLine("Word is hidden.");
-        }
+        // if (myWord.GetIsHidden())
+        // {
+        //     Console.WriteLine("Word is hidden.");
+        // }
 
         // Console.WriteLine(myWord.GetWordString());
         myWord.DisplayWord();
@@ -29,18 +29,10 @@ class Program
 
         Reference tentReference = new Reference("2 Nephi", 2, 12);
 
-        // List<Word> myScriptureWordsList = new List<Word>();
         string myScriptureText = "And my father dwelt in a tent.";
-        // string[] wordsArray = myScriptureText.Split(" ");
-        // foreach (string word in wordsArray)
-        // {
-        //     Word word1 = new Word(word);
-        //     myScriptureWordsList.Add(word1);
-        // }
         
         Scripture myTestScripture = new Scripture(tentReference, myScriptureText);
 
         myTestScripture.DisplayScripture();
-        // Scripture myScripture = new Scripture()
     }
 }
