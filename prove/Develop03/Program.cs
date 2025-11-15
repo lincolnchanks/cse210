@@ -28,5 +28,7 @@ class Program
         string myScriptureText = "And my father dwelt in a tent.";
         Scripture myTestScripture = new Scripture(tentReference, myScriptureText);
         myTestScripture.DisplayScripture();
+        myTestScripture.HideRandomWords();
+        myTestScripture.DisplayScripture();
     }
 }

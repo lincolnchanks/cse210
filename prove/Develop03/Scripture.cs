@@ -1,12 +1,12 @@
+using System.ComponentModel.DataAnnotations;
+
 class Scripture
 {
     private List<Word> _words = new List<Word>();
-    // private string _referenceString;
     private Reference _reference;
 
     public Scripture(Reference reference, string scriptureText)
     {
-        // Split the text into a list and feed it into _words
         string[] scriptureWords = scriptureText.Split(" ");
         foreach (string word in scriptureWords)
         {
@@ -14,7 +14,6 @@ class Scripture
             _words.Add(word1);
         }
         _reference = reference;
-        // _referenceString = reference.GetReferenceString();
     }
     public void DisplayScripture()
     {
@@ -30,5 +29,15 @@ class Scripture
     public string GetScriptureReference()
     {
         return _reference.GetReferenceString();
+    }
+
+    public void HideRandomWords()
+    {
+        Random scriptureRandomGen = new Random();
+        for (int i = 0; i < 3; i++)
+        {
+            int wordIndex = scriptureRandomGen.Next(_words.Count());
+            _words[wordIndex].HideWord();
+        }
     }
 }
