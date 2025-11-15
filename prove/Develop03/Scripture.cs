@@ -1,7 +1,7 @@
 class Scripture
 {
     private List<Word> _words = new List<Word>();
-    private string _referenceString;
+    // private string _referenceString;
     private Reference _reference;
 
     public Scripture(Reference reference, string scriptureText)
@@ -14,16 +14,21 @@ class Scripture
             _words.Add(word1);
         }
         _reference = reference;
-        _referenceString = reference.GetReferenceString();
+        // _referenceString = reference.GetReferenceString();
     }
     public void DisplayScripture()
     {
-        Console.WriteLine(_referenceString);
+        // Displays the Scripture's Reference and text.
+        Console.WriteLine(GetScriptureReference());
         string scriptureTextString = "";
         foreach (Word w in _words)
         {
             scriptureTextString += $"{w.GetWordString()} ";
         }
         Console.WriteLine(scriptureTextString);
+    }
+    public string GetScriptureReference()
+    {
+        return _reference.GetReferenceString();
     }
 }
