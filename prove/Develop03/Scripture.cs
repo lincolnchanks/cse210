@@ -13,8 +13,6 @@ class Scripture
             Word word1 = new Word(word);
             _words.Add(word1);
         }
-
-        // _words = words;
         _reference = reference;
         _referenceString = reference.GetReferenceString();
     }

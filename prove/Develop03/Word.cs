@@ -9,13 +9,14 @@ class Word
         _isHidden = false;
     }
 
-    public bool GetIsHidden() // Get method
+    public bool GetIsHidden()
     {
         return _isHidden;
     }
 
-    public void HideWord() // Set isHidden
+    public void HideWord() 
     {
+        // Set isHidden
         _isHidden = true;
     }
 
