@@ -23,5 +23,19 @@ class Program
         wordNumberTwo.HideWord();
         // Console.WriteLine(wordNumberTwo.GetWordString());
         wordNumberTwo.DisplayWord();
+
+        Reference myReference = new Reference("John", 3, 17);
+        Console.WriteLine(myReference.GetReferenceString());
+
+        List<Word> myScriptureWordsList = new List<Word>();
+        string myScriptureText = "And my father dwelt in a tent.";
+        string[] wordsArray = myScriptureText.Split(" ");
+        foreach (string word in wordsArray)
+        {
+            Word word1 = new Word(word);
+            myScriptureWordsList.Add(word1);
+        }
+        
+        // Scripture myScripture = new Scripture()
     }
 }
