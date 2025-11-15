@@ -1,12 +1,20 @@
 class Scripture
 {
-    public List<Word> _words = new List<Word>();
-    public string _referenceString;
-    public Reference _reference;
+    private List<Word> _words = new List<Word>();
+    private string _referenceString;
+    private Reference _reference;
 
-    public Scripture(List<Word> words, Reference reference)
+    public Scripture(Reference reference, string scriptureText)
     {
-        _words = words;
+        // Split the text into a list and feed it into _words
+        string[] scriptureWords = scriptureText.Split(" ");
+        foreach (string word in scriptureWords)
+        {
+            Word word1 = new Word(word);
+            _words.Add(word1);
+        }
+
+        // _words = words;
         _reference = reference;
         _referenceString = reference.GetReferenceString();
     }

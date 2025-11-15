@@ -29,16 +29,16 @@ class Program
 
         Reference tentReference = new Reference("2 Nephi", 2, 12);
 
-        List<Word> myScriptureWordsList = new List<Word>();
+        // List<Word> myScriptureWordsList = new List<Word>();
         string myScriptureText = "And my father dwelt in a tent.";
-        string[] wordsArray = myScriptureText.Split(" ");
-        foreach (string word in wordsArray)
-        {
-            Word word1 = new Word(word);
-            myScriptureWordsList.Add(word1);
-        }
+        // string[] wordsArray = myScriptureText.Split(" ");
+        // foreach (string word in wordsArray)
+        // {
+        //     Word word1 = new Word(word);
+        //     myScriptureWordsList.Add(word1);
+        // }
         
-        Scripture myTestScripture = new Scripture(myScriptureWordsList, tentReference);
+        Scripture myTestScripture = new Scripture(tentReference, myScriptureText);
 
         myTestScripture.DisplayScripture();
         // Scripture myScripture = new Scripture()
