@@ -27,6 +27,8 @@ class Program
         Reference myReference = new Reference("John", 3, 17);
         Console.WriteLine(myReference.GetReferenceString());
 
+        Reference tentReference = new Reference("2 Nephi", 2, 12);
+
         List<Word> myScriptureWordsList = new List<Word>();
         string myScriptureText = "And my father dwelt in a tent.";
         string[] wordsArray = myScriptureText.Split(" ");
@@ -36,6 +38,9 @@ class Program
             myScriptureWordsList.Add(word1);
         }
         
+        Scripture myTestScripture = new Scripture(myScriptureWordsList, tentReference);
+
+        myTestScripture.DisplayScripture();
         // Scripture myScripture = new Scripture()
     }
 }

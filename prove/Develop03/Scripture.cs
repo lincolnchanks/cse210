@@ -10,8 +10,14 @@ class Scripture
         _reference = reference;
         _referenceString = reference.GetReferenceString();
     }
-    public void DispalyScripture()
+    public void DisplayScripture()
     {
-        
+        Console.WriteLine(_referenceString);
+        string scriptureTextString = "";
+        foreach (Word w in _words)
+        {
+            scriptureTextString += $"{w.GetWordString()} ";
+        }
+        Console.WriteLine(scriptureTextString);
     }
 }
