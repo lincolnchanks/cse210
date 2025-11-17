@@ -7,5 +7,9 @@
         johnny.SetAge(26);
         johnny.SetWeight(170);
         Console.WriteLine(johnny.PersonInformation());
+
+        Police waxilliumLadrian = new Police("Coins, Guns", "Waxillium", "Ladrian", 45, 200);
+        Console.WriteLine(waxilliumLadrian.GetPoliceInformation());
+        Console.WriteLine(waxilliumLadrian.PersonInformation());
     }
 }

@@ -52,4 +52,8 @@ class Person
             _weight = weight;
         }
     }
+    public void AgeUp()
+    {
+        _age ++;
+    }
 }
