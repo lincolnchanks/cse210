@@ -40,13 +40,12 @@ class Program
 
         do
         {
+            Console.Clear();
             Console.WriteLine("Here is a scripture: ");
             goDoScripture.DisplayScripture();
             Console.Write("> ");
             action = Console.ReadLine();
             goDoScripture.HideRandomWords();
-            Console.Clear();
-            goDoScripture.DisplayScripture();
         }
         while (action != "quit");
 
