@@ -20,10 +20,10 @@ class Word
         _isHidden = true;
     }
 
+    // If the word isn't hidden, return it. If it is,
+    // return the hidden version of it.
     private string LocalGetWordString()
     {
-        // If the word isn't hidden, return it. If it is,
-        // return the hidden version of it.
         int wordLength = _word.Length;
         string hiddenString = "";
         if (_isHidden)
