@@ -1,0 +1,16 @@
+class KnightRadiant : Person
+{
+    private int _ideal;
+    private string _order;
+    private string _primarySurge;
+    private string _secondarySurge;
+    public KnightRadiant(int ideal, string order, string firstName, string lastName, int age, 
+        int weight, string primarySurge, string secondarySurge)
+    : base(firstName, lastName, age, weight)
+    {
+        _ideal = ideal;
+        _order = order;
+        _primarySurge = primarySurge;
+        _secondarySurge = secondarySurge;
+    }
+}

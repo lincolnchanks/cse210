@@ -12,8 +12,17 @@
         Console.WriteLine(waxilliumLadrian.GetPoliceInformation());
         Console.WriteLine(waxilliumLadrian.PersonInformation());
 
-        Doctor doctorLegundo = new Doctor("Wooden Stake, Holy Water, Silver Sword", "Doctor", "Legundo", 50, 200);
+        Doctor doctorLegundo = new Doctor("Wooden Stake, Holy Water, Silver Sword", "Doctor", 
+            "Legundo", 50, 200);
         Console.WriteLine(doctorLegundo.GetDoctorInformation());
         Console.WriteLine(doctorLegundo.PersonInformation());
+        doctorLegundo.AgeUp();
+        doctorLegundo.SetWeight(215);
+
+        KnightRadiant kaladinStormblessed = new KnightRadiant(5, "Windrunner", "Kaladin", 
+            "Stormblessed", 20, 200, "Adhesion", "Gravitation");
+        
+        Surgeon kaladinSurgeon = new Surgeon("Bridgeboy", "Shardspear", "Kaladin",
+            "Stormblessed", 20, 200);
     }
 }
