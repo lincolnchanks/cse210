@@ -9,6 +9,8 @@ class Police : Person
 
     public string GetPoliceInformation()
     {
+        // PersonInformation() is still accessible by the Police class.
+        // This is because it's protected, not private.
         return $"{PersonInformation()}, Weapons: {_weapons}";
     }
 }

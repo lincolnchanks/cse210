@@ -2,23 +2,25 @@ class Person
 {
     private string _firstName;
     private string _lastName;
-    private int _age;
+    private int _age; // If you make this protected, child classes don't need the setter methods.
     private int _weight;
 
     public Person(string firstName, string lastName, int age, int weight)
     {
         _firstName = firstName;
         _lastName = lastName;
-        if (age < 0)
+        if (age < 0 || age > 124)
         {
+            Console.WriteLine("Invalid age.");
             _age = 0;
         }
         else
         {
             _age = age;
         }
-        if (weight < 0)
+        if (weight < 0 || weight > 300)
         {
+            Console.WriteLine("Invalid weight.");
             _weight = 0;
         }
         else
@@ -26,7 +28,7 @@ class Person
             _weight = weight;
         }
     }
-    public string PersonInformation()
+    protected string PersonInformation()
     {
         return $"{_lastName}, {_firstName} / {_age} / {_weight} lbs.";
     }
