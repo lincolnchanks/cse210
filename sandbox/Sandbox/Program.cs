@@ -14,11 +14,27 @@ class Program
     }
     static void Main(string[] args) //static: you don't need an object to call this function.
     {
+        Console.WriteLine("Hello");
 
-        TestValues(10, (float)10.123, 123.21412351325325325);
+        string animationString = "\\|/-";
+        int sleepTime = 250;
+        int duration = 10;
+        int index = 0;
+        DateTime currentTime = DateTime.Now;
+        DateTime endTime = currentTime.AddSeconds(duration);
 
-        int newTotal = AddValues(1, 2, 3);
-        Console.WriteLine(newTotal);
+        while (DateTime.Now < endTime)
+        { // Add one to the index. Divide it by the string length and get the remainder. This should
+            // loop through each character.
+            Console.Write(animationString[index++ % animationString.Length]);
+            Thread.Sleep(sleepTime);
+            Console.Write("\b");
+        }
+
+        // TestValues(10, (float)10.123, 123.21412351325325325);
+
+        // int newTotal = AddValues(1, 2, 3);
+        // Console.WriteLine(newTotal);
 
         // Console.WriteLine("Hello Sandbox World!"); //Console.WriteLine() doesn't leave the cursor on the written line.
         // string firstName; // C# is a strongly-typed language, meaning every variable must have a type and it must be used. It also must be declared before it is used.
