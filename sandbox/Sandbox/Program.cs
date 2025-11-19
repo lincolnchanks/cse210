@@ -31,6 +31,17 @@ class Program
             Console.Write("\b");
         }
 
+        int count = duration;
+        while (DateTime.Now < endTime)
+        {
+            Console.Write(count--);
+            Thread.Sleep(1000);
+            if (count >= 9)
+                Console.WriteLine("\b\b  \b\b");
+            else
+                Console.Write("\b");
+        }
+
         // TestValues(10, (float)10.123, 123.21412351325325325);
 
         // int newTotal = AddValues(1, 2, 3);
