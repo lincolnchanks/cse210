@@ -9,6 +9,7 @@ class Menu
             Console.WriteLine("2. Reflection Activity");
             Console.WriteLine("3. Listing Activity");
             Console.WriteLine("4. Quit");
+            Console.Write("> ");
         }
         try
         {
