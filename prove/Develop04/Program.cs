@@ -31,8 +31,8 @@ class Program
 
             if (response == 1)
             {
-                BaseActivity tempActivity = new BaseActivity("Breathing", "This is a breathing exercise.", duration);
-                tempActivity.RunActivity();
+                Breathing tempBreatheActivity = new Breathing("Breathing", "This is a breathing exercise.", duration);
+                tempBreatheActivity.RunBreathingActivity();
             }
             else if (response == 2)
             {
