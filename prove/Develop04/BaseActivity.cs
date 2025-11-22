@@ -18,6 +18,7 @@ class BaseActivity
         Console.WriteLine($"Welcome to the {_name} activity!");
         Console.WriteLine(_description);
         DisplayAnimation();
+        DisplayCountdown();
     }
 
     public void DisplayAnimation()
@@ -33,6 +34,21 @@ class BaseActivity
             Console.Write(animationString[index++ % animationString.Length]);
             Thread.Sleep(sleepTime);
             Console.Write("\b");
+        }
+    }
+
+    public void DisplayCountdown()
+    {
+        DateTime currentTime = DateTime.Now;
+        DateTime endTime = currentTime.AddSeconds(_duration);
+        while (DateTime.Now < endTime)
+        {
+            Console.Write(_duration--);
+            Thread.Sleep(1000);
+            if (_duration >= 9)
+                Console.WriteLine("\b\b  \b\b");
+            else
+                Console.Write("\b");
         }
     }
 }
