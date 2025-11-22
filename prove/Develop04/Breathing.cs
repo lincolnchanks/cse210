@@ -7,4 +7,17 @@ class Breathing : BaseActivity
     {
         
     }
+
+    public void RunBreathingActivity()
+    {
+        Console.WriteLine(_description);
+        DateTime endTime = GetEndTime();
+        while (DateTime.Now < endTime)
+        {
+            Console.Write("Breathe in...");
+            DisplayCountdown(4);
+            Console.WriteLine("Breathe out...");
+            DisplayCountdown(6);
+        }
+    }
 }

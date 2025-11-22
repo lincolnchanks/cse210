@@ -1,8 +1,8 @@
 class BaseActivity
 {
     private string _name = "";
-    private string _description = "";
-    private int _duration;
+    protected string _description = "";
+    protected int _duration;
     // private string _startMessage = "Welcome to the Mindfulness activity!";
     // private string _endMessage = "End message";
 
@@ -18,7 +18,7 @@ class BaseActivity
         Console.WriteLine($"Welcome to the {_name} activity!");
         Console.WriteLine(_description);
         DisplayAnimation();
-        DisplayCountdown();
+        DisplayCountdown(10);
     }
 
     public void DisplayAnimation()
@@ -36,14 +36,14 @@ class BaseActivity
         }
     }
 
-    public void DisplayCountdown()
+    public void DisplayCountdown(int seconds)
     {
         DateTime endTime = GetEndTime();
         while (DateTime.Now < endTime)
         {
-            Console.Write(_duration--);
+            Console.Write(seconds--);
             Thread.Sleep(1000);
-            if (_duration >= 9)
+            if (seconds >= 9)
                 Console.WriteLine("\b\b  \b\b");
             else
                 Console.Write("\b");
