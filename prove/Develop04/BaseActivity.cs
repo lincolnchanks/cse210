@@ -12,4 +12,10 @@ class BaseActivity
         _description = description;
         _duration = duration;
     }
+    
+    public void RunActivity()
+    {
+        Console.WriteLine($"Welcome to the {_name} activity!");
+        Console.WriteLine(_description);
+    }
 }

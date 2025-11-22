@@ -23,15 +23,18 @@ class Program
             response = int.Parse(Console.ReadLine());
             if (response == 1)
             {
-                Console.WriteLine("Breathing");
+                BaseActivity tempActivity = new BaseActivity("Breathing", "This is a breathing exercise.", 20);
+                tempActivity.RunActivity();
             }
             else if (response == 2)
             {
-                Console.WriteLine("Reflection");
+                BaseActivity tempActivity = new BaseActivity("Reflection", "This is a reflection exercise.", 20);
+                tempActivity.RunActivity();
             }
             else if (response == 3)
             {
-                Console.WriteLine("Listing");
+                BaseActivity tempActivity = new BaseActivity("Listing", "This is a listing exercise.", 20);
+                tempActivity.RunActivity();
             }
         }
         while (response != 4);
