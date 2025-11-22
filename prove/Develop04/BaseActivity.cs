@@ -26,8 +26,7 @@ class BaseActivity
         string animationString = "\\|/-";
         int sleepTime = 250;
         int index = 0;
-        DateTime currentTime = DateTime.Now;
-        DateTime endTime = currentTime.AddSeconds(_duration);
+        DateTime endTime = GetEndTime();
 
         while (DateTime.Now < endTime)
         {
@@ -39,8 +38,7 @@ class BaseActivity
 
     public void DisplayCountdown()
     {
-        DateTime currentTime = DateTime.Now;
-        DateTime endTime = currentTime.AddSeconds(_duration);
+        DateTime endTime = GetEndTime();
         while (DateTime.Now < endTime)
         {
             Console.Write(_duration--);
@@ -50,5 +48,12 @@ class BaseActivity
             else
                 Console.Write("\b");
         }
+    }
+
+    public DateTime GetEndTime()
+    {
+        DateTime currentTime = DateTime.Now;
+        DateTime endTime = currentTime.AddSeconds(_duration);
+        return endTime;
     }
 }
