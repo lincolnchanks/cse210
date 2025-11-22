@@ -17,5 +17,22 @@ class BaseActivity
     {
         Console.WriteLine($"Welcome to the {_name} activity!");
         Console.WriteLine(_description);
+        DisplayAnimation();
+    }
+
+    public void DisplayAnimation()
+    {
+        string animationString = "\\|/-";
+        int sleepTime = 250;
+        int index = 0;
+        DateTime currentTime = DateTime.Now;
+        DateTime endTime = currentTime.AddSeconds(_duration);
+
+        while (DateTime.Now < endTime)
+        {
+            Console.Write(animationString[index++ % animationString.Length]);
+            Thread.Sleep(sleepTime);
+            Console.Write("\b");
+        }
     }
 }
