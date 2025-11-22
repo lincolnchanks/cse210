@@ -1,8 +1,8 @@
 class BaseActivity
 {
     private string _name = "";
-    protected string _description = "";
-    protected int _duration;
+    private string _description = "";
+    private int _duration;
     // private string _startMessage = "Welcome to the Mindfulness activity!";
     // private string _endMessage = "End message";
 
@@ -13,6 +13,16 @@ class BaseActivity
         _duration = duration;
     }
     
+    protected string GetDescription()
+    {
+        return _description;
+    }
+
+    protected int GetDuration()
+    {
+        return _duration;
+    }
+
     public void RunActivity()
     {
         Console.WriteLine($"Welcome to the {_name} activity!");

@@ -10,11 +10,11 @@ class Breathing : BaseActivity
 
     public void RunBreathingActivity()
     {
-        Console.WriteLine(_description);
+        Console.WriteLine(GetDuration());
         DateTime endTime = GetEndTime();
         while (DateTime.Now < endTime)
         {
-            Console.Write("Breathe in...");
+            Console.WriteLine("Breathe in...");
             DisplayCountdown(4);
             Console.WriteLine("Breathe out...");
             DisplayCountdown(6);
