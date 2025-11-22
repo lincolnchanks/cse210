@@ -13,6 +13,7 @@ class Program
         activities.Add(3, "Listing");
 
         int response;
+        int duration;
         do
         {
             Console.WriteLine("1. Breathing Activity");
@@ -21,19 +22,26 @@ class Program
             Console.WriteLine("4. Quit");
             Console.Write("> ");
             response = int.Parse(Console.ReadLine());
+
+            if (response != 4)
+            {
+                Console.Write("Enter activity duration in seconds: ");
+            }
+            duration = int.Parse(Console.ReadLine());
+
             if (response == 1)
             {
-                BaseActivity tempActivity = new BaseActivity("Breathing", "This is a breathing exercise.", 20);
+                BaseActivity tempActivity = new BaseActivity("Breathing", "This is a breathing exercise.", duration);
                 tempActivity.RunActivity();
             }
             else if (response == 2)
             {
-                BaseActivity tempActivity = new BaseActivity("Reflection", "This is a reflection exercise.", 20);
+                BaseActivity tempActivity = new BaseActivity("Reflection", "This is a reflection exercise.", duration);
                 tempActivity.RunActivity();
             }
             else if (response == 3)
             {
-                BaseActivity tempActivity = new BaseActivity("Listing", "This is a listing exercise.", 20);
+                BaseActivity tempActivity = new BaseActivity("Listing", "This is a listing exercise.", duration);
                 tempActivity.RunActivity();
             }
         }
