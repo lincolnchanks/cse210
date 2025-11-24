@@ -11,4 +11,9 @@ class Police : Person
     { // We have to use base here or it will be recursive
         return $"{base.GetPersonInformation()}, Weapons: {_weapons}";
     }
+
+    public override double GetSalary()
+    {
+        return 50000.23;
+    }
 }

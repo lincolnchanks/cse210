@@ -18,4 +18,9 @@ class KnightRadiant : Person
     {
         return $"{base.GetPersonInformation()}, Ideal: {_ideal}, Order: {_order}, Surges: {_primarySurge}, {_secondarySurge}.";
     }
+
+    public override double GetSalary()
+    {
+        return 1000000.34;
+    }
 }

@@ -1,4 +1,4 @@
-class Person
+abstract class Person
 {
     private string _firstName;
     private string _lastName;
@@ -58,4 +58,6 @@ class Person
     {
         _age ++;
     }
+
+    public abstract double GetSalary(); // All of our derived classes must now implement this method!!
 }
