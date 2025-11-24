@@ -7,13 +7,13 @@ class Surgeon : Doctor
         _title = title;
     }
 
-    public string GetSurgeonInformation()
-    {
-        return $"{GetDoctorInformation()}, Title: {_title}";
-    }
+    // public string GetSurgeonInformation()
+    // {
+    //     return $"{GetDoctorInformation()}, Title: {_title}";
+    // }
 
     public override string GetPersonInformation()
     {
-        return $"{GetDoctorInformation()}, Title: {_title}";
+        return $"{base.GetPersonInformation()}, Title: {_title}";
     }
 }

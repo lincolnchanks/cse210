@@ -13,16 +13,16 @@
         Console.WriteLine(johnny.GetPersonInformation());
 
         Police waxilliumLadrian = new Police("Coins, Guns", "Waxillium", "Ladrian", 45, 200);
-        Console.WriteLine(waxilliumLadrian.GetPoliceInformation());
+        Console.WriteLine(waxilliumLadrian.GetPersonInformation());
         // Console.WriteLine(waxilliumLadrian.PersonInformation());
 
         Doctor doctorLegundo = new Doctor("Wooden Stake, Holy Water, Silver Sword", "Doctor", 
             "Legundo", 50, 200);
-        Console.WriteLine(doctorLegundo.GetDoctorInformation());
+        Console.WriteLine(doctorLegundo.GetPersonInformation());
         // Console.WriteLine(doctorLegundo.PersonInformation());
         doctorLegundo.AgeUp();
         doctorLegundo.SetWeight(215);
-        Console.WriteLine(doctorLegundo.GetDoctorInformation());
+        Console.WriteLine(doctorLegundo.GetPersonInformation());
 
         KnightRadiant kaladinStormblessed = new KnightRadiant(5, "Windrunner", "Kaladin", 
             "Stormblessed", 20, 200, "Adhesion", "Gravitation");

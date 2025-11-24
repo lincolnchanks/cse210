@@ -6,10 +6,10 @@ class Doctor : Person
     {
         _tools = tools;
     }
-    public string GetDoctorInformation()
-    {
-        return $"{base.GetPersonInformation()}, Tools: {_tools}";
-    }
+    // public string GetDoctorInformation()
+    // {
+    //     return $"{base.GetPersonInformation()}, Tools: {_tools}";
+    // }
 
     public override string GetPersonInformation()
     {
