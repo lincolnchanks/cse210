@@ -2,7 +2,8 @@
 {
     public static void DisplayPersonInformation(Person person)
     {
-        Console.WriteLine(person.GetPersonInformation());
+        Console.Write(person.GetPersonInformation());
+        Console.WriteLine($" ${person.GetSalary()}");
     }
     static void Main(string[] args)
     {
