@@ -10,7 +10,15 @@ class BaseActivity
     {
         _name = name;
         _description = description;
-        _duration = duration;
+        if (duration < 0)
+        {
+            Console.WriteLine("Invalid duration. Duration set to default (10).");
+            _duration = 10;
+        }
+        else
+        {
+            _duration = duration;
+        }
     }
     
     protected string GetDescription()
