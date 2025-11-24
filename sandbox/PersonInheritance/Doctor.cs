@@ -8,6 +8,11 @@ class Doctor : Person
     }
     public string GetDoctorInformation()
     {
-        return $"{PersonInformation()}, Tools: {_tools}";
+        return $"{base.GetPersonInformation()}, Tools: {_tools}";
+    }
+
+    public override string GetPersonInformation()
+    {
+        return $"{base.GetPersonInformation()}, Tools: {_tools}";
     }
 }

@@ -28,7 +28,7 @@ class Person
             _weight = weight;
         }
     }
-    public string PersonInformation()
+    public virtual string GetPersonInformation()
     {
         return $"{_lastName}, {_firstName} / {_age} / {_weight} lbs.";
     }

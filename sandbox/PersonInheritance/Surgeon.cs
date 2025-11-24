@@ -11,4 +11,9 @@ class Surgeon : Doctor
     {
         return $"{GetDoctorInformation()}, Title: {_title}";
     }
+
+    public override string GetPersonInformation()
+    {
+        return $"{GetDoctorInformation()}, Title: {_title}";
+    }
 }
