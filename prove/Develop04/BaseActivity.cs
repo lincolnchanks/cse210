@@ -3,8 +3,8 @@ class BaseActivity
     private string _name = "";
     private string _description = "";
     private int _duration;
-    // private string _startMessage = "Welcome to the Mindfulness activity!";
-    // private string _endMessage = "End message";
+    private string _startMessage = "Welcome to the Mindfulness activity!";
+    private string _endMessage = "Thank you for completing the activity!";
 
     public BaseActivity(string name, string description, int duration)
     {
@@ -73,5 +73,13 @@ class BaseActivity
         DateTime currentTime = DateTime.Now;
         DateTime endTime = currentTime.AddSeconds(seconds);
         return endTime;
+    }
+    protected string GetStartMessage()
+    {
+        return _startMessage;
+    }
+    protected string GetEndMessage()
+    {
+        return _endMessage;
     }
 }
