@@ -8,6 +8,10 @@ class Listing : BaseActivity
 
     public void RunListingActivity()
     {
+        Console.WriteLine(GetStartMessage());
+
         
+
+        Console.WriteLine(GetEndMessage());
     }
 }
