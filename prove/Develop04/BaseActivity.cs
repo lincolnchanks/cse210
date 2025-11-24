@@ -27,16 +27,16 @@ class BaseActivity
     {
         Console.WriteLine($"Welcome to the {_name} activity!");
         Console.WriteLine(_description);
-        DisplayAnimation();
+        DisplayAnimation(10);
         DisplayCountdown(10);
     }
 
-    public void DisplayAnimation()
+    public void DisplayAnimation(int seconds)
     {
         string animationString = "\\|/-";
         int sleepTime = 250;
         int index = 0;
-        DateTime endTime = GetEndTime();
+        DateTime endTime = GetEndTime(seconds);
 
         while (DateTime.Now < endTime)
         {
@@ -48,7 +48,7 @@ class BaseActivity
 
     public void DisplayCountdown(int seconds)
     {
-        DateTime endTime = GetEndTime();
+        DateTime endTime = GetEndTime(seconds);
         while (DateTime.Now < endTime)
         {
             Console.Write(seconds--);
@@ -60,10 +60,10 @@ class BaseActivity
         }
     }
 
-    public DateTime GetEndTime()
+    public DateTime GetEndTime(int seconds)
     {
         DateTime currentTime = DateTime.Now;
-        DateTime endTime = currentTime.AddSeconds(_duration);
+        DateTime endTime = currentTime.AddSeconds(seconds);
         return endTime;
     }
 }

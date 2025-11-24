@@ -11,7 +11,7 @@ class Breathing : BaseActivity
     public void RunBreathingActivity()
     {
         Console.WriteLine(GetDuration());
-        DateTime endTime = GetEndTime();
+        DateTime endTime = GetEndTime(GetDuration());
         while (DateTime.Now < endTime)
         {
             Console.WriteLine("Breathe in...");
