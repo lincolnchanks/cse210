@@ -7,13 +7,6 @@ class Police : Person
         _weapons = weapons;
     }
 
-    // public string GetPoliceInformation()
-    // {
-    //     // PersonInformation() is still accessible by the Police class.
-    //     // This is because it's protected, not private.
-    //     return $"{base.GetPersonInformation()}, Weapons: {_weapons}";
-    // }
-
     public override string GetPersonInformation()
     { // We have to use base here or it will be recursive
         return $"{base.GetPersonInformation()}, Weapons: {_weapons}";

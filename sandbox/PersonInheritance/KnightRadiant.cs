@@ -14,11 +14,6 @@ class KnightRadiant : Person
         _secondarySurge = secondarySurge;
     }
 
-    // public string GetRadiantInformation()
-    // {
-    //     return $"{base.GetPersonInformation()}, Ideal: {_ideal}, Order: {_order}, Surges: {_primarySurge}, {_secondarySurge}.";
-    // }
-
     public override string GetPersonInformation()
     {
         return $"{base.GetPersonInformation()}, Ideal: {_ideal}, Order: {_order}, Surges: {_primarySurge}, {_secondarySurge}.";

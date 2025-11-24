@@ -7,11 +7,6 @@ class Surgeon : Doctor
         _title = title;
     }
 
-    // public string GetSurgeonInformation()
-    // {
-    //     return $"{GetDoctorInformation()}, Title: {_title}";
-    // }
-
     public override string GetPersonInformation()
     {
         return $"{base.GetPersonInformation()}, Title: {_title}";
