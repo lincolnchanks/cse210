@@ -1,5 +1,15 @@
 ﻿class Program
 {
+    public static void print(string message)
+    {
+        Console.WriteLine(message);
+    }
+    // public static string input(string message)
+    // {
+    //     Console.Write(message);
+    //     string input = Console.ReadLine();
+    //     return input;
+    // }
     public static void DisplayPersonInformation(Person person)
     {
         Console.Write(person.GetPersonInformation());
