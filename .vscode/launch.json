@@ -255,7 +255,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-sandbox-ReferencePassing",
-            "program": "${workspaceFolder}/final/Foundation4/bin/Debug/net8.0/ReferencePassing.dll",
+            "program": "${workspaceFolder}/sandbox/ReferencePassing/bin/Debug/net8.0/ReferencePassing.dll",
             "args": [],
             "cwd": "${workspaceFolder}/sandbox/ReferencePassing",
             "console": "integratedTerminal",
