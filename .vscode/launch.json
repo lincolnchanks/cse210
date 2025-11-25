@@ -250,5 +250,18 @@
             "stopAtEntry": false
         },
 
+        {
+            "name": "Reference Passing",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-ReferencePassing",
+            "program": "${workspaceFolder}/final/Foundation4/bin/Debug/net8.0/ReferencePassing.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/ReferencePassing",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
     ]
 }
