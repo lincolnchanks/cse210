@@ -12,6 +12,10 @@ class EternalGoal : Goal
     {
         return $"{base.GetListString}. Number of completions: {_numTimesDone}.";
     }
+    protected override string GetFileString()
+    {
+        return $"{base.GetFileString()}#{_numTimesDone}";
+    }
     public override void RecordEvent()
     {
         Console.WriteLine("Not implemented yet!");
