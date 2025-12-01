@@ -6,6 +6,11 @@ class EternalGoal : Goal
     base(name, description, points)
     {
         _numTimesDone = 0;
+        base.SetType("Eternal Goal");
+    }
+    protected override string GetListString() // This has to also be protected.
+    {
+        return $"{base.GetListString}. Number of completions: {_numTimesDone}.";
     }
     public override void RecordEvent()
     {
