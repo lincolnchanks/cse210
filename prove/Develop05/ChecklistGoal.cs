@@ -20,4 +20,8 @@ class ChecklistGoal : Goal
     {
         return $"{base.GetListString()}. Completed: {_numTimesCompleted}/{_maxTimes}. Bonus Points: {_bonusPoints}.";
     }
+    protected override string GetFileString()
+    {
+        return $"{base.GetFileString()}#{_numTimesCompleted}#{_maxTimes}#{_bonusPoints}";
+    }
 }
