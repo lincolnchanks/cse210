@@ -12,10 +12,6 @@ class ChecklistGoal : Goal
         _maxTimes = maxTimes;
         _bonusPoints = bonusPoints;
     }
-    public override void RecordEvent()
-    {
-        Console.WriteLine("Method is not implemented yet!");
-    }
     protected override string GetListString()
     {
         return $"{base.GetListString()}. Completed: {_numTimesCompleted}/{_maxTimes}. Bonus Points: {_bonusPoints}.";
@@ -23,5 +19,15 @@ class ChecklistGoal : Goal
     protected override string GetFileString()
     {
         return $"{base.GetFileString()}#{_numTimesCompleted}#{_maxTimes}#{_bonusPoints}";
+    }
+    public override void RecordEvent()
+    {
+        _numTimesCompleted++;
+        base.AwardPoints(base.GetPointsNumber());
+        if (_numTimesCompleted == _maxTimes)
+        {
+            base.AwardPoints(_bonusPoints);
+            base.CompleteGoal();
+        }
     }
 }
