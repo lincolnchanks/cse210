@@ -8,7 +8,7 @@ class SimpleGoal : Goal
     // This class doesn't need to override GetListString() or GetFileString().
     public override void RecordEvent()
     {
-        
-        Console.WriteLine("Event not recorded! Method is not yet functional.");
+        base.CompleteGoal();
+        base.AwardPoints(base.GetPointsNumber());
     }
 }

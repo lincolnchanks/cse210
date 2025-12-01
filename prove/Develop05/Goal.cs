@@ -61,4 +61,8 @@ abstract class Goal
             Console.WriteLine("Cannot complete an Eternal Goal!");
         }
     }
+    protected int GetPointsNumber()
+    {
+        return _points;
+    }
 }
