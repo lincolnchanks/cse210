@@ -46,4 +46,8 @@ abstract class Goal
         string[] goalInfo = fileString.Split("#");
         return goalInfo;
     }
+    protected void SetType(string type)
+    {
+        _type = type;
+    }
 }
