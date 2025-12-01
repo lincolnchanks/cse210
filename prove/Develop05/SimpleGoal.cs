@@ -8,7 +8,10 @@ class SimpleGoal : Goal
     // This class doesn't need to override GetListString() or GetFileString().
     public override void RecordEvent()
     {
-        base.CompleteGoal();
-        base.AwardPoints(base.GetPointsNumber());
+        if (!base.GetIsDone())
+        {
+            base.CompleteGoal();
+            base.AwardPoints(base.GetPointsNumber());
+        }
     }
 }

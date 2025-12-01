@@ -22,12 +22,15 @@ class ChecklistGoal : Goal
     }
     public override void RecordEvent()
     {
-        _numTimesCompleted++;
-        base.AwardPoints(base.GetPointsNumber());
-        if (_numTimesCompleted == _maxTimes)
+        if (!base.GetIsDone())
         {
-            base.AwardPoints(_bonusPoints);
-            base.CompleteGoal();
+            _numTimesCompleted++;
+            base.AwardPoints(base.GetPointsNumber());
+            if (_numTimesCompleted == _maxTimes)
+            {
+                base.AwardPoints(_bonusPoints);
+                base.CompleteGoal();
+            }
         }
     }
 }

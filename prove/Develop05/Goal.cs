@@ -65,4 +65,8 @@ abstract class Goal
     {
         return _points;
     }
+    protected bool GetIsDone()
+    {
+        return _isDone;
+    }
 }
