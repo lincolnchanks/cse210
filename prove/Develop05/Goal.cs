@@ -36,4 +36,8 @@ abstract class Goal
         return $"{_type}#{_name}#{_description}#{_points}#{_isDone}";
     }
     public abstract void RecordEvent();
+    public void AwardPoints(int numPoints)
+    {
+        // No code here yet. Waiting for the User class.
+    }
 }
