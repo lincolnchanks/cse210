@@ -35,4 +35,5 @@ abstract class Goal
     {
         return $"{_type}#{_name}#{_description}#{_points}#{_isDone}";
     }
+    public abstract void RecordEvent();
 }
