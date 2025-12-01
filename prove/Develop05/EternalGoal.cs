@@ -18,6 +18,6 @@ class EternalGoal : Goal
     }
     public override void RecordEvent()
     {
-        Console.WriteLine("Not implemented yet!");
+        base.AwardPoints(base.GetPointsNumber());
     }
 }
