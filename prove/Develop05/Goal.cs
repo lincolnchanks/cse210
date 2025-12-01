@@ -50,4 +50,8 @@ abstract class Goal
     {
         _type = type;
     }
+    protected void CompleteGoal()
+    {
+        _isDone = true;
+    }
 }

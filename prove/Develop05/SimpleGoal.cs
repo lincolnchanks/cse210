@@ -5,11 +5,10 @@ class SimpleGoal : Goal
     {
         base.SetType("Simple Goal");
     }
-    // public override string GetListString()
-    // {
-    // }
+    // This class doesn't need to override GetListString() or GetFileString().
     public override void RecordEvent()
     {
+        
         Console.WriteLine("Event not recorded! Method is not yet functional.");
     }
 }
