@@ -12,4 +12,15 @@ abstract class Goal
         _points = numPoints;
         _isDone = false;
     }
+    private string GetListString()
+    {
+        if (_isDone)
+        {
+            return $"[X] {_name}: {_description} Points: {_points}. Completed: {_isDone}.";
+        }
+        else
+        {
+            return $"[ ] {_name}: {_description} Points: {_points}. Completed: {_isDone}.";
+        }
+    }
 }
