@@ -16,4 +16,8 @@ class ChecklistGoal : Goal
     {
         Console.WriteLine("Method is not implemented yet!");
     }
+    protected override string GetListString()
+    {
+        return $"{base.GetListString()}. Completed: {_numTimesCompleted}/{_maxTimes}. Bonus Points: {_bonusPoints}.";
+    }
 }
