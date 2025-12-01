@@ -52,6 +52,13 @@ abstract class Goal
     }
     protected void CompleteGoal()
     {
-        _isDone = true;
+        if (_type != "Eternal Goal")
+        {
+            _isDone = true;
+        }
+        else
+        {
+            Console.WriteLine("Cannot complete an Eternal Goal!");
+        }
     }
 }
