@@ -7,7 +7,6 @@ class SimpleGoal : Goal
     }
     // public override string GetListString()
     // {
-        
     // }
     public override void RecordEvent()
     {

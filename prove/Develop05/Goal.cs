@@ -20,11 +20,11 @@ abstract class Goal
     {
         if (_isDone)
         {
-            return $"[X] {_name}: {_description} Points: {_points}. Completed: {_isDone}.";
+            return $"[X] {_name}: {_description}. Type: {_type}. Points: {_points}. Completed: {_isDone}.";
         }
         else
         {
-            return $"[ ] {_name}: {_description} Points: {_points}. Completed: {_isDone}.";
+            return $"[ ] {_name}: {_description}. Type: {_type}. Points: {_points}. Completed: {_isDone}.";
         }
     }
     public void DisplayListString()
