@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Runtime.InteropServices.Marshalling;
 
 abstract class Goal
@@ -6,6 +7,7 @@ abstract class Goal
     string _description;
     int _points;
     bool _isDone;
+    string _type;
 
     public Goal(string name, string description, int numPoints)
     {
@@ -28,5 +30,9 @@ abstract class Goal
     public void DisplayListString()
     {
         Console.WriteLine(this.GetListString());
+    }
+    protected virtual string GetFileString()
+    {
+        return $"{_type}#{_name}#{_description}#{_points}#{_isDone}";
     }
 }
