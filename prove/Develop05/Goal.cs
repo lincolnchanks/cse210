@@ -3,11 +3,11 @@ using System.Runtime.InteropServices.Marshalling;
 
 abstract class Goal
 {
-    string _name;
-    string _description;
-    int _points;
-    bool _isDone;
-    string _type;
+    private string _name;
+    private string _description;
+    private int _points;
+    private bool _isDone;
+    private string _type;
 
     public Goal(string name, string description, int numPoints)
     {
