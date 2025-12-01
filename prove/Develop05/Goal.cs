@@ -40,4 +40,10 @@ abstract class Goal
     {
         // No code here yet. Waiting for the User class.
     }
+    public virtual string[] ReadGoalInformation(string fileString)
+    {
+        // Not fully functional at the time.
+        string[] goalInfo = fileString.Split("#");
+        return goalInfo;
+    }
 }
