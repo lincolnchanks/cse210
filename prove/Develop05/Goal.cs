@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices.Marshalling;
+
 abstract class Goal
 {
     string _name;
@@ -12,7 +14,7 @@ abstract class Goal
         _points = numPoints;
         _isDone = false;
     }
-    private string GetListString()
+    protected virtual string GetListString() // This one can only be called by child classes.
     {
         if (_isDone)
         {
@@ -22,5 +24,9 @@ abstract class Goal
         {
             return $"[ ] {_name}: {_description} Points: {_points}. Completed: {_isDone}.";
         }
+    }
+    public void DisplayListString()
+    {
+        Console.WriteLine(this.GetListString());
     }
 }
