@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 
 class Program
@@ -23,6 +24,19 @@ class Program
             {
                 case 1:
                     Console.WriteLine("Creating Goal...");
+                    int goalType = menu.DisplayCreateGoalMenu();
+                    switch (goalType)
+                    {
+                        case 1:
+                            Console.WriteLine("Simple Goal!");
+                            break;
+                        case 2:
+                            Console.WriteLine("Eternal Goal!");
+                            break;
+                        case 3:
+                            Console.WriteLine("Checklist Goal!");
+                            break;
+                    }
                     break;
                 case 2:
                     Console.WriteLine("Listing Goals...");
