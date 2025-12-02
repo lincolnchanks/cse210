@@ -30,20 +30,4 @@ class Menu
     {
         return 0;
     }
-    // public int GetUserAction()
-    // {
-    //     int response = 0;
-
-    //     Console.WriteLine("1. Create Goal");
-    //     Console.WriteLine("2. List Goals");
-    //     Console.WriteLine("3. Save Goals");
-    //     Console.WriteLine("4. Load Goals");
-    //     Console.WriteLine("5. Record Event.");
-    //     Console.WriteLine("6. Quit");
-    //     Console.Write("> ");
-
-    //     // Adjust this so it filters out invalid input
-    //     response = int.Parse(Console.ReadLine());
-    //     return response;
-    // }
 }
