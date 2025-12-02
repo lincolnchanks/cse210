@@ -29,6 +29,7 @@ class Program
                     {
                         case 1:
                             Console.WriteLine("Simple Goal!");
+                            // SimpleGoal tempSimpleGoal 
                             break;
                         case 2:
                             Console.WriteLine("Eternal Goal!");
@@ -52,7 +53,7 @@ class Program
                     break;
             }
         }
-        SimpleGoal myGoal = new SimpleGoal("Run", "Run faster", "Simple");
+        SimpleGoal myGoal = new SimpleGoal("Run faster", "Simple");
         myGoal.DisplayListString();
     }
 }

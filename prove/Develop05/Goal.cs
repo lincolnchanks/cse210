@@ -9,9 +9,9 @@ abstract class Goal
     private bool _isDone;
     private string _type;
 
-    public Goal(string name, string description, string type)
+    public Goal(string description, string type)
     {
-        _name = name;
+        _name = ObtainGoalName();
         _description = description;
         _points = ObtainNumberOfPoints();
         _isDone = false;
@@ -28,6 +28,12 @@ abstract class Goal
     protected virtual string GetFileString()
     {
         return $"{_type}#{_name}#{_description}#{_points}#{_isDone}";
+    }
+    public string ObtainGoalName()
+    {
+        Console.WriteLine("Enter the name of this goal:");
+        string goalName = Console.ReadLine();
+        return goalName;
     }
     public int ObtainNumberOfPoints()
     {
