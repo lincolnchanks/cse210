@@ -13,7 +13,7 @@ abstract class Goal
     {
         _name = name;
         _description = description;
-        // _points = numPoints;
+        _points = ObtainNumberOfPoints();
         _isDone = false;
         _type = type;
     }
@@ -29,7 +29,7 @@ abstract class Goal
     {
         return $"{_type}#{_name}#{_description}#{_points}#{_isDone}";
     }
-    public void ObtainNumberOfPoints()
+    public int ObtainNumberOfPoints()
     {
         int inputPointsNum = 0;
         while (inputPointsNum <= 0)
@@ -44,7 +44,7 @@ abstract class Goal
                 Console.WriteLine("Input must be an integer value greater than 0.");
             }
         }
-        _points = inputPointsNum;
+        return inputPointsNum;
     }
     public abstract void RecordEvent();
     public void AwardPoints(int numPoints)
