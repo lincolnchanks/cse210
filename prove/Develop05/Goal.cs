@@ -35,6 +35,11 @@ abstract class Goal
         string goalName = Console.ReadLine();
         return goalName;
     }
+    // public string ObtainGoalDescription()
+    // {
+    //     Console.WriteLine("Enter a short description of this goal:");
+    //     string 
+    // }
     public int ObtainNumberOfPoints()
     {
         int inputPointsNum = 0;
