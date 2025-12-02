@@ -20,14 +20,6 @@ abstract class Goal
     protected virtual string GetListString() // This one can only be called by child classes.
     {
         return $"Name: {_name}, Description: {_description}, Points: {_points}, Status: {_isDone}";
-        // if (_isDone)
-        // {
-        //     return $"[X] {_name}: {_description}. Type: {_type}. Points: {_points}. Completed: {_isDone}.";
-        // }
-        // else
-        // {
-        //     return $"[ ] {_name}: {_description}. Type: {_type}. Points: {_points}. Completed: {_isDone}.";
-        // }
     }
     public void DisplayListString()
     {

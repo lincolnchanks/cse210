@@ -28,6 +28,23 @@ class Menu
     }
     public int DisplayCreateGoalMenu()
     {
-        return 0;
+        int response = 0;
+
+        while (response < 1 || response > 3)
+        {
+            Console.WriteLine("Select Goal Type:");
+            Console.WriteLine(" 1. Simple Goal");
+            Console.WriteLine(" 2. Eternal Goal");
+            Console.WriteLine(" 3. Checklist Goal");
+            try
+            {
+                response = int.Parse(Console.ReadLine());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Input must be an integer value between 1 and 6.");
+            }
+        }
+        return response;
     }
 }

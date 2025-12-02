@@ -6,7 +6,7 @@ class EternalGoal : Goal
     base(name, description, points, type)
     {
         _numTimesDone = 0;
-        base.SetType("Eternal Goal");
+        // base.SetType("Eternal Goal");
     }
     protected override string GetListString() // This has to also be protected.
     {
