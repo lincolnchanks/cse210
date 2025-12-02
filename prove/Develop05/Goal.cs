@@ -9,12 +9,13 @@ abstract class Goal
     private bool _isDone;
     private string _type;
 
-    public Goal(string name, string description, int numPoints)
+    public Goal(string name, string description, int numPoints, string type)
     {
         _name = name;
         _description = description;
         _points = numPoints;
         _isDone = false;
+        _type = type;
     }
     protected virtual string GetListString() // This one can only be called by child classes.
     {
