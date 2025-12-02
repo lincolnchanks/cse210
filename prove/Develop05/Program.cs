@@ -38,6 +38,8 @@ class Program
                     break;
             }
         }
+        SimpleGoal myGoal = new SimpleGoal("Run", "Run faster", 100, "Simple");
+        myGoal.DisplayListString();
     }
 }
 
