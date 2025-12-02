@@ -9,11 +9,11 @@ abstract class Goal
     private bool _isDone;
     private string _type;
 
-    public Goal(string name, string description, int numPoints, string type)
+    public Goal(string name, string description, string type)
     {
         _name = name;
         _description = description;
-        _points = numPoints;
+        // _points = numPoints;
         _isDone = false;
         _type = type;
     }
@@ -28,6 +28,23 @@ abstract class Goal
     protected virtual string GetFileString()
     {
         return $"{_type}#{_name}#{_description}#{_points}#{_isDone}";
+    }
+    public void ObtainNumberOfPoints()
+    {
+        int inputPointsNum = 0;
+        while (inputPointsNum <= 0)
+        {
+            Console.WriteLine("How many points is this goal worth?");
+            try
+            {
+                inputPointsNum = int.Parse(Console.ReadLine());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Input must be an integer value greater than 0.");
+            }
+        }
+        _points = inputPointsNum;
     }
     public abstract void RecordEvent();
     public void AwardPoints(int numPoints)

@@ -4,8 +4,8 @@ class ChecklistGoal : Goal
     private int _maxTimes;
     private int _bonusPoints;
 
-    public ChecklistGoal(string name, string description, int points, string type, int maxTimes, int bonusPoints)
-    : base(name, description, points, type)
+    public ChecklistGoal(string name, string description, string type, int maxTimes, int bonusPoints)
+    : base(name, description, type)
     {
         // base.SetType("Checklist Goal");
         _numTimesCompleted = 0;

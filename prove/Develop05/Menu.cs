@@ -42,7 +42,7 @@ class Menu
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Input must be an integer value between 1 and 6.");
+                Console.WriteLine("Input must be an integer value between 1 and 3.");
             }
         }
         return response;

@@ -2,8 +2,8 @@ class EternalGoal : Goal
 {
     private int _numTimesDone;
 
-    public EternalGoal(string name, string description, int points, string type) : 
-    base(name, description, points, type)
+    public EternalGoal(string name, string description, string type) : 
+    base(name, description, type)
     {
         _numTimesDone = 0;
         // base.SetType("Eternal Goal");
