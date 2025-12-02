@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 
 class Program
 {
@@ -21,14 +22,19 @@ class Program
             switch (response)
             {
                 case 1:
+                    Console.WriteLine("Creating Goal...");
                     break;
                 case 2:
+                    Console.WriteLine("Listing Goals...");
                     break;
                 case 3:
+                    Console.WriteLine("Saving Goals...");
                     break;
                 case 4:
+                    Console.WriteLine("Loading Goals...");
                     break;
                 case 5:
+                    Console.WriteLine("Recording Event...");
                     break;
             }
         }
