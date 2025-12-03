@@ -33,7 +33,7 @@ class Program
                             tempSimpleGoal.DisplayListString();
                             tempSimpleGoal.RecordEvent();
                             tempSimpleGoal.DisplayListString();
-                            Console.WriteLine(tempSimpleGoal.GetFileString());
+                            // Console.WriteLine(tempSimpleGoal.GetFileString());
                             break;
                         case 2:
                             Console.WriteLine("Eternal Goal!");

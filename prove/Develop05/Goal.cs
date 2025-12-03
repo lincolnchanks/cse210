@@ -25,7 +25,7 @@ abstract class Goal
     {
         Console.WriteLine(this.GetListString());
     }
-    public virtual string GetFileString() // make protected later
+    protected virtual string GetFileString()
     {
         return $"{_type}#{_name}#{_description}#{_points}#{_isDone}";
     }
