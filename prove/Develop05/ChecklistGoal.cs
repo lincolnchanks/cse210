@@ -16,7 +16,7 @@ class ChecklistGoal : Goal
         int maxTimesNum = 0;
         while (maxTimesNum <= 0)
         {
-            Console.WriteLine("How many points is this goal worth?");
+            Console.WriteLine("What is the maximum number of times this goal can be completed?");
             try
             {
                 maxTimesNum = int.Parse(Console.ReadLine());
