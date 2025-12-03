@@ -13,6 +13,8 @@ class Program
     }
     static void Main(string[] args)
     {
+        Goals goalsList = new Goals();
+
         Menu menu = new Menu();
         int response = 0;
 
@@ -30,10 +32,12 @@ class Program
                         case 1:
                             Console.WriteLine("Simple Goal!");
                             SimpleGoal tempSimpleGoal = new SimpleGoal("Simple");
+                            goalsList.AddGoal(tempSimpleGoal);
                             break;
                         case 2:
                             Console.WriteLine("Eternal Goal!");
                             EternalGoal tempEternalGoal = new EternalGoal("Eternal");
+                            goalsList.AddGoal(tempEternalGoal);
                             break;
                         case 3:
                             Console.WriteLine("Checklist Goal!");
