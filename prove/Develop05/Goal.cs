@@ -9,10 +9,10 @@ abstract class Goal
     private bool _isDone;
     private string _type;
 
-    public Goal(string description, string type)
+    public Goal(string type)
     {
         _name = ObtainGoalName();
-        _description = description;
+        _description = ObtainGoalDescription();
         _points = ObtainNumberOfPoints();
         _isDone = false;
         _type = type;
@@ -35,11 +35,12 @@ abstract class Goal
         string goalName = Console.ReadLine();
         return goalName;
     }
-    // public string ObtainGoalDescription()
-    // {
-    //     Console.WriteLine("Enter a short description of this goal:");
-    //     string 
-    // }
+    public string ObtainGoalDescription()
+    {
+        Console.WriteLine("Enter a short description of this goal:");
+        string goalDescription = Console.ReadLine();
+        return goalDescription;
+    }
     public int ObtainNumberOfPoints()
     {
         int inputPointsNum = 0;

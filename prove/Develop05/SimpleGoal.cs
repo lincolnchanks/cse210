@@ -1,7 +1,7 @@
 class SimpleGoal : Goal
 {
-    public SimpleGoal(string description, string type) : 
-    base(description, type)
+    public SimpleGoal(string type) : 
+    base(type)
     {
         
     }

@@ -29,7 +29,7 @@ class Program
                     {
                         case 1:
                             Console.WriteLine("Simple Goal!");
-                            SimpleGoal tempSimpleGoal = new SimpleGoal("desc", "Simple");
+                            SimpleGoal tempSimpleGoal = new SimpleGoal("Simple");
                             tempSimpleGoal.DisplayListString();
                             tempSimpleGoal.RecordEvent();
                             tempSimpleGoal.DisplayListString();
@@ -56,7 +56,7 @@ class Program
                     break;
             }
         }
-        SimpleGoal myGoal = new SimpleGoal("Run faster", "Simple");
+        SimpleGoal myGoal = new SimpleGoal("Simple");
         myGoal.DisplayListString();
     }
 }
