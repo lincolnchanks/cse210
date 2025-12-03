@@ -30,9 +30,9 @@ class Program
                         case 1:
                             Console.WriteLine("Simple Goal!");
                             SimpleGoal tempSimpleGoal = new SimpleGoal("Simple");
-                            tempSimpleGoal.DisplayListString();
-                            tempSimpleGoal.RecordEvent();
-                            tempSimpleGoal.DisplayListString();
+                            // tempSimpleGoal.DisplayListString();
+                            // tempSimpleGoal.RecordEvent();
+                            // tempSimpleGoal.DisplayListString();
                             // Console.WriteLine(tempSimpleGoal.GetFileString());
                             break;
                         case 2:

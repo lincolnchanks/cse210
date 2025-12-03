@@ -61,6 +61,7 @@ abstract class Goal
     public abstract void RecordEvent();
     public void AwardPoints(int numPoints)
     {
+        Console.WriteLine($"Will award {numPoints} points once this method works!");
         // No code here yet. Waiting for the User class.
     }
     public virtual string[] ReadGoalInformation(string fileString)
