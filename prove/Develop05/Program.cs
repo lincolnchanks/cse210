@@ -39,7 +39,7 @@ class Program
                             goalsList.AddGoal(tempEternalGoal);
                             break;
                         case 3:
-                            ChecklistGoal tempChecklistGoal = new ChecklistGoal("Checklist", 100);
+                            ChecklistGoal tempChecklistGoal = new ChecklistGoal("Checklist");
                             goalsList.AddGoal(tempChecklistGoal);
                             break;
                     }

@@ -4,12 +4,12 @@ class ChecklistGoal : Goal
     private int _maxTimes;
     private int _bonusPoints;
 
-    public ChecklistGoal(string type, int bonusPoints)
+    public ChecklistGoal(string type)
     : base(type)
     {
         _numTimesCompleted = 0;
         _maxTimes = ObtainMaxTimes();
-        _bonusPoints = bonusPoints;
+        _bonusPoints = ObtainBonusPoints();
     }
     public int ObtainMaxTimes()
     {
@@ -27,6 +27,23 @@ class ChecklistGoal : Goal
             }
         }
         return maxTimesNum;
+    }
+    public int ObtainBonusPoints()
+    {
+        int bonusPointsNum = 0;
+        while (bonusPointsNum <= 0)
+        {
+            Console.WriteLine("How many bonus points will be awarded for completing the entire goal?");
+            try
+            {
+                bonusPointsNum = int.Parse(Console.ReadLine());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Input must be an integer value greater than 0.");
+            }
+        }
+        return bonusPointsNum;
     }
     protected override string GetListString()
     {
