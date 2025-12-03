@@ -41,7 +41,8 @@ class Program
                             break;
                         case 3:
                             Console.WriteLine("Checklist Goal!");
-                            // ChecklistGoal tempChecklistGoal = new ChecklistGoal("Checklist");
+                            ChecklistGoal tempChecklistGoal = new ChecklistGoal("Checklist", 100);
+                            goalsList.AddGoal(tempChecklistGoal);
                             break;
                     }
                     break;
