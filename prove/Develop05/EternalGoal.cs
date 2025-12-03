@@ -12,7 +12,7 @@ class EternalGoal : Goal
     {
         return $"{base.GetListString}. Number of completions: {_numTimesDone}.";
     }
-    protected override string GetFileString()
+    public override string GetFileString()
     {
         return $"{base.GetFileString()}#{_numTimesDone}";
     }
