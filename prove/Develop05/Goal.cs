@@ -70,10 +70,6 @@ abstract class Goal
         string[] goalInfo = fileString.Split("#");
         return goalInfo;
     }
-    protected void SetType(string type)
-    {
-        _type = type;
-    }
     protected void CompleteGoal()
     {
         if (_type != "Eternal Goal")
