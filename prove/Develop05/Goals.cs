@@ -8,4 +8,11 @@ class Goals
     {
         _goals.Add(goal);
     }
+    public void DisplayGoals()
+    {
+        foreach (Goal goal in _goals)
+        {
+            goal.DisplayListString();
+        }
+    }
 }

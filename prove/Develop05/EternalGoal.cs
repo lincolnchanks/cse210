@@ -9,7 +9,7 @@ class EternalGoal : Goal
     }
     protected override string GetListString() // This has to also be protected.
     {
-        return $"{base.GetListString}. Number of completions: {_numTimesDone}.";
+        return $"{base.GetListString()}. Number of completions: {_numTimesDone}.";
     }
     protected override string GetFileString()
     {

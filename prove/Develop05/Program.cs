@@ -48,6 +48,7 @@ class Program
                     break;
                 case 2:
                     Console.WriteLine("Listing Goals...");
+                    goalsList.DisplayGoals();
                     break;
                 case 3:
                     Console.WriteLine("Saving Goals...");
