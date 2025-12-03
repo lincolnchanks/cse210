@@ -5,7 +5,8 @@ class SimpleGoal : Goal
     {
         
     }
-    // This class doesn't need to override GetListString() or GetFileString().
+    // This class doesn't need to override GetListString() or GetFileString(),
+    // it has no new information to add to those methods.
     public override void RecordEvent()
     {
         if (!base.GetIsDone())

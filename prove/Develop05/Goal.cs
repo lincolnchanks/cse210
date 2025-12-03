@@ -19,30 +19,36 @@ abstract class Goal
     }
     protected virtual string GetListString() // This one can only be called by child classes.
     {
-        return $"Name: {_name}, Description: {_description}, Points: {_points}, Status: {_isDone}";
+        // Get a string to display in Action 2.
+        return $"Type: {_type}, Name: {_name}, Description: {_description}, Points: {_points}, Status: {_isDone}";
     }
     public void DisplayListString()
     {
+        // Display a string from the above method.
         Console.WriteLine(this.GetListString());
     }
     protected virtual string GetFileString()
     {
+        // Get a string to display in the file.
         return $"{_type}#{_name}#{_description}#{_points}#{_isDone}";
     }
     public string ObtainGoalName()
     {
+        // Get user input for the goal name. Constructor function.
         Console.WriteLine("Enter the name of this goal:");
         string goalName = Console.ReadLine();
         return goalName;
     }
     public string ObtainGoalDescription()
     {
+        // Get user input for the goal description. Constructor function.
         Console.WriteLine("Enter a short description of this goal:");
         string goalDescription = Console.ReadLine();
         return goalDescription;
     }
     public int ObtainNumberOfPoints()
     {
+        // Get user input for the goal point value. Constructor function.
         int inputPointsNum = 0;
         while (inputPointsNum <= 0)
         {
@@ -58,7 +64,7 @@ abstract class Goal
         }
         return inputPointsNum;
     }
-    public abstract void RecordEvent();
+    public abstract void RecordEvent(); // Goal completion; overriden by derived classes
     public void AwardPoints(int numPoints)
     {
         Console.WriteLine($"Will award {numPoints} points once this method works!");
@@ -72,6 +78,7 @@ abstract class Goal
     }
     protected void CompleteGoal()
     {
+        // Mark the goal as complete unless it's eternal.
         if (_type != "Eternal Goal")
         {
             _isDone = true;
@@ -83,10 +90,12 @@ abstract class Goal
     }
     protected int GetPointsNumber()
     {
+        // Return number of points.
         return _points;
     }
     protected bool GetIsDone()
     {
+        // Return the goal status.
         return _isDone;
     }
 }
