@@ -30,16 +30,14 @@ class Program
                         case 1:
                             Console.WriteLine("Simple Goal!");
                             SimpleGoal tempSimpleGoal = new SimpleGoal("Simple");
-                            // tempSimpleGoal.DisplayListString();
-                            // tempSimpleGoal.RecordEvent();
-                            // tempSimpleGoal.DisplayListString();
-                            // Console.WriteLine(tempSimpleGoal.GetFileString());
                             break;
                         case 2:
                             Console.WriteLine("Eternal Goal!");
+                            EternalGoal tempEternalGoal = new EternalGoal("Eternal");
                             break;
                         case 3:
                             Console.WriteLine("Checklist Goal!");
+                            // ChecklistGoal tempChecklistGoal = new ChecklistGoal("Checklist");
                             break;
                     }
                     break;

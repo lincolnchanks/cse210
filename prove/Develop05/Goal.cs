@@ -79,7 +79,7 @@ abstract class Goal
     protected void CompleteGoal()
     {
         // Mark the goal as complete unless it's eternal.
-        if (_type != "Eternal Goal")
+        if (_type != "Eternal")
         {
             _isDone = true;
         }
