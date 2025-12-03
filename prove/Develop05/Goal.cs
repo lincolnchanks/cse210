@@ -46,6 +46,22 @@ abstract class Goal
         string goalDescription = Console.ReadLine();
         return goalDescription;
     }
+    // public int ObtainIntValue(ref int intValue)
+    // {
+    //     while (intValue <= 0)
+    //     {
+    //         Console.WriteLine("How many points is this goal worth?");
+    //         try
+    //         {
+    //             intValue = int.Parse(Console.ReadLine());
+    //         }
+    //         catch (Exception ex)
+    //         {
+    //             Console.WriteLine("Input must be an integer value greater than 0.");
+    //         }
+    //     }
+    //     return intValue;
+    // }
     public int ObtainNumberOfPoints()
     {
         // Get user input for the goal point value. Constructor function.
