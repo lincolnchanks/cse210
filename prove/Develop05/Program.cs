@@ -25,6 +25,8 @@ class Program
             switch (response)
             {
                 case 1:
+                // Create a new goal of the type specified by the user.
+                // Add that goal to the overall goals list.
                     int goalType = menu.DisplayCreateGoalMenu();
                     switch (goalType)
                     {
@@ -43,6 +45,7 @@ class Program
                     }
                     break;
                 case 2:
+                // Display each goal in the overall goals list.
                     goalsList.DisplayGoals();
                     break;
                 case 3:
