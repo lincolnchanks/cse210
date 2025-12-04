@@ -10,7 +10,7 @@ class EternalGoal : Goal
     public EternalGoal(string type, string name, string description, int points, bool isDone) : 
     base(type, name, description, points, isDone)
     {
-        _numTimesDone = 0;
+        _numTimesDone = 0; // This needs to get changed!!!
     }
     public override string GetListString() // This has to also be protected.
     {

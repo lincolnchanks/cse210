@@ -105,10 +105,11 @@ class Program
                                 goalsList.AddGoal(tempFileEternalGoal);
                                 break;
                             case "Checklist":
-                                string tempFileGoalNumCompletions = parts[5];
-                                string tempFileGoalMaxTimes = parts[6];
-                                string tempFileGoalBonusPoints = parts[7];
-                                // ChecklistGoal tempFileChecklistGoal = new ChecklistGoal()
+                                int tempFileGoalNumCompletions = int.Parse(parts[5]);
+                                int tempFileGoalMaxTimes = int.Parse(parts[6]);
+                                int tempFileGoalBonusPoints = int.Parse(parts[7]);
+                                ChecklistGoal tempFileChecklistGoal = new ChecklistGoal(tempFileGoalType, tempFileGoalName, tempFileGoalDesc, tempFileGoalPoints, tempFileGoalBool, tempFileGoalNumCompletions, tempFileGoalMaxTimes, tempFileGoalBonusPoints);
+                                goalsList.AddGoal(tempFileChecklistGoal);
                                 break;
                         }
                     }

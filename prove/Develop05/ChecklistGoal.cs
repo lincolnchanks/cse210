@@ -11,6 +11,13 @@ class ChecklistGoal : Goal
         _maxTimes = ObtainMaxTimes();
         _bonusPoints = ObtainBonusPoints();
     }
+    public ChecklistGoal(string type, string name, string description, int points, bool isDone, int numCompletions, int maxTimes, int bonusPoints) : 
+    base(type, name, description, points, isDone)
+    {
+        _numTimesCompleted = numCompletions;
+        _maxTimes = maxTimes;
+        _bonusPoints = bonusPoints;
+    }
     public int ObtainMaxTimes()
     {
         int maxTimesNum = 0;
