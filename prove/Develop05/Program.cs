@@ -101,6 +101,8 @@ class Program
                                 goalsList.AddGoal(tempFileSimpleGoal);
                                 break;
                             case "Eternal":
+                                EternalGoal tempFileEternalGoal = new EternalGoal(tempFileGoalType, tempFileGoalName, tempFileGoalDesc, tempFileGoalPoints, tempFileGoalBool);
+                                goalsList.AddGoal(tempFileEternalGoal);
                                 break;
                             case "Checklist":
                                 break;
