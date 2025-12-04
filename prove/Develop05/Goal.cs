@@ -21,6 +21,14 @@ abstract class Goal
         _isDone = false;
         _type = type;
     }
+    public Goal(string type, string name, string description, int points, bool isDone)
+    {
+        _name = name;
+        _description = description;
+        _points = points;
+        _isDone = isDone;
+        _type = type;
+    }
     public virtual string GetListString() // This one can only be called by child classes.
     {
         // Get a string to display in Action 2.
