@@ -57,8 +57,7 @@ class Program
                 case 5:
                     Console.WriteLine("Recording Event...");
                     int goalNumber = goalsList.DisplayChooseGoalMenu();
-                    goalsList.GetGoalsList()[goalNumber - 1].RecordEvent();
-                    // You could record the event here instead of in Goals
+                    goalsList.GetGoalsList()[goalNumber - 1].RecordEvent(goalsList);
                     break;
             }
         }

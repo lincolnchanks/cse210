@@ -53,7 +53,7 @@ class ChecklistGoal : Goal
     {
         return $"{base.GetFileString()}#{_numTimesCompleted}#{_maxTimes}#{_bonusPoints}";
     }
-    public override void RecordEvent()
+    public override void RecordEvent(Goals goals)
     {
         if (!base.GetIsDone())
         {

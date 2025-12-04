@@ -84,7 +84,7 @@ abstract class Goal
         }
         return inputPointsNum;
     }
-    public abstract void RecordEvent(); // Goal completion; overriden by derived classes
+    public abstract void RecordEvent(Goals goals); // Goal completion; overriden by derived classes
     public void AwardPoints(int numPoints)
     {
         _pointsAwarded += numPoints;

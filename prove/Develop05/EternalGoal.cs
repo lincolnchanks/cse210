@@ -15,7 +15,7 @@ class EternalGoal : Goal
     {
         return $"{base.GetFileString()}#{_numTimesDone}";
     }
-    public override void RecordEvent()
+    public override void RecordEvent(Goals goals)
     {
         base.AwardPoints(base.GetPointsNumber());
     }
