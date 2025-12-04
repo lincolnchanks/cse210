@@ -15,7 +15,7 @@ class Goals
             goal.DisplayListString();
         }
     }
-    public void DisplayChooseGoalMenu()
+    public int DisplayChooseGoalMenu()
     {
         int count = 1;
         foreach(Goal goal in _goals)
@@ -37,10 +37,15 @@ class Goals
                 Console.WriteLine($"Input must be an integer value between 1 and {count - 1}.");
             }
         }
-        _goals[goalNum - 1].RecordEvent();
+        return goalNum;
+        // _goals[goalNum - 1].RecordEvent();
     }
     public void AwardPoints(int numPoints)
     {
         _totalScore += numPoints;
+    }
+    public List<Goal> GetGoalsList()
+    {
+        return _goals;
     }
 }
