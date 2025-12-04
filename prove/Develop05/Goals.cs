@@ -23,5 +23,20 @@ class Goals
             Console.WriteLine($"{count}. {goal.GetListString()}");
             count++;
         }
+        count -= 1; // This reverts the count back to the actual length of the list.
+        int goalNum = 0;
+        while (goalNum < 1 || goalNum > count)
+        {
+            Console.WriteLine("Which goal would you like to complete?");
+            try
+            {
+                goalNum = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine($"Input must be an integer value between 1 and {count - 1}.");
+            }
+        }
+        _goals[goalNum - 1].RecordEvent();
     }
 }
