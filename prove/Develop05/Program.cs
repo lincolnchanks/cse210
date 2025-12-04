@@ -98,6 +98,7 @@ class Program
                         {
                             case "Simple":
                                 SimpleGoal tempFileSimpleGoal = new SimpleGoal(tempFileGoalType, tempFileGoalName, tempFileGoalDesc, tempFileGoalPoints, tempFileGoalBool);
+                                goalsList.AddGoal(tempFileSimpleGoal);
                                 break;
                             case "Eternal":
                                 break;
