@@ -56,6 +56,16 @@ class Program
                     break;
                 case 3:
                     Console.WriteLine("Saving Goals...");
+                    // Gets a file name from the user, then writes to that file.
+                    Console.WriteLine("Enter the filename to save to:");
+                    string filename = Console.ReadLine();
+                    using (StreamWriter outputFile = new StreamWriter(filename))
+                    {
+                        foreach(Goal goal in goalsList.GetGoalsList())
+                        {
+                            outputFile.WriteLine($"{goal.GetFileString()}");
+                        }
+                    }
                     break;
                 case 4:
                     Console.WriteLine("Loading Goals...");

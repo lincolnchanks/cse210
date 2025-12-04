@@ -31,7 +31,7 @@ abstract class Goal
         // Display a string from the above method.
         Console.WriteLine(this.GetListString());
     }
-    protected virtual string GetFileString()
+    public virtual string GetFileString()
     {
         // Get a string to display in the file.
         return $"{_type}#{_name}#{_description}#{_points}#{_isDone}";

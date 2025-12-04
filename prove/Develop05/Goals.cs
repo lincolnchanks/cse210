@@ -51,4 +51,8 @@ class Goals
     {
         Console.WriteLine($"Total Points: {_totalScore}.");
     }
+    public string GetFileName()
+    {
+        return _filename;
+    }
 }
