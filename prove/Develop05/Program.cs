@@ -55,11 +55,10 @@ class Program
                     string uselessString = Console.ReadLine();
                     break;
                 case 3:
-                    Console.WriteLine("Saving Goals...");
                     // Gets a file name from the user, then writes to that file.
                     Console.WriteLine("Enter the filename to save to:");
-                    string filename = Console.ReadLine();
-                    using (StreamWriter outputFile = new StreamWriter(filename))
+                    string outputFileName = Console.ReadLine();
+                    using (StreamWriter outputFile = new StreamWriter(outputFileName))
                     {
                         foreach(Goal goal in goalsList.GetGoalsList())
                         {
@@ -69,6 +68,21 @@ class Program
                     break;
                 case 4:
                     Console.WriteLine("Loading Goals...");
+                    Console.WriteLine("Enter the filename to load from:");
+                    string inputFileName = Console.ReadLine();
+                    string[] strings = System.IO.File.ReadAllLines(inputFileName);
+
+                    foreach (string line in strings)
+                    {
+                        string[] parts = line.Split("#");
+
+                        string tempFileGoalType = parts[0];
+                        string tempFileGoalName = parts[1];
+                        string tempFileGoalDesc = parts[2];
+                        int tempFileGoalPoints = int.Parse(parts[3]);
+                        string tempFileGoalStatus = parts[4];
+                    }
+                    string uselessSecond = Console.ReadLine();
                     break;
                 case 5:
                     Console.Clear();
