@@ -17,7 +17,7 @@ abstract class Goal
         _isDone = false;
         _type = type;
     }
-    protected virtual string GetListString() // This one can only be called by child classes.
+    public virtual string GetListString() // This one can only be called by child classes.
     {
         // Get a string to display in Action 2.
         return $"Type: {_type}, Name: {_name}, Description: {_description}, Points: {_points}, Status: {_isDone}";

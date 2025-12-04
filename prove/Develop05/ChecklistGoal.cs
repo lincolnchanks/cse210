@@ -45,7 +45,7 @@ class ChecklistGoal : Goal
         }
         return bonusPointsNum;
     }
-    protected override string GetListString()
+    public override string GetListString()
     {
         return $"{base.GetListString()}. Completed: {_numTimesCompleted}/{_maxTimes}. Bonus Points: {_bonusPoints}.";
     }

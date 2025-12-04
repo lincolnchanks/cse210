@@ -56,6 +56,7 @@ class Program
                     break;
                 case 5:
                     Console.WriteLine("Recording Event...");
+                    goalsList.DisplayChooseGoalMenu();
                     break;
             }
         }

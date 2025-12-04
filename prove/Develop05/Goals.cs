@@ -15,4 +15,13 @@ class Goals
             goal.DisplayListString();
         }
     }
+    public void DisplayChooseGoalMenu()
+    {
+        int count = 1;
+        foreach(Goal goal in _goals)
+        {
+            Console.WriteLine($"{count}. {goal.GetListString()}");
+            count++;
+        }
+    }
 }
