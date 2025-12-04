@@ -48,8 +48,11 @@ class Program
                     break;
                 case 2:
                 // Display each goal in the overall goals list.
+                    Console.Clear();
                     goalsList.DisplayTotalPoints();
                     goalsList.DisplayGoals();
+                    Console.WriteLine("Press ENTER to continue.");
+                    string uselessString = Console.ReadLine();
                     break;
                 case 3:
                     Console.WriteLine("Saving Goals...");
