@@ -12,7 +12,7 @@ class SimpleGoal : Goal
         if (!base.GetIsDone())
         {
             base.CompleteGoal();
-            base.AwardPoints(base.GetPointsNumber());
+            base.AwardPoints(base.GetPointsNumber(), goals);
         }
     }
 }

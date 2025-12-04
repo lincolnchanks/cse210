@@ -85,10 +85,11 @@ abstract class Goal
         return inputPointsNum;
     }
     public abstract void RecordEvent(Goals goals); // Goal completion; overriden by derived classes
-    public void AwardPoints(int numPoints)
+    public void AwardPoints(int numPoints, Goals goals)
     {
-        _pointsAwarded += numPoints;
-        Console.WriteLine($"Will award {numPoints} points once this method works!");
+        goals.AwardPoints(numPoints);
+        // _pointsAwarded += numPoints;
+        Console.WriteLine($"Awarded {numPoints} points!");
         // No code here yet. Waiting for the User class.
     }
     public virtual string[] ReadGoalInformation(string fileString)

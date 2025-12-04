@@ -58,10 +58,10 @@ class ChecklistGoal : Goal
         if (!base.GetIsDone())
         {
             _numTimesCompleted++;
-            base.AwardPoints(base.GetPointsNumber());
+            base.AwardPoints(base.GetPointsNumber(), goals);
             if (_numTimesCompleted == _maxTimes)
             {
-                base.AwardPoints(_bonusPoints);
+                base.AwardPoints(_bonusPoints, goals);
                 base.CompleteGoal();
             }
         }

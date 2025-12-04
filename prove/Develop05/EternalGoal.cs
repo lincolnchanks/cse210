@@ -17,6 +17,6 @@ class EternalGoal : Goal
     }
     public override void RecordEvent(Goals goals)
     {
-        base.AwardPoints(base.GetPointsNumber());
+        base.AwardPoints(base.GetPointsNumber(), goals);
     }
 }
