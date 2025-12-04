@@ -8,6 +8,10 @@ abstract class Goal
     private int _points;
     private bool _isDone;
     private string _type;
+    private int _pointsAwarded;
+    // This value will be updated by RecordEvent() and AwardPoints(). Then
+    // when RecordEvent() is called on it in the Goals class, the Goals class
+    // will get this value and add it to the overall points value.
 
     public Goal(string type)
     {
@@ -83,6 +87,7 @@ abstract class Goal
     public abstract void RecordEvent(); // Goal completion; overriden by derived classes
     public void AwardPoints(int numPoints)
     {
+        _pointsAwarded += numPoints;
         Console.WriteLine($"Will award {numPoints} points once this method works!");
         // No code here yet. Waiting for the User class.
     }
@@ -104,7 +109,7 @@ abstract class Goal
             Console.WriteLine("Cannot complete an Eternal Goal!");
         }
     }
-    protected int GetPointsNumber()
+    public int GetPointsNumber()
     {
         // Return number of points.
         return _points;
@@ -113,5 +118,9 @@ abstract class Goal
     {
         // Return the goal status.
         return _isDone;
+    }
+    public string GetGoalType()
+    {
+        return _type;
     }
 }

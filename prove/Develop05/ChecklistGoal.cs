@@ -66,4 +66,14 @@ class ChecklistGoal : Goal
             }
         }
     }
+    public int GetGoalProgress()
+    {
+        return _maxTimes - _numTimesCompleted; 
+        // If this returns 0, the other methods will recognize the checklist goal is done.
+        // Then they'll know to award the bonus points.
+    }
+    public int GetBonusPoints()
+    {
+        return _bonusPoints;
+    }
 }

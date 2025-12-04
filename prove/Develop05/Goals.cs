@@ -39,4 +39,8 @@ class Goals
         }
         _goals[goalNum - 1].RecordEvent();
     }
+    public void AwardPoints(int numPoints)
+    {
+        _totalScore += numPoints;
+    }
 }
