@@ -113,7 +113,6 @@ class Program
                                 break;
                         }
                     }
-                    string uselessSecond = Console.ReadLine();
                     break;
                 case 5:
                     Console.Clear();
