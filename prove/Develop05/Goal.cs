@@ -88,9 +88,7 @@ abstract class Goal
     public void AwardPoints(int numPoints, Goals goals)
     {
         goals.AwardPoints(numPoints);
-        // _pointsAwarded += numPoints;
         Console.WriteLine($"Awarded {numPoints} points!");
-        // No code here yet. Waiting for the User class.
     }
     public virtual string[] ReadGoalInformation(string fileString)
     {

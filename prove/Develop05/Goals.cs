@@ -38,7 +38,6 @@ class Goals
             }
         }
         return goalNum;
-        // _goals[goalNum - 1].RecordEvent();
     }
     public void AwardPoints(int numPoints)
     {
@@ -47,5 +46,9 @@ class Goals
     public List<Goal> GetGoalsList()
     {
         return _goals;
+    }
+    public void DisplayTotalPoints()
+    {
+        Console.WriteLine($"Total Points: {_totalScore}.");
     }
 }

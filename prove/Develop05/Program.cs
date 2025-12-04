@@ -46,6 +46,7 @@ class Program
                     break;
                 case 2:
                 // Display each goal in the overall goals list.
+                    goalsList.DisplayTotalPoints();
                     goalsList.DisplayGoals();
                     break;
                 case 3:
