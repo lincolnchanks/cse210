@@ -20,6 +20,7 @@ class Program
 
         while (response != 6)
         {
+            Console.Clear();
             response = menu.DisplayMenu();
 
             switch (response)
@@ -27,6 +28,7 @@ class Program
                 case 1:
                 // Create a new goal of the type specified by the user.
                 // Add that goal to the overall goals list.
+                    Console.Clear();
                     int goalType = menu.DisplayCreateGoalMenu();
                     switch (goalType)
                     {
@@ -56,7 +58,7 @@ class Program
                     Console.WriteLine("Loading Goals...");
                     break;
                 case 5:
-                    Console.WriteLine("Recording Event...");
+                    Console.Clear();
                     int goalNumber = goalsList.DisplayChooseGoalMenu();
                     goalsList.GetGoalsList()[goalNumber - 1].RecordEvent(goalsList);
                     break;
