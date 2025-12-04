@@ -84,10 +84,20 @@ class Program
                         int tempFileGoalPoints = int.Parse(parts[3]);
                         string tempFileGoalStatus = parts[4];
 
+                        bool tempFileGoalBool;
+                        if (tempFileGoalStatus == "True")
+                        {
+                            tempFileGoalBool = true;
+                        }
+                        else
+                        {
+                            tempFileGoalBool = false;
+                        }
+
                         switch (tempFileGoalType)
                         {
                             case "Simple":
-                                // SimpleGoal tempFileSimpleGoal = new SimpleGoal(tempFileGoalType, tempFileGoalName, tempFileGoalDesc, tempFileGoalPoints, tempFileGoalStatus);
+                                SimpleGoal tempFileSimpleGoal = new SimpleGoal(tempFileGoalType, tempFileGoalName, tempFileGoalDesc, tempFileGoalPoints, tempFileGoalBool);
                                 break;
                             case "Eternal":
                                 break;
