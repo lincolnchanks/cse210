@@ -72,6 +72,8 @@ class Program
                     string inputFileName = Console.ReadLine();
                     string[] strings = System.IO.File.ReadAllLines(inputFileName);
 
+                    goalsList = new Goals();
+
                     foreach (string line in strings)
                     {
                         string[] parts = line.Split("#");
@@ -81,6 +83,21 @@ class Program
                         string tempFileGoalDesc = parts[2];
                         int tempFileGoalPoints = int.Parse(parts[3]);
                         string tempFileGoalStatus = parts[4];
+
+                        switch (tempFileGoalType)
+                        {
+                            case "Simple":
+                                // SimpleGoal tempFileSimpleGoal = new SimpleGoal(tempFileGoalType, tempFileGoalName, tempFileGoalDesc, tempFileGoalPoints, tempFileGoalStatus);
+                                break;
+                            case "Eternal":
+                                break;
+                            case "Checklist":
+                                break;
+                        }
+
+                        // Goal tempFileGoal = new Goal(tempFileGoalType, tempFileGoalName, tempFileGoalDesc, tempFileGoalPoints, tempFileGoalStatus);
+
+                        // goalsList.AddGoal();
                     }
                     string uselessSecond = Console.ReadLine();
                     break;
