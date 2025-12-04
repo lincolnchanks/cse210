@@ -105,12 +105,12 @@ class Program
                                 goalsList.AddGoal(tempFileEternalGoal);
                                 break;
                             case "Checklist":
+                                string tempFileGoalNumCompletions = parts[5];
+                                string tempFileGoalMaxTimes = parts[6];
+                                string tempFileGoalBonusPoints = parts[7];
+                                // ChecklistGoal tempFileChecklistGoal = new ChecklistGoal()
                                 break;
                         }
-
-                        // Goal tempFileGoal = new Goal(tempFileGoalType, tempFileGoalName, tempFileGoalDesc, tempFileGoalPoints, tempFileGoalStatus);
-
-                        // goalsList.AddGoal();
                     }
                     string uselessSecond = Console.ReadLine();
                     break;
