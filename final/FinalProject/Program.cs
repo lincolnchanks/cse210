@@ -9,5 +9,8 @@ class Program
         bread.DisplayFoodInformation();
         bread.Expire();
         bread.DisplayFoodInformation();
+
+        Storage fridge = new Storage("Fridge");
+        fridge.DisplayInfo();
     }
 }
