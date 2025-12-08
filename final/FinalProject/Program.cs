@@ -17,7 +17,7 @@ class Program
         FoodItem meatballs = new FoodItem("Meatballs", 2025, 12, 19, 300, 6, 12.43, "IDK Brand");
 
         Meal peachesAndMeatballs = new Meal();
-        peachesAndMeatballs.AddIngredient(meatballs, 24, 300);
+        peachesAndMeatballs.AddIngredient(meatballs, 24);
         peachesAndMeatballs.DisplayIngredients();
     }
 }

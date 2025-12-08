@@ -36,6 +36,10 @@ class FoodItem
     {
         
     }
+    public int GetCalories()
+    {
+        return _calories;
+    }
     public void DisplayFoodInformation()
     {
         Console.WriteLine($"Name: {_name}");

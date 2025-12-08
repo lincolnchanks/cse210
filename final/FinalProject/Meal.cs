@@ -11,11 +11,11 @@ class Meal
     {
         
     }
-    public void AddIngredient(FoodItem ingredient, int ingredientAmount, int ingredientCalories)
+    public void AddIngredient(FoodItem ingredient, int ingredientAmount)
     {
         _ingredients.Add(ingredient);
         _ingredientAmounts.Add(ingredientAmount);
-        _totalCalories += ingredientCalories;
+        _totalCalories += ingredient.GetCalories();
     }
     public void RemoveIngredient(FoodItem ingredient, int ingredientAmount, int ingredientCalories)
     {
