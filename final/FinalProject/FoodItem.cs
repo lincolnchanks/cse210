@@ -19,7 +19,10 @@ class FoodItem
     }
     public void Expire()
     {
-        
+        if (!_expired)
+        {
+            _expired = true;
+        }
     }
     public void DisplayFoodItem()
     {
