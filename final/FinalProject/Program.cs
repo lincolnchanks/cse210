@@ -11,6 +11,7 @@ class Program
         bread.DisplayFoodInformation();
 
         Storage fridge = new Storage("Fridge");
+        fridge.AddItem(bread);
         fridge.DisplayInfo();
     }
 }
