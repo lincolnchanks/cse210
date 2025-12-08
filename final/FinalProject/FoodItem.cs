@@ -33,4 +33,14 @@ class FoodItem
     {
         
     }
+    public void DisplayFoodInformation()
+    {
+        Console.WriteLine($"Name: {_name}");
+        Console.WriteLine($"Expiration Date: {_expirationDate}");
+        Console.WriteLine($"Calories Per Serving: {_calories}");
+        Console.WriteLine($"Expired: {_expired}");
+        Console.WriteLine($"Number of Servings: {_numServings}");
+        Console.WriteLine($"Price: {_price}");
+        Console.WriteLine($"Brand: {_brand}");
+    }
 }
