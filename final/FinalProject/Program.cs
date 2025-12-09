@@ -50,6 +50,15 @@ class Program
                     break;
                 case 3:
                     Console.WriteLine("Saving All Data.");
+                    Console.WriteLine("Enter the filename to save to:");
+                    string outputFileName = Console.ReadLine();
+                    using (StreamWriter outputFile = new StreamWriter(outputFileName))
+                    {
+                        foreach(FoodItem foodItem in testStorage.GetContentsList())
+                        {
+                            outputFile.WriteLine($"{foodItem.GetFileSystemString()}");
+                        }
+                    }
                     break;
                 case 4:
                     Console.WriteLine("Loading Data from file.");

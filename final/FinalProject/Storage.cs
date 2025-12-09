@@ -11,6 +11,10 @@ class Storage
     {
         _contents.Add(item);
     }
+    public List<FoodItem> GetContentsList()
+    {
+        return _contents;
+    }
     public void DisplayInfo()
     {
         Console.WriteLine($"Name: {_name}");
