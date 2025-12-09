@@ -5,6 +5,9 @@ class Program
     static void Main(string[] args)
     {
         Menu menu = new Menu();
+        
+        Storage testStorage = new Storage("Overall Storage"); // eventually there'll be a way
+                                                            // to make your own storage.
 
         int response = 0;
         while (response != 9)
@@ -16,6 +19,32 @@ class Program
             {
                 case 1:
                     Console.WriteLine("Adding Item to storage.");
+                    Console.WriteLine("Please enter the name of the food item.");
+                    string tempFoodName = Console.ReadLine();
+                    Console.WriteLine("Enter the expiration date (yyyy/mm/dd).");
+
+                    string tempFoodExpirationDate = Console.ReadLine();
+                    string[] dateData = tempFoodExpirationDate.Split("/");
+                    int tempExpirYear = int.Parse(dateData[0]);
+                    int tempExpirMonth = int.Parse(dateData[1]);
+                    int tempExpirDay = int.Parse(dateData[2]);
+                    
+                    Console.WriteLine("Enter the number of calories.");
+                    int tempFoodCalories = int.Parse(Console.ReadLine());
+                    
+                    Console.WriteLine("Enter the number of servings.");
+                    int tempFoodNumServings = int.Parse(Console.ReadLine());
+                    
+                    Console.WriteLine("Enter the price.");
+                    double tempFoodPrice = double.Parse(Console.ReadLine());
+                    
+                    Console.WriteLine("Enter the brand.");
+                    string tempFoodBrand = Console.ReadLine();
+                    FoodItem tempCurrentFoodItem = new FoodItem(tempFoodName, tempExpirYear, tempExpirMonth, tempExpirDay, tempFoodCalories, tempFoodNumServings, tempFoodPrice, tempFoodBrand);
+                    testStorage.AddItem(tempCurrentFoodItem);
+                    
+                    tempCurrentFoodItem.DisplayFoodInformation();
+                    testStorage.DisplayInfo();
                     break;
                 case 2:
                     Console.WriteLine("Listing Items in Storage.");
