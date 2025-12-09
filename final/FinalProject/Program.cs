@@ -18,11 +18,11 @@ class Program
             switch (response)
             {
                 case 1:
-                    Console.WriteLine("Adding Item to storage.");
+                    // Add one food item to the storage list, based on user input.
                     Console.WriteLine("Please enter the name of the food item.");
                     string tempFoodName = Console.ReadLine();
-                    Console.WriteLine("Enter the expiration date (yyyy/mm/dd).");
 
+                    Console.WriteLine("Enter the expiration date (yyyy/mm/dd).");
                     string tempFoodExpirationDate = Console.ReadLine();
                     string[] dateData = tempFoodExpirationDate.Split("/");
                     int tempExpirYear = int.Parse(dateData[0]);
@@ -40,14 +40,13 @@ class Program
                     
                     Console.WriteLine("Enter the brand.");
                     string tempFoodBrand = Console.ReadLine();
+
                     FoodItem tempCurrentFoodItem = new FoodItem(tempFoodName, tempExpirYear, tempExpirMonth, tempExpirDay, tempFoodCalories, tempFoodNumServings, tempFoodPrice, tempFoodBrand);
                     testStorage.AddItem(tempCurrentFoodItem);
-                    
-                    tempCurrentFoodItem.DisplayFoodInformation();
-                    testStorage.DisplayInfo();
                     break;
                 case 2:
-                    Console.WriteLine("Listing Items in Storage.");
+                    // Display each food item in the storage container.
+                    testStorage.DisplayInfo();
                     break;
                 case 3:
                     Console.WriteLine("Saving All Data.");
