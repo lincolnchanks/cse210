@@ -3,7 +3,7 @@ class Menu
     public int DisplayMenu()
     {
         int response = 0;
-        while (response != 10)
+        while (response < 1 || response > 9)
         {
             Console.WriteLine("1. Add Item to Storage");
             Console.WriteLine("2. List Items in Storage");
@@ -12,8 +12,8 @@ class Menu
             Console.WriteLine("5. Make Recipe");
             Console.WriteLine("6. Check Expiration Dates");
             Console.WriteLine("7. Check Calendar");
-            Console.WriteLine("8. Make Meal");
-            Console.WriteLine("9. Schedule Meal");
+            Console.WriteLine("8. Make and Schedule Meal");
+            Console.WriteLine("9. Quit");
             response = int.Parse(Console.ReadLine());
         }
         return response;
