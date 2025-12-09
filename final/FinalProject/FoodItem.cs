@@ -17,12 +17,16 @@ class FoodItem
         _price = price;
         _brand = brand;
     }
-    public void Expire()
+    public void Expire() // this needs to be called by some sort of refresh method, that checks every day when the user signs in.
     {
         if (!_expired)
         {
             _expired = true;
         }
+    }
+    public string GetFileSystemString()
+    {
+        return $"FoodItem#{_name}#{_expirationDate}#{_calories}#{_expired}#{_numServings}#{_price}#{_brand}";
     }
     public void DisplayFoodItem()
     {
