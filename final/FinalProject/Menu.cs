@@ -1,7 +1,21 @@
 class Menu
 {
-    public void DisplayMenu()
+    public int DisplayMenu()
     {
-        
+        int response = 0;
+        while (response != 10)
+        {
+            Console.WriteLine("1. Add Item to Storage");
+            Console.WriteLine("2. List Items in Storage");
+            Console.WriteLine("3. Save All Data");
+            Console.WriteLine("4. Load Data From File");
+            Console.WriteLine("5. Make Recipe");
+            Console.WriteLine("6. Check Expiration Dates");
+            Console.WriteLine("7. Check Calendar");
+            Console.WriteLine("8. Make Meal");
+            Console.WriteLine("9. Schedule Meal");
+            response = int.Parse(Console.ReadLine());
+        }
+        return response;
     }
 }
