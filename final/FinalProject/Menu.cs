@@ -36,4 +36,22 @@ class Menu
         }
         return storage.GetContentsList()[chosenFoodItem - 1];
     }
+    public Recipe DisplayChooseRecipeMenu(User user)
+    {
+        int count = 1;
+        foreach(Recipe savedRecipe in user.GetSavedRecipes())
+        {
+            Console.WriteLine($"{count}. {savedRecipe.GetRecipeName()}");
+            count++;
+        }
+        count -= 1;
+
+        int chosenRecipe = 0;
+        while (chosenRecipe < 1 || chosenRecipe > count)
+        {
+            Console.WriteLine($"Choose a recipe to base this off of.");
+            chosenRecipe = int.Parse(Console.ReadLine());
+        }
+        return user.GetSavedRecipes()[chosenRecipe - 1];
+    }
 }

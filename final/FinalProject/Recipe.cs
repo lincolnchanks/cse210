@@ -10,7 +10,10 @@ class Recipe
     {
         _recipeName = name;
     }
-
+    public string GetRecipeName()
+    {
+        return _recipeName;
+    }
     public void AddIngredient(FoodItem ingredient, int amount)
     {
         _ingredients.Add(ingredient);

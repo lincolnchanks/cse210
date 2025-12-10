@@ -12,4 +12,8 @@ class User
     {
         _savedRecipes.Add(recipe);
     }
+    public List<Recipe> GetSavedRecipes()
+    {
+        return _savedRecipes;
+    }
 }

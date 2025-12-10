@@ -132,6 +132,9 @@ class Program
                 case 8:
                     Console.WriteLine("Making and Scheduling Meal.");
                     // TO-DO: Make meals from recipe templates.
+                    Recipe tempTemplateRecipe = menu.DisplayChooseRecipeMenu(lincoln);
+
+                    Meal tempMeal = new Meal(tempTemplateRecipe);
 
                     // When making a meal, you can make it from a recipe
                     // or add a new set of ingredients. After a meal is
