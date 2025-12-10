@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReferencePassing", "sandbox
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSpace", "sandbox\NameSpace\NameSpace.csproj", "{9102EE25-255A-4DDF-9363-F02BB7DB4468}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enumerations", "sandbox\Enumerations\Enumerations.csproj", "{09CE5B75-6646-4E31-B893-390391E04291}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -163,6 +165,10 @@ Global
 		{9102EE25-255A-4DDF-9363-F02BB7DB4468}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9102EE25-255A-4DDF-9363-F02BB7DB4468}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9102EE25-255A-4DDF-9363-F02BB7DB4468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09CE5B75-6646-4E31-B893-390391E04291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09CE5B75-6646-4E31-B893-390391E04291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09CE5B75-6646-4E31-B893-390391E04291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09CE5B75-6646-4E31-B893-390391E04291}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -192,6 +198,7 @@ Global
 		{932D87AB-6067-4EB6-80BE-DE1D9CB84922} = {9BD1CAC1-4326-4D59-9857-A733451B87EB}
 		{E221134B-352C-49DA-8FCA-A75ADA94E7C1} = {9BD1CAC1-4326-4D59-9857-A733451B87EB}
 		{9102EE25-255A-4DDF-9363-F02BB7DB4468} = {9BD1CAC1-4326-4D59-9857-A733451B87EB}
+		{09CE5B75-6646-4E31-B893-390391E04291} = {9BD1CAC1-4326-4D59-9857-A733451B87EB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19AF66DC-EAD7-4425-8965-A7DBC84E77B9}
