@@ -12,6 +12,10 @@ class User
     {
         _savedRecipes.Add(recipe);
     }
+    public List<Storage> GetStoragePlaces()
+    {
+        return _storagePlaces;
+    }
     public List<Recipe> GetSavedRecipes()
     {
         return _savedRecipes;

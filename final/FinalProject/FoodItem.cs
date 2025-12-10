@@ -47,6 +47,10 @@ class FoodItem
     {
         return _name;
     }
+    public DateTime GetExpirationDate()
+    {
+        return _expirationDate;
+    }
     public void DisplayFoodItem()
     {
         
