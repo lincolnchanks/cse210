@@ -2,8 +2,8 @@ using System.Numerics;
 
 class Recipe
 {
-    List<FoodItem> _ingredients = new List<FoodItem>();
-    List<int> _ingredientAmounts = new List<int>();
+    private List<FoodItem> _ingredients = new List<FoodItem>();
+    private List<int> _ingredientAmounts = new List<int>();
 
     public void AddIngredient(FoodItem ingredient, int amount)
     {

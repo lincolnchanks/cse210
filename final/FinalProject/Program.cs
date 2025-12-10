@@ -4,10 +4,13 @@ class Program
 {
     static void Main(string[] args)
     {
+        User lincoln = new User();
+
         Menu menu = new Menu();
         
         Storage testStorage = new Storage("Overall Storage"); // eventually there'll be a way
                                                             // to make your own storage.
+        lincoln.AddStoragePlace(testStorage);
 
         int response = 0;
         while (response != 9)
