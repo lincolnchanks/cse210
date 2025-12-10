@@ -8,10 +8,13 @@ class Meal
     private Recipe _recipe;
     // private int _numServings;
 
-    public Meal(List<FoodItem> ingredients, List<int> ingredientAmounts)
+    public Meal(Recipe recipe)
     {
-        _ingredients = ingredients;
-        _ingredientAmounts = ingredientAmounts;
+        _recipe = recipe;
+        
+        _ingredients = _recipe.GetIngredientsList();
+        _ingredientAmounts = _recipe.GetAmountsList();
+        
         foreach(FoodItem foodItem in _ingredients)
         {
             _totalCalories += foodItem.GetCalories();
