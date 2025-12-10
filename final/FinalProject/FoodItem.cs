@@ -2,6 +2,9 @@ class FoodItem
 {
     private string _name;
     private DateTime _expirationDate;
+    private int _expirationYear;
+    private int _expirationMonth;
+    private int _expirationDay;
     private int _calories;
     private bool _expired;
     private int _numServings;
@@ -11,6 +14,9 @@ class FoodItem
     {
         _name = name;
         _expirationDate = new DateTime(expirationYear, expirationMonth, expirationDay);
+        _expirationYear = expirationYear;
+        _expirationMonth = expirationMonth;
+        _expirationDay = expirationDay;
         _calories = calories;
         _expired = false;
         _numServings = numServings;
@@ -26,7 +32,7 @@ class FoodItem
     }
     public string GetFileSystemString()
     {
-        return $"FoodItem#{_name}#{_expirationDate}#{_calories}#{_expired}#{_numServings}#{_price}#{_brand}";
+        return $"FoodItem#{_name}#{_expirationYear}#{_expirationMonth}#{_expirationDay}#{_calories}#{_expired}#{_numServings}#{_price}#{_brand}";
     }
     public void DisplayFoodItem()
     {
