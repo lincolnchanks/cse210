@@ -97,6 +97,10 @@ class Program
                     break;
                 case 5:
                     Console.WriteLine("Making a recipe.");
+                    // This creates a new Recipe object and allows the user to enter ingredients.
+                    // TO-DO:
+                        // Make recipes saveable.
+                        // Make recipes deletable
                     Recipe currentRecipe = new Recipe();
                     bool done = false;
                     while (!done)
@@ -124,6 +128,7 @@ class Program
                     break;
                 case 8:
                     Console.WriteLine("Making and Scheduling Meal.");
+                    // TO-DO: Make meals from recipe templates.
 
                     // When making a meal, you can make it from a recipe
                     // or add a new set of ingredients. After a meal is
