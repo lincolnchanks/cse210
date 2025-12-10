@@ -18,4 +18,8 @@ class Menu
         }
         return response;
     }
+    public int DisplayChooseIngredientMenu()
+    {
+        return 0;
+    }
 }
