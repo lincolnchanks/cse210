@@ -5,7 +5,8 @@ class Meal
     private List<FoodItem> _ingredients = new List<FoodItem>();
     private List<int> _ingredientAmounts = new List<int>();
     private int _totalCalories = 0;
-    private int _numServings;
+    private Recipe _recipe;
+    // private int _numServings;
 
     public Meal(List<FoodItem> ingredients, List<int> ingredientAmounts)
     {

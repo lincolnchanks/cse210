@@ -4,6 +4,12 @@ class Recipe
 {
     private List<FoodItem> _ingredients = new List<FoodItem>();
     private List<int> _ingredientAmounts = new List<int>();
+    private string _recipeName;
+
+    public Recipe(string name)
+    {
+        _recipeName = name;
+    }
 
     public void AddIngredient(FoodItem ingredient, int amount)
     {

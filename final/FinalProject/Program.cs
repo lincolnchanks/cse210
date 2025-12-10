@@ -101,7 +101,10 @@ class Program
                     // TO-DO:
                         // Make recipes saveable.
                         // Make recipes deletable
-                    Recipe currentRecipe = new Recipe();
+                    Console.WriteLine("Enter the name of the recipe:");
+                    string tempRecipeName = Console.ReadLine();
+
+                    Recipe currentRecipe = new Recipe(tempRecipeName);
                     bool done = false;
                     while (!done)
                     {
