@@ -4,7 +4,7 @@ class Calendar
 
     public Calendar(List<Day> days)
     {
-        
+        _days = days;
     }
     public void DisplayCalendar(int dateRange)
     {
