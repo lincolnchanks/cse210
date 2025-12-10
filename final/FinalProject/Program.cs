@@ -1,5 +1,9 @@
 using System;
 using System.Data;
+using static FoodItemLoadData;
+
+enum FoodItemLoadData {Name, ExpirYear, ExpirMonth, 
+    ExpirDay, Calories, NumServings, Price, Brand}
 
 class Program
 {
