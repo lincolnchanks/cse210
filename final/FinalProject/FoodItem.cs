@@ -43,6 +43,10 @@ class FoodItem
     {
         return $"FoodItem#{_name}#{_expirationYear}#{_expirationMonth}#{_expirationDay}#{_calories}#{_expired}#{_numServings}#{_price}#{_brand}";
     }
+    public string GetName()
+    {
+        return _name;
+    }
     public void DisplayFoodItem()
     {
         

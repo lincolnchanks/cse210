@@ -18,8 +18,21 @@ class Menu
         }
         return response;
     }
-    public int DisplayChooseIngredientMenu()
+    public int DisplayChooseIngredientMenu(Storage storage)
     {
-        return 0;
+        int count = 1;
+        foreach(FoodItem foodItem in storage.GetContentsList())
+        {
+            Console.WriteLine($"{count}. {foodItem.GetName()}");
+        }
+        count -= 1;
+
+        int response = 0;
+        while (response < 1 || response > count)
+        {
+            Console.WriteLine("Choose an ingredient to add.");
+            response = int.Parse(Console.ReadLine());
+        }
+        return response;
     }
 }

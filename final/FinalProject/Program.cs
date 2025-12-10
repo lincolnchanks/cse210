@@ -41,7 +41,9 @@ class Program
                     Console.WriteLine("Enter the brand.");
                     string tempFoodBrand = Console.ReadLine();
 
-                    FoodItem tempCurrentFoodItem = new FoodItem(tempFoodName, tempExpirYear, tempExpirMonth, tempExpirDay, tempFoodCalories, tempFoodNumServings, tempFoodPrice, tempFoodBrand);
+                    FoodItem tempCurrentFoodItem = new FoodItem(tempFoodName, tempExpirYear, 
+                        tempExpirMonth, tempExpirDay, tempFoodCalories, tempFoodNumServings, 
+                        tempFoodPrice, tempFoodBrand);
                     testStorage.AddItem(tempCurrentFoodItem);
                     break;
                 case 2:
@@ -79,7 +81,9 @@ class Program
                         double foodPrice = double.Parse(foodLineInfo[8]);
                         string foodBrand = foodLineInfo[9];
 
-                        FoodItem loadedFoodItem = new FoodItem(foodName, foodExpirYear, foodExpirMonth, foodExpirDay, foodCalories, foodNumServings, foodPrice, foodBrand);
+                        FoodItem loadedFoodItem = new FoodItem(foodName, foodExpirYear, 
+                            foodExpirMonth, foodExpirDay, foodCalories, foodNumServings, 
+                            foodPrice, foodBrand);
                         testStorage.AddItem(loadedFoodItem);
                     }
                     break;
@@ -114,7 +118,7 @@ class Program
         // Console.WriteLine(currentDate);
 
         // Console.WriteLine("Hello FinalProject World!");
-        FoodItem bread = new FoodItem("Bread", 2025, 12, 19, 300, 10, 2.98, "Grandma Sycamore's");
+        // FoodItem bread = new FoodItem("Bread", 2025, 12, 19, 300, 10, 2.98, "Grandma Sycamore's");
         // Console.WriteLine(bread.GetFileSystemString());
         // bread.DisplayFoodInformation();
         // bread.Expire();
@@ -124,18 +128,18 @@ class Program
         // fridge.AddItem(bread);
         // fridge.DisplayInfo();
 
-        FoodItem meatballs = new FoodItem("Meatballs", 2025, 12, 19, 300, 6, 12.43, "IDK Brand");
+        // FoodItem meatballs = new FoodItem("Meatballs", 2025, 12, 19, 300, 6, 12.43, "IDK Brand");
 
-        List<FoodItem> testItems = new List<FoodItem>();
-        testItems.Add(bread);
-        testItems.Add(meatballs);
+        // List<FoodItem> testItems = new List<FoodItem>();
+        // testItems.Add(bread);
+        // testItems.Add(meatballs);
 
-        List<int> testAmounts = new List<int>();
-        testAmounts.Add(13);
-        testAmounts.Add(24);
+        // List<int> testAmounts = new List<int>();
+        // testAmounts.Add(13);
+        // testAmounts.Add(24);
 
-        Meal peachesAndMeatballs = new Meal(testItems, testAmounts);
-        // peachesAndMeatballs.AddIngredient(meatballs, 24);
-        peachesAndMeatballs.DisplayIngredients();
+        // Meal peachesAndMeatballs = new Meal(testItems, testAmounts);
+        // // peachesAndMeatballs.AddIngredient(meatballs, 24);
+        // peachesAndMeatballs.DisplayIngredients();
     }
 }
