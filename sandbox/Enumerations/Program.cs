@@ -2,7 +2,8 @@
 
 enum Months {January, February, March, April, May, June, 
     July, August, September, October, November, December}
-
+// You can use this in the food program to help with indexes and indexing!
+// enum InputLoadData {}
 class Program
 {
     public static void Main(string[] args)
