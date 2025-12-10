@@ -91,7 +91,7 @@ class Program
                         double foodPrice = double.Parse(foodLineInfo[8]);
                         string foodBrand = foodLineInfo[9];
 
-                        FoodItem loadedFoodItem = new FoodItem(foodName, foodExpirYear, foodExpirMonth, foodExpirDay, foodCalories, foodExpired, foodNumServings, foodPrice, foodBrand);
+                        FoodItem loadedFoodItem = new FoodItem(foodName, foodExpirYear, foodExpirMonth, foodExpirDay, foodCalories, foodNumServings, foodPrice, foodBrand);
                         testStorage.AddItem(loadedFoodItem);
                     }
                     
@@ -119,6 +119,9 @@ class Program
                     break;
             }
         }
+
+        // DateTime currentDate = DateTime.Today;
+        // Console.WriteLine(currentDate);
 
         // Console.WriteLine("Hello FinalProject World!");
         // FoodItem bread = new FoodItem("Bread", 2025, 12, 19, 300, 10, 2.98, "Grandma Sycamore's");

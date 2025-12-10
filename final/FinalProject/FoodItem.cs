@@ -12,30 +12,39 @@ class FoodItem
     private string _brand;
     public FoodItem(string name, int expirationYear, int expirationMonth, int expirationDay, int calories, int numServings, double price, string brand)
     {
+        DateTime currentDate = DateTime.Today;
         _name = name;
         _expirationDate = new DateTime(expirationYear, expirationMonth, expirationDay);
         _expirationYear = expirationYear;
         _expirationMonth = expirationMonth;
         _expirationDay = expirationDay;
         _calories = calories;
-        _expired = false;
+        if (currentDate < _expirationDate)
+        {
+            _expired = false;
+        }
+        else
+        {
+            _expired = true;
+            // if (currentDate == _expirationDate) Add some behavior for when food is expiring today.
+        }
         _numServings = numServings;
         _price = price;
         _brand = brand;
     }
-    public FoodItem(string name, int expirationYear, int expirationMonth, int expirationDay, int calories, bool isExpired, int numServings, double price, string brand)
-    {
-        _name = name;
-        _expirationDate = new DateTime(expirationYear, expirationMonth, expirationDay);
-        _expirationYear = expirationYear;
-        _expirationMonth = expirationMonth;
-        _expirationDay = expirationDay;
-        _calories = calories;
-        _expired = isExpired;
-        _numServings = numServings;
-        _price = price;
-        _brand = brand;
-    }
+    // public FoodItem(string name, int expirationYear, int expirationMonth, int expirationDay, int calories, bool isExpired, int numServings, double price, string brand)
+    // {
+    //     _name = name;
+    //     _expirationDate = new DateTime(expirationYear, expirationMonth, expirationDay);
+    //     _expirationYear = expirationYear;
+    //     _expirationMonth = expirationMonth;
+    //     _expirationDay = expirationDay;
+    //     _calories = calories;
+    //     _expired = isExpired;
+    //     _numServings = numServings;
+    //     _price = price;
+    //     _brand = brand;
+    // }
     public void Expire() // this needs to be called by some sort of refresh method, that checks every day when the user signs in.
     {
         if (!_expired)
