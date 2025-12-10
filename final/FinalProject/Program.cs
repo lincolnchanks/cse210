@@ -7,67 +7,6 @@ using System.Data;
 
 class Program
 {
-    // static Calendar SetupCalendar(User user)
-    // Could this be better used within the constructor for Calendar? Come to think of it,
-    // I think so.
-    // {
-        // Calendar calendar = new Calendar();
-        // List<Day> calendarDaysList = new List<Day>();
-
-        // // Take today's date and extract the year, month, and day.
-        // DateTime currentDate = DateTime.Today;
-        // int currYear = currentDate.Year;
-        // int currMonth = currentDate.Month;
-        // int currDay = currentDate.Day;
-        // // I believe this loops 30 times? So it'll block out the next 30 days.
-        // // Realistically, I don't think we care about food that expires 30 days from now.
-        // // At least, we can worry about that later when the program is more built up.
-        // for(int i = 0; i < 30; i++)
-        // {
-        //     if (currMonth is 1 or 3 or 5 or 7 or 8 or 10 or 12)
-        //     {
-        //         if ((31 - currDay) > i)
-        //         {
-        //             Day tempDay = new Day(currYear, currMonth, currDay + i, user);
-        //             calendarDaysList.Add(tempDay);
-        //         }
-        //         else
-        //         {
-        //             Day tempDay = new Day(currYear, currMonth + 1, i - (31 - currDay), user);
-        //             calendarDaysList.Add(tempDay);
-        //         }
-        //     }
-        //     else if (currMonth is 4 or 6 or 9 or 11)
-        //     {
-        //         if ((30 - currDay) > i)
-        //         {
-        //             Day tempDay = new Day(currYear, currMonth, currDay + i, user);
-        //             calendarDaysList.Add(tempDay);
-        //         }
-        //         else
-        //         {
-        //             Day tempDay = new Day(currYear, currMonth + 1, i - (30 - currDay), user);
-        //             calendarDaysList.Add(tempDay);
-        //         }
-        //     }
-        //     else
-        //     {
-        //         if ((28 - currDay) > i)
-        //         {
-        //             Day tempDay = new Day(currYear, currMonth, currDay + i, user);
-        //             calendarDaysList.Add(tempDay);
-        //         }
-        //         else
-        //         {
-        //             Day tempDay = new Day(currYear, currMonth + 1, i - (28 - currDay), user);
-        //             calendarDaysList.Add(tempDay);
-        //         }
-        //     }
-        // }
-        // Calendar calendar = new Calendar(user);
-        // return calendar;
-    // }
-
     static void Main(string[] args)
     {
         User lincoln = new User();
