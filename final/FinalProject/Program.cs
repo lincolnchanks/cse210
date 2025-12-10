@@ -76,17 +76,6 @@ class Program
                         int foodExpirDay = int.Parse(foodLineInfo[4]);
                         int foodCalories = int.Parse(foodLineInfo[5]);
 
-                        bool foodExpired;
-                        string foodExpirString = foodLineInfo[6];
-                        if (foodExpirString == "True")
-                        {
-                            foodExpired = true;
-                        }
-                        else
-                        {
-                            foodExpired = false;
-                        }
-
                         int foodNumServings = int.Parse(foodLineInfo[7]);
                         double foodPrice = double.Parse(foodLineInfo[8]);
                         string foodBrand = foodLineInfo[9];
