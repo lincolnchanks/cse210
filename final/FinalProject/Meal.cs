@@ -7,6 +7,16 @@ class Meal
     private int _totalCalories = 0;
     private int _numServings;
 
+    public Meal(List<FoodItem> ingredients, List<int> ingredientAmounts)
+    {
+        _ingredients = ingredients;
+        _ingredientAmounts = ingredientAmounts;
+        foreach(FoodItem foodItem in _ingredients)
+        {
+            _totalCalories += foodItem.GetCalories();
+        }
+    }
+
     public void RemoveItemsFromStorage(Storage storage)
     {
         
