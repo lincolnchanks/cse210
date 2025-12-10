@@ -101,8 +101,12 @@ class Program
                         Console.WriteLine("Enter the amount of this ingredient:");
                         int currentIngredientAmount = int.Parse(Console.ReadLine());
                         currentRecipe.AddIngredient(currentIngredient, currentIngredientAmount);
-                        done = true; // temp code
-                        // currently you can only add one item
+                        Console.WriteLine("Continue? (Y/N)");
+                        string finResponse = Console.ReadLine();
+                        if (!(finResponse.ToLower() == "y"))
+                        {
+                            done = true;
+                        }
                     }
                     currentRecipe.DisplayRecipe();
                     break;
