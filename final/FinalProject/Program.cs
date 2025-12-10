@@ -71,7 +71,28 @@ class Program
                         string[] foodLineInfo = foodLine.Split("#");
 
                         string foodName = foodLineInfo[1];
-                        
+                        int foodExpirYear = int.Parse(foodLineInfo[2]);
+                        int foodExpirMonth = int.Parse(foodLineInfo[3]);
+                        int foodExpirDay = int.Parse(foodLineInfo[4]);
+                        int foodCalories = int.Parse(foodLineInfo[5]);
+
+                        bool foodExpired;
+                        string foodExpirString = foodLineInfo[6];
+                        if (foodExpirString == "True")
+                        {
+                            foodExpired = true;
+                        }
+                        else
+                        {
+                            foodExpired = false;
+                        }
+
+                        int foodNumServings = int.Parse(foodLineInfo[7]);
+                        double foodPrice = double.Parse(foodLineInfo[8]);
+                        string foodBrand = foodLineInfo[9];
+
+                        FoodItem loadedFoodItem = new FoodItem(foodName, foodExpirYear, foodExpirMonth, foodExpirDay, foodCalories, foodExpired, foodNumServings, foodPrice, foodBrand);
+                        testStorage.AddItem(loadedFoodItem);
                     }
                     
                     break;
@@ -98,7 +119,6 @@ class Program
                     break;
             }
         }
-
 
         // Console.WriteLine("Hello FinalProject World!");
         // FoodItem bread = new FoodItem("Bread", 2025, 12, 19, 300, 10, 2.98, "Grandma Sycamore's");
