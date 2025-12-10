@@ -49,7 +49,6 @@ class Program
                     testStorage.DisplayInfo();
                     break;
                 case 3:
-                    Console.WriteLine("Saving All Data.");
                     Console.WriteLine("Enter the filename to save to:");
                     string outputFileName = Console.ReadLine();
                     using (StreamWriter outputFile = new StreamWriter(outputFileName))
@@ -62,6 +61,19 @@ class Program
                     break;
                 case 4:
                     Console.WriteLine("Loading Data from file.");
+                    Console.WriteLine("Enter the filename to load from (this will override your current data):");
+                    string inputFileName = Console.ReadLine();
+                    string[] foodLines = System.IO.File.ReadAllLines(inputFileName);
+                    testStorage = new Storage("Overall Storage");
+
+                    foreach(string foodLine in foodLines)
+                    {
+                        string[] foodLineInfo = foodLine.Split("#");
+
+                        string foodName = foodLineInfo[1];
+                        
+                    }
+                    
                     break;
                 case 5:
                     Console.WriteLine("Making a recipe.");
