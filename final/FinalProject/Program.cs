@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 
 class Program
 {
@@ -92,6 +93,18 @@ class Program
                     break;
                 case 5:
                     Console.WriteLine("Making a recipe.");
+                    Recipe currentRecipe = new Recipe();
+                    bool done = false;
+                    while (!done)
+                    {
+                        FoodItem currentIngredient = menu.DisplayChooseIngredientMenu(testStorage);
+                        Console.WriteLine("Enter the amount of this ingredient:");
+                        int currentIngredientAmount = int.Parse(Console.ReadLine());
+                        currentRecipe.AddIngredient(currentIngredient, currentIngredientAmount);
+                        done = true; // temp code
+                        // currently you can only add one item
+                    }
+                    currentRecipe.DisplayRecipe();
                     break;
                 case 6:
                     Console.WriteLine("Checking Expiration Dates.");

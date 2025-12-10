@@ -18,4 +18,11 @@ class Recipe
     {
         return _ingredientAmounts;
     }
+    public void DisplayRecipe()
+    {
+        foreach (FoodItem foodItem in _ingredients)
+        {
+            foodItem.DisplayFoodInformation();
+        }
+    }
 }
