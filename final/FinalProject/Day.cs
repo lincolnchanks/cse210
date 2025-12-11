@@ -1,7 +1,8 @@
 class Day
 {
     private DateTime _date;
-    private List<FoodItem> _expiringItems;
+    private List<FoodItem> _expiringItems = new List<FoodItem>();
+    private bool _hasExpiringItems = false;
     private Meal _breakfast;
     private Meal _lunch;
     private Meal _dinner;
@@ -18,27 +19,35 @@ class Day
                 if (foodItem.GetExpirationDate() == _date)
                 {
                     _expiringItems.Add(foodItem);
+                    _hasExpiringItems = true;
                 }
             }
         }
     }
-    public Day(DateTime date, User user)
-    {
-        _date = date;
-        foreach (Storage storage in user.GetStoragePlaces())
-        {
-            foreach(FoodItem foodItem in storage.GetContentsList())
-            {
-                if (foodItem.GetExpirationDate() == _date)
-                {
-                    _expiringItems.Add(foodItem);
-                }
-            }
-        }
-    }
+    // public Day(DateTime date, User user)
+    // {
+    //     _date = date;
+    //     foreach (Storage storage in user.GetStoragePlaces())
+    //     {
+    //         foreach(FoodItem foodItem in storage.GetContentsList())
+    //         {
+    //             if (foodItem.GetExpirationDate() == _date)
+    //             {
+    //                 _expiringItems.Add(foodItem);
+    //             }
+    //         }
+    //     }
+    // }
     public void DisplayDay()
     {
         Console.WriteLine($"{_date.Year}/{_date.Month}/{_date.Day}");
+        if (this._hasExpiringItems)
+        {
+            foreach(FoodItem item in _expiringItems)
+            {
+                Console.WriteLine($"Expiring today: {item.GetName()}");
+            }
+        }
     }
     public void SetBreakfast(Meal breakfast)
     {

@@ -53,15 +53,14 @@ class Calendar
                 days.Add(tempDay);
             }
 
+            // For some reason I can't directly add Day objects to _days.
             _days = days;
 
             //TO-DO: Handle year wrapping as well.
         }
     }
-    public void DisplayCalendar(int dateRange)
+    public void DisplayCalendar()
     {
-        // For each day:
-            // Print the DateTime info
         foreach (Day day in _days)
         {
             day.DisplayDay();
