@@ -22,5 +22,7 @@ class Program
 
         Console.WriteLine($"The number of days in February is {DaysInTheMonth[(int)February]}");
         Console.WriteLine($"The number of days in June is {DaysInTheMonth[(int)June]}");
+        Console.WriteLine($"The number of days in January is {DaysInTheMonth[(int)January]}");
+        Console.WriteLine($"The number of days in May is {DaysInTheMonth[(int)May]}");
     }
 }
