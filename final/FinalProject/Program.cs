@@ -69,7 +69,7 @@ class Program
                         {
                             outputFile.WriteLine($"{foodItem.GetFileSystemString()}");
                         }
-                        outputFile.WriteLine("");
+                        // FoodItems are written out regardless of order. Recipes are not.
                         foreach(Recipe recipe in lincoln.GetSavedRecipes())
                         {
                             outputFile.WriteLine($"{recipe.GetFileSystemString()}");
@@ -127,6 +127,7 @@ class Program
                         }
                     }
                     currentRecipe.DisplayRecipe();
+                    lincoln.AddRecipe(currentRecipe); // This should make recipes saveable.
                     break;
                 case 6:
                     Console.WriteLine("Checking Expiration Dates.");
@@ -158,7 +159,7 @@ class Program
 
         // Recipe recipe1 = new Recipe("JKJK");
 
-        // calendar.DisplayCalendar();
+        calendar.DisplayCalendar();
 
         // DateTime currentDate = DateTime.Today;
         // Console.WriteLine(currentDate);
