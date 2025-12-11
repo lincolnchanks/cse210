@@ -66,4 +66,8 @@ class Calendar
             day.DisplayDay();
         }
     }
+    public List<Day> GetDays()
+    {
+        return _days;
+    }
 }

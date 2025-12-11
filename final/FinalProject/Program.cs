@@ -28,7 +28,7 @@ class Program
             switch (response)
             {
                 case 1:
-                    // Add one food item to the storage list, based on user input.
+                    // Getting user input
                     Console.WriteLine("Please enter the name of the food item.");
                     string tempFoodName = Console.ReadLine();
 
@@ -51,10 +51,18 @@ class Program
                     Console.WriteLine("Enter the brand.");
                     string tempFoodBrand = Console.ReadLine();
 
+                    // Creating Item
                     FoodItem tempCurrentFoodItem = new FoodItem(tempFoodName, tempExpirYear, 
                         tempExpirMonth, tempExpirDay, tempFoodCalories, tempFoodNumServings, 
                         tempFoodPrice, tempFoodBrand);
+                    
+                    // Adding to storage
                     testStorage.AddItem(tempCurrentFoodItem);
+
+                    foreach (Day day in calendar.GetDays())
+                    {
+                        Console.WriteLine("Day");
+                    }
                     break;
                 case 2:
                     // Display each food item in the storage container.
@@ -106,8 +114,8 @@ class Program
                     Console.WriteLine("Making a recipe.");
                     // This creates a new Recipe object and allows the user to enter ingredients.
                     // TO-DO:
-                        // Make recipes saveable.
                         // Make recipes deletable
+                        // Make recipes listable
                     Console.WriteLine("Enter the name of the recipe:");
                     string tempRecipeName = Console.ReadLine();
 
@@ -136,6 +144,7 @@ class Program
                     Console.WriteLine("Checking Calendar.");
                     // Displays each day with the food items expiring that day, plus each meal
                     // planned for it.
+                    // What if we run the calendar constructor every time this command is run?
                     break;
                 case 8:
                     Console.WriteLine("Making and Scheduling Meal.");
