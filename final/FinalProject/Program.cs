@@ -69,6 +69,11 @@ class Program
                         {
                             outputFile.WriteLine($"{foodItem.GetFileSystemString()}");
                         }
+                        outputFile.WriteLine("");
+                        foreach(Recipe recipe in lincoln.GetSavedRecipes())
+                        {
+                            outputFile.WriteLine($"{recipe.GetFileSystemString()}");
+                        }
                     }
                     break;
                 case 4:
@@ -151,7 +156,9 @@ class Program
             }
         }
 
-        calendar.DisplayCalendar();
+        // Recipe recipe1 = new Recipe("JKJK");
+
+        // calendar.DisplayCalendar();
 
         // DateTime currentDate = DateTime.Today;
         // Console.WriteLine(currentDate);
@@ -168,6 +175,11 @@ class Program
         // fridge.DisplayInfo();
 
         // FoodItem meatballs = new FoodItem("Meatballs", 2025, 12, 19, 300, 6, 12.43, "IDK Brand");
+
+        // recipe1.AddIngredient(bread, 10);
+        // recipe1.AddIngredient(meatballs, 12);
+
+        // Console.WriteLine(recipe1.GetFileSystemString());
 
         // List<FoodItem> testItems = new List<FoodItem>();
         // testItems.Add(bread);

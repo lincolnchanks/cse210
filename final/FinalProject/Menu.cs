@@ -14,7 +14,14 @@ class Menu
             Console.WriteLine("7. Check Calendar");
             Console.WriteLine("8. Make and Schedule Meal");
             Console.WriteLine("9. Quit");
-            response = int.Parse(Console.ReadLine());
+            try
+            {
+                response = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Input must be an integer between 1 and 9.");
+            }
         }
         return response;
     }
@@ -32,7 +39,14 @@ class Menu
         while (chosenFoodItem < 1 || chosenFoodItem > count)
         {
             Console.WriteLine("Choose an ingredient to add.");
-            chosenFoodItem = int.Parse(Console.ReadLine());
+            try
+            {
+                chosenFoodItem = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine($"Input must be an integer between 1 and {count}.");
+            }
         }
         return storage.GetContentsList()[chosenFoodItem - 1];
     }
@@ -50,7 +64,14 @@ class Menu
         while (chosenRecipe < 1 || chosenRecipe > count)
         {
             Console.WriteLine($"Choose a recipe to base this off of.");
-            chosenRecipe = int.Parse(Console.ReadLine());
+            try
+            {
+                chosenRecipe = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine($"Input must be an integer between 1 and {count}.");
+            }
         }
         return user.GetSavedRecipes()[chosenRecipe - 1];
     }

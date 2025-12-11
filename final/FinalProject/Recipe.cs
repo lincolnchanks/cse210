@@ -34,4 +34,19 @@ class Recipe
             foodItem.DisplayFoodInformation();
         }
     }
+    public string GetFileSystemString()
+    {
+        string fileString = $"Recipe#{_recipeName}#ingredients";
+        foreach(FoodItem foodItem in _ingredients)
+        {
+            fileString += $"#{foodItem.GetName()}";
+        }
+        fileString += $"#ingredientAmounts";
+        foreach(int amount in _ingredientAmounts)
+        {
+            fileString += $"#{amount}";
+        }
+
+        return fileString;
+    }
 }
