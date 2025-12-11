@@ -151,6 +151,8 @@ class Program
             }
         }
 
+        calendar.DisplayCalendar(1);
+
         // DateTime currentDate = DateTime.Today;
         // Console.WriteLine(currentDate);
 

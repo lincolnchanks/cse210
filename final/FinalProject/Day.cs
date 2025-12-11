@@ -36,6 +36,10 @@ class Day
             }
         }
     }
+    public void DisplayDay()
+    {
+        Console.WriteLine($"{_date.Year}/{_date.Month}/{_date.Day}");
+    }
     public void SetBreakfast(Meal breakfast)
     {
         
