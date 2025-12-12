@@ -157,10 +157,7 @@ class Program
                     Console.WriteLine("Checking Expiration Dates.");
                     break;
                 case 7:
-                    Console.WriteLine("Checking Calendar.");
-                    // Displays each day with the food items expiring that day, plus each meal
-                    // planned for it.
-                    // What if we run the calendar constructor every time this command is run?
+                    calendar.DisplayCalendar();
                     break;
                 case 8:
                 // TO-DO:
@@ -226,8 +223,6 @@ class Program
         }
 
         // Recipe recipe1 = new Recipe("JKJK");
-
-        calendar.DisplayCalendar();
 
         // DateTime currentDate = DateTime.Today;
         // Console.WriteLine(currentDate);
