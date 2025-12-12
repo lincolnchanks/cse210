@@ -130,6 +130,7 @@ class Program
                     // TO-DO:
                         // Make recipes deletable
                         // Make recipes listable
+                        // If there are no ingredients in the list, accommodate that
                     Console.WriteLine("Enter the name of the recipe:");
                     string tempRecipeName = Console.ReadLine();
 
@@ -161,12 +162,25 @@ class Program
                     // What if we run the calendar constructor every time this command is run?
                     break;
                 case 8:
+                // TO-DO:
+                // If there are no recipes to choose from, accommodate that.
                     Console.WriteLine("Making and Scheduling Meal.");
                     Recipe tempTemplateRecipe = menu.DisplayChooseRecipeMenu(lincoln);
 
                     Meal tempMeal = new Meal(tempTemplateRecipe);
                     int chosenMeal = menu.DisplayChooseMealMenu();
-                    Console.WriteLine(chosenMeal);
+                    switch (chosenMeal)
+                    {
+                        case 1:
+                            Console.WriteLine("Breakfast");
+                            break;
+                        case 2:
+                            Console.WriteLine("Lunch");
+                            break;
+                        case 3:
+                            Console.WriteLine("Dinner");
+                            break;
+                    }
 
                     // You can only make meals from recipes.
 
