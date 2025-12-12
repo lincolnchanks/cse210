@@ -6,6 +6,9 @@ class Day
     private Meal _breakfast;
     private Meal _lunch;
     private Meal _dinner;
+    private bool _breakfastAssigned = false;
+    private bool _lunchAssigned = false;
+    private bool _dinnerAssigned = false;
 
     public Day(int year, int month, int day, User user)
     {
@@ -30,13 +33,28 @@ class Day
     }
     public void DisplayDay()
     {
+        // Date String
         Console.WriteLine(GetDateString());
+        // Expiring Items
         if (this._hasExpiringItems)
         {
             foreach(FoodItem item in _expiringItems)
             {
                 Console.WriteLine($"Expiring today: {item.GetName()}");
             }
+        }
+        // Display Meals
+        if (_breakfastAssigned)
+        {
+            Console.WriteLine($"Breakfast: {_breakfast.GetMealName()}");
+        }
+        if (_lunchAssigned)
+        {
+            Console.WriteLine($"Lunch: {_lunch.GetMealName()}");
+        }
+        if (_dinnerAssigned)
+        {
+            Console.WriteLine($"Dinner: {_dinner.GetMealName()}");
         }
     }
     public DateTime GetDate()
@@ -49,15 +67,30 @@ class Day
     }
     public void SetBreakfast(Meal breakfast)
     {
-        
+        _breakfast = breakfast;
+        _breakfastAssigned = true;
     }
     public void SetLunch(Meal lunch)
     {
-        
+        _lunch = lunch;
+        _lunchAssigned = true;
     }
     public void SetDinner(Meal dinner)
     {
-        
+        _dinner = dinner;
+        _dinnerAssigned = true;
+    }
+    public Meal GetBreakfast()
+    {
+        return _breakfast;
+    }
+    public Meal GetLunch()
+    {
+        return _lunch;
+    }
+    public Meal GetDinner()
+    {
+        return _dinner;
     }
     public void AddItemExpiration(FoodItem expiringItem)
     {

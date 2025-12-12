@@ -167,34 +167,60 @@ class Program
                 // If there are no recipes to choose from, accommodate that.
                     Console.WriteLine("Making and Scheduling Meal.");
                     Recipe tempTemplateRecipe = menu.DisplayChooseRecipeMenu(lincoln);
+                    Meal tempMeal = new Meal(tempTemplateRecipe);
 
                     Console.WriteLine($"Select the date for this meal (up to {calendar.GetDays()[calendar.GetDays().Count - 1].GetDateString()})");
                     string inputDateString = Console.ReadLine();
-
                     string[] inputDateData = inputDateString.Split("/");
-                    int inputExpirYear = int.Parse(inputDateData[0]);
-                    int inputExpirMonth = int.Parse(inputDateData[1]);
-                    int inputExpirDay = int.Parse(inputDateData[2]);
+                    int inputYear = int.Parse(inputDateData[0]);
+                    int inputMonth = int.Parse(inputDateData[1]);
+                    int inputDay = int.Parse(inputDateData[2]);
 
-                    Meal tempMeal = new Meal(tempTemplateRecipe);
+                    Day templateDay = new Day(inputYear, inputMonth, inputDay, lincoln);
                     int chosenMeal = menu.DisplayChooseMealMenu();
+                    string chosenMealString;
                     switch (chosenMeal)
                     {
                         case 1:
                             Console.WriteLine("Breakfast");
+                            templateDay.SetBreakfast(tempMeal);
+                            chosenMealString = "Breakfast";
                             break;
                         case 2:
                             Console.WriteLine("Lunch");
+                            templateDay.SetLunch(tempMeal);
+                            chosenMealString = "Lunch";
                             break;
-                        case 3:
+                        default:
                             Console.WriteLine("Dinner");
+                            templateDay.SetDinner(tempMeal);
+                            chosenMealString = "Dinner";
                             break;
                     }
 
-                    // You can only make meals from recipes.
-
-                    // After the meal is created you are prompted to choose a day to
-                    // schedule it onto.
+                    // Puts the meal into the official calendar list.
+                    foreach(Day day in calendar.GetDays())
+                    {
+                        if (day.GetDateString() == inputDateString)
+                        {
+                            switch (chosenMealString)
+                            {
+                                case "Breakfast":
+                                    day.SetBreakfast(templateDay.GetBreakfast());
+                                    break;
+                                case "Lunch":
+                                    day.SetLunch(templateDay.GetLunch());
+                                    break;
+                                default:
+                                    day.SetDinner(templateDay.GetDinner());
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Invalid date. Cannot plan beyond two weeks out.");
+                        }
+                    }
                     break;
             }
         }

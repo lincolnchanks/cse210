@@ -20,7 +20,10 @@ class Meal
             _totalCalories += foodItem.GetCalories();
         }
     }
-
+    public string GetMealName()
+    {
+        return _recipe.GetRecipeName();
+    }
     public void RemoveItemsFromStorage(Storage storage)
     {
         
