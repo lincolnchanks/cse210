@@ -153,31 +153,8 @@ class Program
                                         break;
                                     }
                                 }
-                                // tempLoadedRecipe.AddIngredient(fileRecipeIngredients[i], int.Parse(fileRecipeAmounts[i]));
                             }
                             lincoln.AddRecipe(tempLoadedRecipe);
-                            // bool readingIngredients = false;
-                            // bool readingAmounts = false;
-                            // for (int i = 2; i < foodLineInfo.Count(); i++)
-                            // {
-                            //     if (foodLineInfo[i] == "ingredients")
-                            //     {
-                            //         readingIngredients = true;
-                            //     }
-
-                            //     if (readingIngredients && foodLineInfo[i] != "ingredients")
-                            //     {
-                            //         if (foodLineInfo[i] == "ingredientAmounts")
-                            //         {
-                            //             readingIngredients = false;
-                            //             readingAmounts = true;
-                            //         }
-                            //         else
-                            //         {
-                            //             string tempFileIngredientName = foodLineInfo[i];
-                            //         }
-                            //     }
-                            // }
                         }
                     }
                     break;
@@ -277,40 +254,5 @@ class Program
                     break;
             }
         }
-
-        // Recipe recipe1 = new Recipe("JKJK");
-
-        // DateTime currentDate = DateTime.Today;
-        // Console.WriteLine(currentDate);
-
-        // Console.WriteLine("Hello FinalProject World!");
-        // FoodItem bread = new FoodItem("Bread", 2025, 12, 19, 300, 10, 2.98, "Grandma Sycamore's");
-        // Console.WriteLine(bread.GetFileSystemString());
-        // bread.DisplayFoodInformation();
-        // bread.Expire();
-        // bread.DisplayFoodInformation();
-
-        // Storage fridge = new Storage("Fridge");
-        // fridge.AddItem(bread);
-        // fridge.DisplayInfo();
-
-        // FoodItem meatballs = new FoodItem("Meatballs", 2025, 12, 19, 300, 6, 12.43, "IDK Brand");
-
-        // recipe1.AddIngredient(bread, 10);
-        // recipe1.AddIngredient(meatballs, 12);
-
-        // Console.WriteLine(recipe1.GetFileSystemString());
-
-        // List<FoodItem> testItems = new List<FoodItem>();
-        // testItems.Add(bread);
-        // testItems.Add(meatballs);
-
-        // List<int> testAmounts = new List<int>();
-        // testAmounts.Add(13);
-        // testAmounts.Add(24);
-
-        // Meal peachesAndMeatballs = new Meal(testItems, testAmounts);
-        // // peachesAndMeatballs.AddIngredient(meatballs, 24);
-        // peachesAndMeatballs.DisplayIngredients();
     }
 }
