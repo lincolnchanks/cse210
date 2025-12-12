@@ -52,6 +52,10 @@ class Day
             }
         }
     }
+    public DateTime GetDate()
+    {
+        return _date;
+    }
     public void SetBreakfast(Meal breakfast)
     {
         

@@ -61,7 +61,13 @@ class Program
 
                     foreach (Day day in calendar.GetDays())
                     {
-                        Console.WriteLine("Day");
+                        // Console.WriteLine("Day");
+                        // Console.WriteLine(day.GetDate() == tempCurrentFoodItem.GetExpirationDate());
+                        if (day.GetDate() == tempCurrentFoodItem.GetExpirationDate())
+                        {
+                            day.AddItemExpiration(tempCurrentFoodItem);
+                            break;
+                        }
                     }
                     break;
                 case 2:
