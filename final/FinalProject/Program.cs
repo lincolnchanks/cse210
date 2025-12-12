@@ -115,6 +115,7 @@ class Program
                             foodPrice, foodBrand);
                         testStorage.AddItem(loadedFoodItem);
                     }
+                    calendar = new Calendar(lincoln);
                     break;
                 case 5:
                     Console.WriteLine("Making a recipe.");
@@ -154,17 +155,11 @@ class Program
                     break;
                 case 8:
                     Console.WriteLine("Making and Scheduling Meal.");
-                    // TO-DO: Make meals from recipe templates.
                     Recipe tempTemplateRecipe = menu.DisplayChooseRecipeMenu(lincoln);
 
                     Meal tempMeal = new Meal(tempTemplateRecipe);
 
-                    // When making a meal, you can make it from a recipe
-                    // or add a new set of ingredients. After a meal is
-                    // created with the second option, you have the option of
-                    // saving its ingredients as a recipe.
-
-                    // Meal could inherit from Recipe!! (maybe??)
+                    // You can only make meals from recipes.
 
                     // After the meal is created you are prompted to choose a day to
                     // schedule it onto.

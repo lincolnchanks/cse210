@@ -72,5 +72,9 @@ class Day
     public void AddItemExpiration(FoodItem expiringItem)
     {
         _expiringItems.Add(expiringItem);
+        if (!_hasExpiringItems)
+        {
+            _hasExpiringItems = true;
+        }
     }
 }
