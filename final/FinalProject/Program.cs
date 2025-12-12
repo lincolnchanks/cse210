@@ -20,7 +20,7 @@ class Program
         lincoln.AddStoragePlace(testStorage);
 
         int response = 0;
-        while (response != 9)
+        while (response != 8)
         {
             // Console.Clear();
             response = menu.DisplayMenu();
@@ -265,18 +265,12 @@ class Program
                     lincoln.AddRecipe(currentRecipe);
                     break;
                 case 6:
-                // ----------------------------------------------------------
-                // OBSOLETE - DELETE LATER
-                // ----------------------------------------------------------
-                    Console.WriteLine("Checking Expiration Dates.");
-                    break;
-                case 7:
                     // ----------------------------------------------------------
                     // DISPLAY EVERY DAY WITH ITS MEALS AND EXPIRATIONS
                     // ----------------------------------------------------------
                     calendar.DisplayCalendar();
                     break;
-                case 8:
+                case 7:
                 // TO-DO:
                 // If there are no recipes to choose from, accommodate that.
                     // --------------------------------------------------------------

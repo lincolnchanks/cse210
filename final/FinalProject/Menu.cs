@@ -3,24 +3,23 @@ class Menu
     public int DisplayMenu()
     {
         int response = 0;
-        while (response < 1 || response > 9)
+        while (response < 1 || response > 8)
         {
             Console.WriteLine("1. Add Item to Storage");
             Console.WriteLine("2. List Items in Storage");
             Console.WriteLine("3. Save All Data");
             Console.WriteLine("4. Load Data From File");
             Console.WriteLine("5. Make Recipe");
-            Console.WriteLine("6. Check Expiration Dates");
-            Console.WriteLine("7. Check Calendar");
-            Console.WriteLine("8. Make and Schedule Meal");
-            Console.WriteLine("9. Quit");
+            Console.WriteLine("6. Check Calendar");
+            Console.WriteLine("7. Make and Schedule Meal");
+            Console.WriteLine("8. Quit");
             try
             {
                 response = int.Parse(Console.ReadLine());
             }
             catch
             {
-                Console.WriteLine("Input must be an integer between 1 and 9.");
+                Console.WriteLine("Input must be an integer between 1 and 8.");
             }
         }
         return response;
