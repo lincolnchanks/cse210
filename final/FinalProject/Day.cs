@@ -30,7 +30,7 @@ class Day
     }
     public void DisplayDay()
     {
-        Console.WriteLine($"{_date.Year}/{_date.Month}/{_date.Day}");
+        Console.WriteLine(GetDateString());
         if (this._hasExpiringItems)
         {
             foreach(FoodItem item in _expiringItems)
@@ -42,6 +42,10 @@ class Day
     public DateTime GetDate()
     {
         return _date;
+    }
+    public string GetDateString()
+    {
+        return $"{_date.Year}/{_date.Month}/{_date.Day}";
     }
     public void SetBreakfast(Meal breakfast)
     {

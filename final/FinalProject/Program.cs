@@ -98,6 +98,7 @@ class Program
 
                     foreach(string foodLine in foodLines)
                     {
+                        // TO-DO: Make recipes loadable.
                         string[] foodLineInfo = foodLine.Split("#");
 
                         string foodName = foodLineInfo[1];
@@ -166,6 +167,8 @@ class Program
                 // If there are no recipes to choose from, accommodate that.
                     Console.WriteLine("Making and Scheduling Meal.");
                     Recipe tempTemplateRecipe = menu.DisplayChooseRecipeMenu(lincoln);
+
+                    Console.WriteLine($"Select the date for this meal (up to {calendar.GetDays()[calendar.GetDays().Count - 1].GetDateString()})");
 
                     Meal tempMeal = new Meal(tempTemplateRecipe);
                     int chosenMeal = menu.DisplayChooseMealMenu();
