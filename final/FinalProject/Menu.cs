@@ -75,4 +75,24 @@ class Menu
         }
         return user.GetSavedRecipes()[chosenRecipe - 1];
     }
+    public int DisplayChooseMealMenu()
+    {
+        int chosenMeal = 0;
+        while (chosenMeal < 1 || chosenMeal > 3)
+        {
+            Console.WriteLine("Select which meal to schedule this for:");
+            Console.WriteLine("1. Breakfast");
+            Console.WriteLine("2. Lunch");
+            Console.WriteLine("3. Dinner");
+            try
+            {
+                chosenMeal = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Input must be an integer between 1 and 3.");
+            }
+        }
+        return chosenMeal;
+    }
 }

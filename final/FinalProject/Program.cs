@@ -165,6 +165,8 @@ class Program
                     Recipe tempTemplateRecipe = menu.DisplayChooseRecipeMenu(lincoln);
 
                     Meal tempMeal = new Meal(tempTemplateRecipe);
+                    int chosenMeal = menu.DisplayChooseMealMenu();
+                    Console.WriteLine(chosenMeal);
 
                     // You can only make meals from recipes.
 
