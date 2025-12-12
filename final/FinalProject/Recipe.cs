@@ -28,23 +28,29 @@ class Recipe
         return _ingredientAmounts;
     }
     public void DisplayRecipe()
-    {
-        foreach (FoodItem foodItem in _ingredients)
+    { // TO-DO: Make this method better.
+        Console.WriteLine($"Recipe: {_recipeName}");
+        Console.WriteLine("Ingredients:");
+        for (int i = 0; i < _ingredients.Count; i++)
         {
-            foodItem.DisplayFoodInformation();
+            Console.WriteLine($"{i + 1}. {_ingredients[i]} - {_ingredientAmounts[i]} serving(s)");
         }
+        // foreach (FoodItem foodItem in _ingredients)
+        // {
+        //     foodItem.DisplayFoodInformation();
+        // }
     }
     public string GetFileSystemString()
     {
-        string fileString = $"Recipe#{_recipeName}#ingredients";
+        string fileString = $"Recipe#{_recipeName}#";
         foreach(FoodItem foodItem in _ingredients)
         {
-            fileString += $"#{foodItem.GetName()}";
+            fileString += $"/{foodItem.GetName()}";
         }
-        fileString += $"#ingredientAmounts";
+        fileString += $"#";
         foreach(int amount in _ingredientAmounts)
         {
-            fileString += $"#{amount}";
+            fileString += $"/{amount}";
         }
 
         return fileString;

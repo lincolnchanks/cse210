@@ -67,6 +67,10 @@ class FoodItem
     {
         return _calories;
     }
+    public void ShortDisplayFoodInformation()
+    {
+        Console.WriteLine($"Item: {_name}");
+    }
     public void DisplayFoodInformation()
     {
         Console.WriteLine($"Name: {_name}");

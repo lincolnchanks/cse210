@@ -73,6 +73,10 @@ class Program
                 case 2:
                     // Display each food item in the storage container.
                     testStorage.DisplayInfo();
+                    foreach (Recipe recipe in lincoln.GetSavedRecipes())
+                    {
+                        recipe.DisplayRecipe();
+                    }
                     break;
                 case 3:
                     Console.WriteLine("Enter the filename to save to:");
@@ -100,28 +104,80 @@ class Program
                     {
                         // TO-DO: Make recipes loadable.
                         string[] foodLineInfo = foodLine.Split("#");
+                        string infoType = foodLineInfo[0];
 
-                        string foodName = foodLineInfo[1];
-                        int foodExpirYear = int.Parse(foodLineInfo[2]);
-                        int foodExpirMonth = int.Parse(foodLineInfo[3]);
-                        int foodExpirDay = int.Parse(foodLineInfo[4]);
-                        int foodCalories = int.Parse(foodLineInfo[5]);
-
-                        int foodNumServings = int.Parse(foodLineInfo[7]);
-                        double foodPrice = double.Parse(foodLineInfo[8]);
-                        string foodBrand = foodLineInfo[9];
-
-                        FoodItem loadedFoodItem = new FoodItem(foodName, foodExpirYear, 
-                            foodExpirMonth, foodExpirDay, foodCalories, foodNumServings, 
-                            foodPrice, foodBrand);
-                        testStorage.AddItem(loadedFoodItem);
-                        foreach (Day day in calendar.GetDays())
+                        // If it's a FoodItem, run this code to read it accordingly.
+                        if (infoType == "FoodItem")
                         {
-                            if (day.GetDate() == loadedFoodItem.GetExpirationDate())
+                            string foodName = foodLineInfo[1];
+                            int foodExpirYear = int.Parse(foodLineInfo[2]);
+                            int foodExpirMonth = int.Parse(foodLineInfo[3]);
+                            int foodExpirDay = int.Parse(foodLineInfo[4]);
+                            int foodCalories = int.Parse(foodLineInfo[5]);
+
+                            int foodNumServings = int.Parse(foodLineInfo[7]);
+                            double foodPrice = double.Parse(foodLineInfo[8]);
+                            string foodBrand = foodLineInfo[9];
+
+                            FoodItem loadedFoodItem = new FoodItem(foodName, foodExpirYear, 
+                                foodExpirMonth, foodExpirDay, foodCalories, foodNumServings, 
+                                foodPrice, foodBrand);
+                            testStorage.AddItem(loadedFoodItem);
+                            foreach (Day day in calendar.GetDays())
                             {
-                                day.AddItemExpiration(loadedFoodItem);
-                                break;
+                                if (day.GetDate() == loadedFoodItem.GetExpirationDate())
+                                {
+                                    day.AddItemExpiration(loadedFoodItem);
+                                    break;
+                                }
                             }
+                        }
+                        // TO-DO: When saving FoodItems, save ItemIDs with them so the user
+                        // adding two items with the same name doesn't break the program
+                        // (STRETCH GOAL!!!!)
+                        else if (infoType == "Recipe")
+                        {
+                            string fileRecipeName = foodLineInfo[1];
+                            Recipe tempLoadedRecipe = new Recipe(fileRecipeName);
+
+                            string[] fileRecipeIngredients = foodLineInfo[2].Split("/");
+                            string[] fileRecipeAmounts = foodLineInfo[3].Split("/");
+                            for (int i = 0; i < fileRecipeIngredients.Length; i++)
+                            {
+                                string tempIngredientName = fileRecipeIngredients[i];
+                                foreach(FoodItem foodItem in testStorage.GetContentsList())
+                                {
+                                    if (foodItem.GetName() == tempIngredientName)
+                                    {
+                                        tempLoadedRecipe.AddIngredient(foodItem, int.Parse(fileRecipeAmounts[i]));
+                                        break;
+                                    }
+                                }
+                                // tempLoadedRecipe.AddIngredient(fileRecipeIngredients[i], int.Parse(fileRecipeAmounts[i]));
+                            }
+                            lincoln.AddRecipe(tempLoadedRecipe);
+                            // bool readingIngredients = false;
+                            // bool readingAmounts = false;
+                            // for (int i = 2; i < foodLineInfo.Count(); i++)
+                            // {
+                            //     if (foodLineInfo[i] == "ingredients")
+                            //     {
+                            //         readingIngredients = true;
+                            //     }
+
+                            //     if (readingIngredients && foodLineInfo[i] != "ingredients")
+                            //     {
+                            //         if (foodLineInfo[i] == "ingredientAmounts")
+                            //         {
+                            //             readingIngredients = false;
+                            //             readingAmounts = true;
+                            //         }
+                            //         else
+                            //         {
+                            //             string tempFileIngredientName = foodLineInfo[i];
+                            //         }
+                            //     }
+                            // }
                         }
                     }
                     break;
