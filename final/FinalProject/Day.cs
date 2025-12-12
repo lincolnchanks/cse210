@@ -28,20 +28,6 @@ class Day
             }
         }
     }
-    // public Day(DateTime date, User user)
-    // {
-    //     _date = date;
-    //     foreach (Storage storage in user.GetStoragePlaces())
-    //     {
-    //         foreach(FoodItem foodItem in storage.GetContentsList())
-    //         {
-    //             if (foodItem.GetExpirationDate() == _date)
-    //             {
-    //                 _expiringItems.Add(foodItem);
-    //             }
-    //         }
-    //     }
-    // }
     public void DisplayDay()
     {
         Console.WriteLine($"{_date.Year}/{_date.Month}/{_date.Day}");

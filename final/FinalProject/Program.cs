@@ -114,8 +114,15 @@ class Program
                             foodExpirMonth, foodExpirDay, foodCalories, foodNumServings, 
                             foodPrice, foodBrand);
                         testStorage.AddItem(loadedFoodItem);
+                        foreach (Day day in calendar.GetDays())
+                        {
+                            if (day.GetDate() == loadedFoodItem.GetExpirationDate())
+                            {
+                                day.AddItemExpiration(loadedFoodItem);
+                                break;
+                            }
+                        }
                     }
-                    calendar = new Calendar(lincoln);
                     break;
                 case 5:
                     Console.WriteLine("Making a recipe.");
