@@ -12,9 +12,10 @@ class Day
         // Checks each Food Item in each Storage container. If that item expires on this day, it
         // is added to the list of expiring items.
         _date = new DateTime(year, month, day);
-        // This code needs to run each time a FoodItem is created. Currently, this code
-        // constructs a Day object before any FoodItems are created. I need to add a method
-        // to either the FoodItem or Day class that will add FoodItems to a Day object manually.
+        // When a FoodItem is created it's automatically added to its expiration Day but only if
+        // that day is in the next 14 days. This constructor should be modified so that every time
+        // FoodItem data is loaded from a file, a new calendar object with corresponding Days will
+        // be constructed.
         foreach (Storage storage in user.GetStoragePlaces())
         {
             foreach(FoodItem foodItem in storage.GetContentsList())
