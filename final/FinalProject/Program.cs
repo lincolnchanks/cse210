@@ -169,6 +169,12 @@ class Program
                     Recipe tempTemplateRecipe = menu.DisplayChooseRecipeMenu(lincoln);
 
                     Console.WriteLine($"Select the date for this meal (up to {calendar.GetDays()[calendar.GetDays().Count - 1].GetDateString()})");
+                    string inputDateString = Console.ReadLine();
+
+                    string[] inputDateData = inputDateString.Split("/");
+                    int inputExpirYear = int.Parse(inputDateData[0]);
+                    int inputExpirMonth = int.Parse(inputDateData[1]);
+                    int inputExpirDay = int.Parse(inputDateData[2]);
 
                     Meal tempMeal = new Meal(tempTemplateRecipe);
                     int chosenMeal = menu.DisplayChooseMealMenu();
