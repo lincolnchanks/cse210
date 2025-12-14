@@ -256,15 +256,12 @@ class Program
                                             {
                                                 case "Breakfast":
                                                     day.SetBreakfast(loadedMeal);
-                                                    loadedMeal.SetMealSlot("Breakfast"); // This could be incorporated into the SetBreakfast() method.
                                                     break;
                                                 case "Lunch":
                                                     day.SetLunch(loadedMeal);
-                                                    loadedMeal.SetMealSlot("Lunch");
                                                     break;
                                                 case "Dinner":
                                                     day.SetDinner(loadedMeal);
-                                                    loadedMeal.SetMealSlot("Dinner");
                                                     break;
                                             }
                                         }
@@ -361,19 +358,16 @@ class Program
                         case 1:
                             Console.WriteLine("Breakfast");
                             templateDay.SetBreakfast(tempMeal);
-                            tempMeal.SetMealSlot("Breakfast");
                             chosenMealString = "Breakfast";
                             break;
                         case 2:
                             Console.WriteLine("Lunch");
                             templateDay.SetLunch(tempMeal);
-                            tempMeal.SetMealSlot("Lunch");
                             chosenMealString = "Lunch";
                             break;
                         default:
                             Console.WriteLine("Dinner");
                             templateDay.SetDinner(tempMeal);
-                            tempMeal.SetMealSlot("Dinner");
                             chosenMealString = "Dinner";
                             break;
                     }

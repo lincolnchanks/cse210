@@ -71,21 +71,21 @@ class Day
         _breakfast = breakfast;
         _breakfastAssigned = true;
         _scheduledMeals.Add(breakfast);
-        // breakfast.SetMealSlot("Breakfast");
+        breakfast.SetMealSlot("Breakfast");
     }
     public void SetLunch(Meal lunch)
     {
         _lunch = lunch;
         _lunchAssigned = true;
         _scheduledMeals.Add(lunch);
-        // lunch.SetMealSlot("Lunch");
+        lunch.SetMealSlot("Lunch");
     }
     public void SetDinner(Meal dinner)
     {
         _dinner = dinner;
         _dinnerAssigned = true;
         _scheduledMeals.Add(dinner);
-        // dinner.SetMealSlot("Dinner");
+        dinner.SetMealSlot("Dinner");
     }
     public List<Meal> GetMeals()
     {
