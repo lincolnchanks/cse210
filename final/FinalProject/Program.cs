@@ -6,9 +6,11 @@ using System.Data;
 //     ExpirDay, Calories, NumServings, Price, Brand}
 
 // Final Backlog:
-//  1. Save Meal Dates and Slots
 //  2. Add the Serve Meal Action
 //  3. Combine similar methods inside the Day class.
+
+// Stretch Backlog:
+// 1. Clean Up Loading and Creating Meals
 
 class Program
 {
@@ -233,6 +235,44 @@ class Program
                             // ----------------------------------------------------------
                             lincoln.AddRecipe(tempLoadedRecipe);
                         }
+                        else if (infoType == "ScheduledMeal")
+                        {
+                            string loadedRecipeName = foodLineInfo[1];
+                            string loadedRecipeDate = foodLineInfo[2];
+                            string loadedRecipeMealSlot = foodLineInfo[3];
+
+                            foreach(Recipe recipe in lincoln.GetSavedRecipes())
+                            {
+                                if (recipe.GetRecipeName() == loadedRecipeName)
+                                {
+                                    Recipe loadedRecipe = new Recipe(loadedRecipeName);
+                                    Meal loadedMeal = new Meal(loadedRecipe);
+
+                                    foreach(Day day in calendar.GetDays())
+                                    {
+                                        if (day.GetDateString() == loadedRecipeDate)
+                                        {
+                                            switch (loadedRecipeMealSlot)
+                                            {
+                                                case "Breakfast":
+                                                    day.SetBreakfast(loadedMeal);
+                                                    loadedMeal.SetMealSlot("Breakfast"); // This could be incorporated into the SetBreakfast() method.
+                                                    break;
+                                                case "Lunch":
+                                                    day.SetLunch(loadedMeal);
+                                                    loadedMeal.SetMealSlot("Lunch");
+                                                    break;
+                                                case "Dinner":
+                                                    day.SetDinner(loadedMeal);
+                                                    loadedMeal.SetMealSlot("Dinner");
+                                                    break;
+                                            }
+                                        }
+                                    }
+                                    break;
+                                }
+                            }
+                        }
                     }
                     break;
                 case 5:
@@ -321,16 +361,19 @@ class Program
                         case 1:
                             Console.WriteLine("Breakfast");
                             templateDay.SetBreakfast(tempMeal);
+                            tempMeal.SetMealSlot("Breakfast");
                             chosenMealString = "Breakfast";
                             break;
                         case 2:
                             Console.WriteLine("Lunch");
                             templateDay.SetLunch(tempMeal);
+                            tempMeal.SetMealSlot("Lunch");
                             chosenMealString = "Lunch";
                             break;
                         default:
                             Console.WriteLine("Dinner");
                             templateDay.SetDinner(tempMeal);
+                            tempMeal.SetMealSlot("Dinner");
                             chosenMealString = "Dinner";
                             break;
                     }

@@ -6,6 +6,7 @@ class Meal
     private List<int> _ingredientAmounts = new List<int>();
     private int _totalCalories = 0;
     private Recipe _recipe;
+    private string _mealSlot;
 
     public Meal(Recipe recipe)
     {
@@ -23,9 +24,13 @@ class Meal
     {
         return _recipe.GetRecipeName();
     }
+    public void SetMealSlot(string mealSlot)
+    {
+        _mealSlot = mealSlot;
+    }
     public string GetFileSystemString(Day day)
     {
-        return $"ScheduledMeal#{_recipe.GetRecipeName()}#{day.GetDateString()}";
+        return $"ScheduledMeal#{_recipe.GetRecipeName()}#{day.GetDateString()}#{_mealSlot}";
     }
     public void RemoveItemsFromStorage(Storage storage)
     {
