@@ -1,6 +1,5 @@
 class User
 {
-    // private double _weeklyBudget;
     private List<Storage> _storagePlaces = new List<Storage>();
     private List<Recipe> _savedRecipes = new List<Recipe>();
 

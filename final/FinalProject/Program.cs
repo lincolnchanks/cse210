@@ -117,6 +117,16 @@ class Program
                         {
                             outputFile.WriteLine($"{recipe.GetFileSystemString()}");
                         }
+                        // ----------------------------------------------------------
+                        // WRITE EACH SCHEDULED MEAL TO THE FILE
+                        // ----------------------------------------------------------
+                        foreach(Day day in calendar.GetDays())
+                        {
+                            foreach(Meal meal in day.GetMeals())
+                            {
+                                outputFile.WriteLine($"{meal.GetFileSystemString(day)}");
+                            }
+                        }
                     }
                     break;
                 case 4:

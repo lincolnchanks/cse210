@@ -3,6 +3,7 @@ class Day
     private DateTime _date;
     private List<FoodItem> _expiringItems = new List<FoodItem>();
     private bool _hasExpiringItems = false;
+    private List<Meal> _scheduledMeals = new List<Meal>();
     private Meal _breakfast;
     private Meal _lunch;
     private Meal _dinner;
@@ -69,16 +70,23 @@ class Day
     {
         _breakfast = breakfast;
         _breakfastAssigned = true;
+        _scheduledMeals.Add(breakfast);
     }
     public void SetLunch(Meal lunch)
     {
         _lunch = lunch;
         _lunchAssigned = true;
+        _scheduledMeals.Add(lunch);
     }
     public void SetDinner(Meal dinner)
     {
         _dinner = dinner;
         _dinnerAssigned = true;
+        _scheduledMeals.Add(dinner);
+    }
+    public List<Meal> GetMeals()
+    {
+        return _scheduledMeals;
     }
     public Meal GetBreakfast()
     {
