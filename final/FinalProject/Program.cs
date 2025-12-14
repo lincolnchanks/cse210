@@ -6,11 +6,11 @@ using System.Data;
 //     ExpirDay, Calories, NumServings, Price, Brand}
 
 // Final Backlog:
-//  2. Add the Serve Meal Action
 //  3. Combine similar methods inside the Day class.
 
-// Stretch Backlog:
+// Stretch Goals:
 // 1. Clean Up Loading and Creating Meals
+// 2. When ServeMeal() is called, maybe remove that scheduled meal from its day as well?
 
 class Program
 {
@@ -411,7 +411,7 @@ class Program
                         }
                     }
                     Meal servedMeal = tempMealsList[servedMealNum - 1];
-                    // Meal servedMeal = menu.DisplayChooseScheduledMealMenu(calendar);
+                    
                     servedMeal.ServeMeal(testStorage);
                     break;
             }
