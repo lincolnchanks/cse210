@@ -5,12 +5,10 @@ using System.Data;
 // enum FoodItemLoadData {Name, ExpirYear, ExpirMonth, 
 //     ExpirDay, Calories, NumServings, Price, Brand}
 
-// Final Backlog:
-//  3. Combine similar methods inside the Day class.
-
 // Stretch Goals:
 // 1. Clean Up Loading and Creating Meals
 // 2. When ServeMeal() is called, maybe remove that scheduled meal from its day as well?
+// 3. Combine similar methods inside the Day class.
 
 class Program
 {
