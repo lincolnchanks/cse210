@@ -33,7 +33,7 @@ class Recipe
         Console.WriteLine("Ingredients:");
         for (int i = 0; i < _ingredients.Count; i++)
         {
-            Console.WriteLine($"{i + 1}. {_ingredients[i]} - {_ingredientAmounts[i]} serving(s)");
+            Console.WriteLine($"{i + 1}. {_ingredients[i].GetName()} - {_ingredientAmounts[i]} serving(s)");
         }
         // foreach (FoodItem foodItem in _ingredients)
         // {

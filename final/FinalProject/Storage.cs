@@ -21,7 +21,7 @@ class Storage
         Console.WriteLine($"Items:");
         foreach(FoodItem item in _contents)
         {
-            item.DisplayFoodInformation();
+            item.DisplayFoodItem();
         }
     }
 }

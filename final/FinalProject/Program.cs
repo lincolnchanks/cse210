@@ -9,7 +9,6 @@ using System.Data;
 //  1. Save Meal Dates and Slots
 //  2. Add the Serve Meal Action
 //  3. Combine similar methods inside the Day class.
-//  4. Make the Menu more User-friendly with Console.Clear()'s.
 
 class Program
 {
@@ -28,7 +27,7 @@ class Program
         int response = 0;
         while (response != 8)
         {
-            // Console.Clear();
+            Console.Clear();
             response = menu.DisplayMenu();
 
             switch (response)
@@ -94,6 +93,7 @@ class Program
                     {
                         recipe.DisplayRecipe();
                     }
+                    string stallString = Console.ReadLine();
                     break;
                 case 3:
                     // ----------------------------------------------------------
@@ -275,6 +275,7 @@ class Program
                     // DISPLAY EVERY DAY WITH ITS MEALS AND EXPIRATIONS
                     // ----------------------------------------------------------
                     calendar.DisplayCalendar();
+                    string stallString1 = Console.ReadLine();
                     break;
                 case 7:
                 // TO-DO:

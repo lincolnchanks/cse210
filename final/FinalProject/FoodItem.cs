@@ -53,7 +53,17 @@ class FoodItem
     }
     public void DisplayFoodItem()
     {
-        
+        string statusString = "";
+        if (_expired)
+        {
+            statusString += "[EXPIRED] ";
+        }
+        statusString += $"Item: {_name} ({GetExpirationDateString()})";
+        Console.WriteLine(statusString);
+    }
+    public string GetExpirationDateString()
+    {
+        return $"{_expirationDate.Year}/{_expirationDate.Month}/{_expirationDate.Day}";
     }
     public void RemoveFromStorage(int numServingsRemoved)
     {
