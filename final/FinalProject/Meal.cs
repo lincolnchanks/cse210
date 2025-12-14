@@ -20,6 +20,10 @@ class Meal
             _totalCalories += foodItem.GetCalories();
         }
     }
+    public Recipe GetRecipe()
+    {
+        return _recipe;
+    }
     public string GetMealName()
     {
         return _recipe.GetRecipeName();
@@ -31,6 +35,37 @@ class Meal
     public string GetFileSystemString(Day day)
     {
         return $"ScheduledMeal#{_recipe.GetRecipeName()}#{day.GetDateString()}#{_mealSlot}";
+    }
+    public string GetMealSlot()
+    {
+        return _mealSlot;
+    }
+    public void ServeMeal(Storage storage)
+    {
+        // For each ingredient
+        for (int i = 0; i < _ingredients.Count; i++)
+        {
+            // Compare to each item in storage
+            foreach(FoodItem item in storage.GetContentsList())
+            {
+                // Match the ingredient name to the item in storage
+                if (_ingredients[i].GetName() == item.GetName())
+                {
+                    // Are there enough servings in storage to remove the item?
+                    if (_ingredientAmounts[i] <= item.GetNumServings())
+                    {
+                        // If so, remove that number of servings.
+                        item.RemoveFromStorage(_ingredientAmounts[i], storage);
+                    }
+                    else
+                    {
+                        // If not, quit the function.
+                        Console.WriteLine($"Not enough of {_ingredients[i].GetName()} in storage.");
+                        return;
+                    }
+                }
+            }
+        }
     }
     public void RemoveItemsFromStorage(Storage storage)
     {

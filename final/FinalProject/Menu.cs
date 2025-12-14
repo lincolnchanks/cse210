@@ -4,7 +4,7 @@ class Menu
     { // ONE MORE ACTION: SERVE MEAL
         // THIS ONE REMOVES THE FOOD AMOUNTS FROM THE FOOD STORAGE.
         int response = 0;
-        while (response < 1 || response > 8)
+        while (response < 1 || response > 9)
         {
             Console.WriteLine("1. Add Item to Storage");
             Console.WriteLine("2. List Items in Storage");
@@ -13,14 +13,15 @@ class Menu
             Console.WriteLine("5. Make Recipe");
             Console.WriteLine("6. Check Calendar");
             Console.WriteLine("7. Make and Schedule Meal");
-            Console.WriteLine("8. Quit");
+            Console.WriteLine("8. Serve Meal");
+            Console.WriteLine("9. Quit");
             try
             {
                 response = int.Parse(Console.ReadLine());
             }
             catch
             {
-                Console.WriteLine("Input must be an integer between 1 and 8.");
+                Console.WriteLine("Input must be an integer between 1 and 9.");
             }
         }
         return response;
@@ -75,7 +76,7 @@ class Menu
         }
         return user.GetSavedRecipes()[chosenRecipe - 1];
     }
-    public int DisplayChooseMealMenu()
+    public int DisplayChooseMealSlotMenu()
     {
         int chosenMeal = 0;
         while (chosenMeal < 1 || chosenMeal > 3)
@@ -94,5 +95,37 @@ class Menu
             }
         }
         return chosenMeal;
+    }
+    public int DisplayChooseScheduledMealMenu(Calendar calendar)
+    {
+        int chosenScheduledMeal = 0;
+        int count = 0;
+        // List<Meal> tempMealsList = new List<Meal>();
+        Console.WriteLine("Choose a meal to serve:");
+        foreach(Day day in calendar.GetDays())
+        {
+            foreach(Meal meal in day.GetMeals())
+            {
+                count++;
+                // tempMealsList.Add(meal);
+                Console.WriteLine($"{count}. {meal.GetMealName()} ({day.GetDateString()}, {meal.GetMealSlot()})");
+            }
+        }
+        while (chosenScheduledMeal < 1 || chosenScheduledMeal > count)
+        {
+            try
+            {
+                chosenScheduledMeal = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine($"Input must be an integer between 1 and {count}.");
+            }
+        }
+        
+        return chosenScheduledMeal;
+        // Meal chosenMeal = tempMealsList[chosenScheduledMeal - 1];
+
+        // return chosenMeal;
     }
 }

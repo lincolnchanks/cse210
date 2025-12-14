@@ -245,7 +245,7 @@ class Program
                             {
                                 if (recipe.GetRecipeName() == loadedRecipeName)
                                 {
-                                    Recipe loadedRecipe = new Recipe(loadedRecipeName);
+                                    Recipe loadedRecipe = recipe;
                                     Meal loadedMeal = new Meal(loadedRecipe);
 
                                     foreach(Day day in calendar.GetDays())
@@ -347,7 +347,7 @@ class Program
                     // MAKE A TEMPLATE DAY.
                     // ----------------------------------------------------------
                     Day templateDay = new Day(inputYear, inputMonth, inputDay, lincoln);
-                    int chosenMeal = menu.DisplayChooseMealMenu();
+                    int chosenMeal = menu.DisplayChooseMealSlotMenu();
                     string chosenMealString;
 
                     // ----------------------------------------------------------
@@ -401,7 +401,18 @@ class Program
                     break;
                 case 8:
                     Console.WriteLine("Serving Meal");
-                    string stallString2 = Console.ReadLine();
+                    int servedMealNum = menu.DisplayChooseScheduledMealMenu(calendar);
+                    List<Meal> tempMealsList = new List<Meal>();
+                    foreach(Day day in calendar.GetDays())
+                    {
+                        foreach(Meal meal in day.GetMeals())
+                        {
+                            tempMealsList.Add(meal);
+                        }
+                    }
+                    Meal servedMeal = tempMealsList[servedMealNum - 1];
+                    // Meal servedMeal = menu.DisplayChooseScheduledMealMenu(calendar);
+                    servedMeal.ServeMeal(testStorage);
                     break;
             }
         }

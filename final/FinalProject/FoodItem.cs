@@ -39,6 +39,10 @@ class FoodItem
             _expired = true;
         }
     }
+    public int GetNumServings()
+    {
+        return _numServings;
+    }
     public string GetFileSystemString()
     {
         return $"FoodItem#{_name}#{_expirationYear}#{_expirationMonth}#{_expirationDay}#{_calories}#{_expired}#{_numServings}#{_price}#{_brand}";
@@ -58,25 +62,29 @@ class FoodItem
         {
             statusString += "[EXPIRED] ";
         }
-        statusString += $"Item: {_name} ({GetExpirationDateString()})";
+        statusString += $"Item: {_name} ({GetExpirationDateString()}) - {_numServings} Servings";
         Console.WriteLine(statusString);
     }
     public string GetExpirationDateString()
     {
         return $"{_expirationDate.Year}/{_expirationDate.Month}/{_expirationDate.Day}";
     }
-    public void RemoveFromStorage(int numServingsRemoved)
+    public void RemoveFromStorage(int numServingsRemoved, Storage storage)
     {
-        
+        _numServings -= numServingsRemoved;
+        if (_numServings == 0)
+        {
+            storage.GetContentsList().Remove(this);
+        }
     }
     public int GetCalories()
     {
         return _calories;
     }
-    public void ShortDisplayFoodInformation()
-    {
-        Console.WriteLine($"Item: {_name}");
-    }
+    // public void ShortDisplayFoodInformation()
+    // {
+    //     Console.WriteLine($"Item: {_name}");
+    // }
     public void DisplayFoodInformation()
     {
         Console.WriteLine($"Name: {_name}");
