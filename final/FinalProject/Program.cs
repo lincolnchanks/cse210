@@ -27,7 +27,7 @@ class Program
         lincoln.AddStoragePlace(testStorage);
 
         int response = 0;
-        while (response != 8)
+        while (response != 9)
         {
             Console.Clear();
             response = menu.DisplayMenu();
@@ -398,6 +398,10 @@ class Program
                             Console.WriteLine($"Invalid date. Cannot plan beyond two weeks out.");
                         }
                     }
+                    break;
+                case 8:
+                    Console.WriteLine("Serving Meal");
+                    string stallString2 = Console.ReadLine();
                     break;
             }
         }
