@@ -59,10 +59,6 @@ class FoodItem
     {
         
     }
-    public void ScheduleItem()
-    {
-        
-    }
     public int GetCalories()
     {
         return _calories;

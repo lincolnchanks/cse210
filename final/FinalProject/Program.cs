@@ -5,6 +5,12 @@ using System.Data;
 // enum FoodItemLoadData {Name, ExpirYear, ExpirMonth, 
 //     ExpirDay, Calories, NumServings, Price, Brand}
 
+// Final Backlog:
+//  1. Save Meal Dates and Slots
+//  2. Add the Serve Meal Action
+//  3. Combine similar methods inside the Day class.
+//  4. Make the Menu more User-friendly with Console.Clear()'s.
+
 class Program
 {
     static void Main(string[] args)

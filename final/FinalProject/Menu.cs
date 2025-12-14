@@ -1,7 +1,8 @@
 class Menu
 {
     public int DisplayMenu()
-    {
+    { // ONE MORE ACTION: SERVE MEAL
+        // THIS ONE REMOVES THE FOOD AMOUNTS FROM THE FOOD STORAGE.
         int response = 0;
         while (response < 1 || response > 8)
         {
