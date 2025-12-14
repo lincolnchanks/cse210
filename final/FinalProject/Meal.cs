@@ -67,19 +67,11 @@ class Meal
             }
         }
     }
-    public void RemoveItemsFromStorage(Storage storage)
-    {
-        
-    }
     public void AddIngredient(FoodItem ingredient, int ingredientAmount)
     {
         _ingredients.Add(ingredient);
         _ingredientAmounts.Add(ingredientAmount);
         _totalCalories += ingredient.GetCalories();
-    }
-    public void RemoveIngredient(FoodItem ingredient, int ingredientAmount, int ingredientCalories)
-    {
-        
     }
     public void DisplayIngredients()
     {
