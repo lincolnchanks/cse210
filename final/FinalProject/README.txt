@@ -48,7 +48,9 @@ In designing this program I saw no way to include Inheritance or Polymorphism in
 Many classes contained objects of other classes (Has-A), but none were similar enough to 
 others in design or purpose (Is-A) to justify being derived from one another. Some classes 
 came close to this requirement--for example, I considered making the Meal class derive from 
-the Recipe class, but they came out different enough that I decided not to.
+the Recipe class, but I realized it would not make sense. A Meal is *not* a Recipe, so there 
+is no Is-A relationship. Similarly, a Calendar is *not* a Day, it simply has many Days--thus 
+that idea was out too.
 
 Since there was no use of Inheritance in this program, I also saw no means of including 
 Polymorphism in the design, given that Polymorphism requires the use of Inheritance, which 

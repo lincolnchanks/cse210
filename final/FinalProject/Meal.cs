@@ -2,8 +2,8 @@ using System.Numerics;
 
 class Meal
 {
-    private List<FoodItem> _ingredients = new List<FoodItem>();
-    private List<int> _ingredientAmounts = new List<int>();
+    // private List<FoodItem> _ingredients = new List<FoodItem>();
+    // private List<int> _ingredientAmounts = new List<int>();
     private int _totalCalories = 0;
     private Recipe _recipe;
     private string _mealSlot;
@@ -12,10 +12,11 @@ class Meal
     {
         _recipe = recipe;
         
-        _ingredients = _recipe.GetIngredientsList();
-        _ingredientAmounts = _recipe.GetAmountsList();
+        // The Recipe already has this information stored, thus we don't need it right now.
+        // _ingredients = _recipe.GetIngredientsList();
+        // _ingredientAmounts = _recipe.GetAmountsList();
         
-        foreach(FoodItem foodItem in _ingredients)
+        foreach(FoodItem foodItem in _recipe.GetIngredientsList())
         {
             _totalCalories += foodItem.GetCalories();
         }
@@ -43,24 +44,24 @@ class Meal
     public void ServeMeal(Storage storage)
     {
         // For each ingredient
-        for (int i = 0; i < _ingredients.Count; i++)
+        for (int i = 0; i < _recipe.GetIngredientsList().Count; i++)
         {
             // Compare to each item in storage
             foreach(FoodItem item in storage.GetContentsList())
             {
                 // Match the ingredient name to the item in storage
-                if (_ingredients[i].GetName() == item.GetName())
+                if (_recipe.GetIngredientsList()[i].GetName() == item.GetName())
                 {
                     // Are there enough servings in storage to remove the item?
-                    if (_ingredientAmounts[i] <= item.GetNumServings())
+                    if (_recipe.GetAmountsList()[i] <= item.GetNumServings())
                     {
                         // If so, remove that number of servings.
-                        item.RemoveFromStorage(_ingredientAmounts[i], storage);
+                        item.RemoveFromStorage(_recipe.GetAmountsList()[i], storage);
                     }
                     else
                     {
                         // If not, quit the function.
-                        Console.WriteLine($"Not enough of {_ingredients[i].GetName()} in storage.");
+                        Console.WriteLine($"Not enough of {_recipe.GetIngredientsList()[i].GetName()} in storage.");
                         return;
                     }
                 }
@@ -69,17 +70,18 @@ class Meal
     }
     public void AddIngredient(FoodItem ingredient, int ingredientAmount)
     {
-        _ingredients.Add(ingredient);
-        _ingredientAmounts.Add(ingredientAmount);
+        _recipe.AddIngredient(ingredient, ingredientAmount);
+        // _ingredients.Add(ingredient);
+        // _ingredientAmounts.Add(ingredientAmount);
         _totalCalories += ingredient.GetCalories();
     }
     public void DisplayIngredients()
     {
-        foreach(FoodItem item in _ingredients)
+        foreach(FoodItem item in _recipe.GetIngredientsList())
         {
             item.DisplayFoodInformation();
         }
-        foreach(int i in _ingredientAmounts)
+        foreach(int i in _recipe.GetAmountsList())
         {
             Console.WriteLine(i);
         }
