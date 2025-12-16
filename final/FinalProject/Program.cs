@@ -53,19 +53,18 @@ class Program
                     Console.WriteLine("Enter the number of servings.");
                     int tempFoodNumServings = int.Parse(Console.ReadLine());
                     
-                    Console.WriteLine("Enter the price.");
-                    double tempFoodPrice = double.Parse(Console.ReadLine());
+                    // Console.WriteLine("Enter the price.");
+                    // double tempFoodPrice = double.Parse(Console.ReadLine());
                     
-                    Console.WriteLine("Enter the brand.");
-                    string tempFoodBrand = Console.ReadLine();
+                    // Console.WriteLine("Enter the brand.");
+                    // string tempFoodBrand = Console.ReadLine();
 
                     // ----------------------------------------------------------
                     // CREATE FOODITEM OBJECT FROM PROVIDED DATA
                     // ----------------------------------------------------------
 
                     FoodItem tempCurrentFoodItem = new FoodItem(tempFoodName, tempExpirYear, 
-                        tempExpirMonth, tempExpirDay, tempFoodCalories, tempFoodNumServings, 
-                        tempFoodPrice, tempFoodBrand);
+                        tempExpirMonth, tempExpirDay, tempFoodCalories, tempFoodNumServings);
                     
                     // ----------------------------------------------------------
                     // ADD THE FOODITEM TO THE OVERALL STORAGE
@@ -161,15 +160,14 @@ class Program
                             int foodCalories = int.Parse(foodLineInfo[5]);
 
                             int foodNumServings = int.Parse(foodLineInfo[7]);
-                            double foodPrice = double.Parse(foodLineInfo[8]);
-                            string foodBrand = foodLineInfo[9];
+                            // double foodPrice = double.Parse(foodLineInfo[8]);
+                            // string foodBrand = foodLineInfo[9];
 
                             // ----------------------------------------------------------
                             // CREATE A FOODITEM FROM THE PARSED DATA
                             // ----------------------------------------------------------
                             FoodItem loadedFoodItem = new FoodItem(foodName, foodExpirYear, 
-                                foodExpirMonth, foodExpirDay, foodCalories, foodNumServings, 
-                                foodPrice, foodBrand);
+                                foodExpirMonth, foodExpirDay, foodCalories, foodNumServings);
                             // ----------------------------------------------------------
                             // ADD IT TO STORAGE
                             // ----------------------------------------------------------

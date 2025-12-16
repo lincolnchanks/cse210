@@ -8,9 +8,9 @@ class FoodItem
     private int _calories;
     private bool _expired;
     private int _numServings;
-    private double _price;
-    private string _brand;
-    public FoodItem(string name, int expirationYear, int expirationMonth, int expirationDay, int calories, int numServings, double price, string brand)
+    // private double _price;
+    // private string _brand;
+    public FoodItem(string name, int expirationYear, int expirationMonth, int expirationDay, int calories, int numServings)
     {
         DateTime currentDate = DateTime.Today;
         _name = name;
@@ -29,8 +29,8 @@ class FoodItem
             // if (currentDate == _expirationDate) Add some behavior for when food is expiring today.
         }
         _numServings = numServings;
-        _price = price;
-        _brand = brand;
+        // _price = price;
+        // _brand = brand;
     }
     public void Expire() // this needs to be called by some sort of refresh method, that checks every day when the user signs in.
     {
@@ -45,7 +45,7 @@ class FoodItem
     }
     public string GetFileSystemString()
     {
-        return $"FoodItem#{_name}#{_expirationYear}#{_expirationMonth}#{_expirationDay}#{_calories}#{_expired}#{_numServings}#{_price}#{_brand}";
+        return $"FoodItem#{_name}#{_expirationYear}#{_expirationMonth}#{_expirationDay}#{_calories}#{_expired}#{_numServings}";
     }
     public string GetName()
     {
@@ -92,7 +92,7 @@ class FoodItem
         Console.WriteLine($"Calories Per Serving: {_calories}");
         Console.WriteLine($"Expired: {_expired}");
         Console.WriteLine($"Number of Servings: {_numServings}");
-        Console.WriteLine($"Price: {_price}");
-        Console.WriteLine($"Brand: {_brand}");
+        // Console.WriteLine($"Price: {_price}");
+        // Console.WriteLine($"Brand: {_brand}");
     }
 }
