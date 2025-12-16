@@ -14,5 +14,10 @@ class Program
             "Multiplication", "3.4", "3-9");
         Console.WriteLine(mathAssignment.GetSummary());
         Console.WriteLine(mathAssignment.GetHomeworkList());
+
+        WritingAssignment writingAssignment = new WritingAssignment("Shallan Davar", 
+            "Lightweaving", "Words of Radiance");
+        Console.WriteLine(writingAssignment.GetSummary());
+        Console.WriteLine(writingAssignment.GetWritingInformation());
     }
 }
