@@ -21,10 +21,10 @@ class Meal
             _totalCalories += foodItem.GetCalories();
         }
     }
-    public Recipe GetRecipe()
-    {
-        return _recipe;
-    }
+    // public Recipe GetRecipe()
+    // {
+    //     return _recipe;
+    // }
     public string GetMealName()
     {
         return _recipe.GetRecipeName();
@@ -68,23 +68,23 @@ class Meal
             }
         }
     }
-    public void AddIngredient(FoodItem ingredient, int ingredientAmount)
-    {
-        _recipe.AddIngredient(ingredient, ingredientAmount);
-        // _ingredients.Add(ingredient);
-        // _ingredientAmounts.Add(ingredientAmount);
-        _totalCalories += ingredient.GetCalories();
-    }
-    public void DisplayIngredients()
-    {
-        foreach(FoodItem item in _recipe.GetIngredientsList())
-        {
-            item.DisplayFoodInformation();
-        }
-        foreach(int i in _recipe.GetAmountsList())
-        {
-            Console.WriteLine(i);
-        }
-        Console.WriteLine(_totalCalories);
-    }
+    // public void AddIngredient(FoodItem ingredient, int ingredientAmount)
+    // {
+    //     _recipe.AddIngredient(ingredient, ingredientAmount);
+    //     // _ingredients.Add(ingredient);
+    //     // _ingredientAmounts.Add(ingredientAmount);
+    //     _totalCalories += ingredient.GetCalories();
+    // }
+    // public void DisplayIngredients()
+    // {
+    //     foreach(FoodItem item in _recipe.GetIngredientsList())
+    //     {
+    //         item.DisplayFoodInformation();
+    //     }
+    //     foreach(int i in _recipe.GetAmountsList())
+    //     {
+    //         Console.WriteLine(i);
+    //     }
+    //     Console.WriteLine(_totalCalories);
+    // }
 }

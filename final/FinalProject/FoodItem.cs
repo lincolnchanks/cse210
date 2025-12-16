@@ -32,13 +32,13 @@ class FoodItem
         // _price = price;
         // _brand = brand;
     }
-    public void Expire() // this needs to be called by some sort of refresh method, that checks every day when the user signs in.
-    {
-        if (!_expired)
-        {
-            _expired = true;
-        }
-    }
+    // public void Expire() // this needs to be called by some sort of refresh method, that checks every day when the user signs in.
+    // {
+    //     if (!_expired)
+    //     {
+    //         _expired = true;
+    //     }
+    // }
     public int GetNumServings()
     {
         return _numServings;
@@ -85,14 +85,14 @@ class FoodItem
     // {
     //     Console.WriteLine($"Item: {_name}");
     // }
-    public void DisplayFoodInformation()
-    {
-        Console.WriteLine($"Name: {_name}");
-        Console.WriteLine($"Expiration Date: {_expirationDate}");
-        Console.WriteLine($"Calories Per Serving: {_calories}");
-        Console.WriteLine($"Expired: {_expired}");
-        Console.WriteLine($"Number of Servings: {_numServings}");
-        // Console.WriteLine($"Price: {_price}");
-        // Console.WriteLine($"Brand: {_brand}");
-    }
+    // public void DisplayFoodInformation()
+    // {
+    //     Console.WriteLine($"Name: {_name}");
+    //     Console.WriteLine($"Expiration Date: {_expirationDate}");
+    //     Console.WriteLine($"Calories Per Serving: {_calories}");
+    //     Console.WriteLine($"Expired: {_expired}");
+    //     Console.WriteLine($"Number of Servings: {_numServings}");
+    //     // Console.WriteLine($"Price: {_price}");
+    //     // Console.WriteLine($"Brand: {_brand}");
+    // }
 }
