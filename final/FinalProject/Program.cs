@@ -9,6 +9,7 @@ using System.Data;
 // 1. Clean Up Loading and Creating Meals
 // 2. When ServeMeal() is called, maybe remove that scheduled meal from its day as well?
 // 3. Combine similar methods inside the Day class.
+// 4. Make the Day class include the day of the week.
 
 class Program
 {
