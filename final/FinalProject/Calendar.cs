@@ -2,34 +2,45 @@ class Calendar
 {
     private List<Day> _days;
 
+    private int GetNumDaysInCurrentMonth(int currMonth)
+    {
+        int numDaysInCurrentMonth;
+        // If the current month is a 31-day month, set it to 31 days
+        if (currMonth is 1 or 3 or 5 or 7 or 8 or 10 or 12)
+        {
+            numDaysInCurrentMonth = 31;
+        }
+        // If the current month is a 30-day month, set it to 30 days
+        else if (currMonth is 4 or 6 or 9 or 11)
+        {
+            numDaysInCurrentMonth = 30;
+        }
+        // Otherwise, it's February so set it to 28 days
+        else
+        {
+            numDaysInCurrentMonth = 28;
+        }
+        return numDaysInCurrentMonth;
+    }
+    
     public Calendar(User user)
     {
         List<Day> days = new List<Day>();
 
-        // Get today's date, and extract the info into data
+        // Get today's date, then get the year, month, and day of today's date.
         DateTime today = DateTime.Today;
         int currYear = today.Year;
         int currMonth = today.Month;
         int currDay = today.Day;
 
         // Creates the next 14 days and adds them to the calendar's list.
+
         int numDaysInCurrentMonth;
         // Could we try declaring the daysLeftInMonth variable outside the for loop?
         for (int i = 0; i < 14; i++)
         {
             // Get the correct number of days depending on the current month.
-            if (currMonth is 1 or 3 or 5 or 7 or 8 or 10 or 12)
-            {
-                numDaysInCurrentMonth = 31;
-            }
-            else if (currMonth is 4 or 6 or 9 or 11)
-            {
-                numDaysInCurrentMonth = 30;
-            }
-            else
-            {
-                numDaysInCurrentMonth = 28;
-            }
+            numDaysInCurrentMonth = GetNumDaysInCurrentMonth(currMonth);
 
             // This handles dates wrapping into the next month.
 
